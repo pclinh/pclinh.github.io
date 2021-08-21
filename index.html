@@ -23,7 +23,6 @@
           statusChangeCallback(response);
       });
     };
-
     (function(d, s, id){
        var js, fjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) {return;}
@@ -35,7 +34,7 @@
      function statusChangeCallback(response){
        if(response.status === 'connected'){
          console.log('Logged in and authenticated');
-
+            window.location.href="./main.html"
        } else {
          console.log('Not authenticated');
 
@@ -69,10 +68,10 @@
     }
   </script>
 
-    <fb:login-button 
-        scope="public_profile,email"
-        onlogin="checkLoginState()">
-    </fb:login-button>
+        <fb:login-button 
+            scope="public_profile,email"
+            onlogin="checkLoginState()">
+        </fb:login-button>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
 </body>
 </html>
