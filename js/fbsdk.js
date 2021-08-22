@@ -33,5 +33,6 @@ window.fbAsyncInit = function() {
   }
   function logout (){
         FB.logout(function(response){
+            window.location.href='index.html'
       });
     }
