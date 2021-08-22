@@ -9,7 +9,6 @@ window.fbAsyncInit = function() {
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
       var access_token= response.authResponse.accessToken;
-      var url1 = response.authResponse.url;
   });
 };
 (function(d, s, id){
@@ -38,6 +37,8 @@ function logout (){
     });
   }
 $("#Get_btn").click(function(){
+  var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
+  console.log(access_token);
     $.get(url1+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
