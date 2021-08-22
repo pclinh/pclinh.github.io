@@ -17,13 +17,14 @@ window.fbAsyncInit = function() {
    js = d.createElement(s); js.id = id;
    js.src = "//connect.facebook.net/en_US/sdk.js";
    fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));
 
  function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
     var access_token = response.authResponse.accessToken;
     console.log(access_token);
+    $("#Get_btn").click(get());
    } else {
      console.log('Not authenticated');
    }
@@ -38,9 +39,8 @@ function logout (){
           window.location.href='index.html'
     });
   }
-$("#Get_btn").click(function(){
-  var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
-  
+
+ function get(){ var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $.get(url1+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
@@ -49,4 +49,5 @@ $("#Get_btn").click(function(){
         $(".get").append(row);
      });
     });
-  })
+  }
+
