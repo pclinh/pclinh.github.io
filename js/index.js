@@ -24,7 +24,7 @@ window.fbAsyncInit = function() {
     console.log('Logged in and authenticated');
     var access_token = response.authResponse.accessToken;
     console.log(access_token);
-    $("#Get_btn").click(get());
+    $("#Get_btn").click(get(access_token));
    } else {
      console.log('Not authenticated');
    }
@@ -40,7 +40,8 @@ function logout (){
     });
   }
 
- function get(){ var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
+ function get(access_token)
+ { var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $.get(url1+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
