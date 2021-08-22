@@ -1,6 +1,12 @@
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1229103174227463',
+    cookie     : true,
+    xfbml      : true,
+    version    : 'v11.0'
+  }); 
 $("#Get_btn").click(function(){
-var json = $.getJSON( "../data.json", function(data) { 
-    $.get(data.url+"access_token="+data.access_token, function(data2, status){
+    $.get(response.authResponse.url+"access_token="+response.authResponse.accessToken, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
         console.log(value.created_time)
@@ -8,9 +14,5 @@ var json = $.getJSON( "../data.json", function(data) {
         $(".get").append(row);
      });
     });
-  }) 
-});
-$("#Post_btn").click(function(){
-  var txt = "test123"
-  var postApi=data.url+"access_token="+data.access_token +'&'+'message='+"\""+txt+"\""
-});
+  })
+}
