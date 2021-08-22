@@ -5,6 +5,9 @@ window.fbAsyncInit = function() {
     xfbml      : true,
     version    : 'v11.0'
   }); 
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
 $("#Get_btn").click(function(){
     $.get(response.authResponse.url+"access_token="+response.authResponse.accessToken, function(data2, status){
       console.log(data2)
