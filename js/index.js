@@ -1,4 +1,4 @@
- var access_token="";
+  $access_token;
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '1229103174227463',
@@ -31,8 +31,8 @@ window.fbAsyncInit = function() {
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' }, 
         success: function (data) {
-          access_token.concat(data.access_token);
-         console.log(data.access_toke)
+          access_token=data.access_token;
+         console.log(data.access_token)
         },
     });
     console.log(access_token)
