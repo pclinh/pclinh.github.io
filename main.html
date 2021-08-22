@@ -8,9 +8,7 @@
     
 </head>
 <body>
-  
   <script>
-    console.log('updated');
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1229103174227463',
@@ -18,6 +16,7 @@
       xfbml      : true,
       version    : 'v11.0'
     });
+
     FB.getLoginStatus(function(response) {
         statusChangeCallback(response);
     });
@@ -51,8 +50,7 @@
     <button id="logout_btn" onclick="logout()">logout</button>
     <button id="Get_btn">Get</button>
     <div><p class="get"></p></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
       var json = $.getJSON( "../data.json", function(data) { 
       console.log(response.authResponse.accessToken);
       data.accessToken=response.authResponse.accessToken;

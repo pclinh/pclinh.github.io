@@ -32,13 +32,11 @@
    function statusChangeCallback(response){
      if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      console.log('updated');
       window.location.href="main.html";
      } else {
        console.log('Not authenticated');
      }
    }
-
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
