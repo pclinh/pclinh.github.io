@@ -27,7 +27,7 @@ window.fbAsyncInit = function() {
     });).responseJSON.access_token;*/
      $.ajax({ 
         type: 'GET', 
-        url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken', 
+        url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' }, 
         success: function (data) { 
             var names = data
