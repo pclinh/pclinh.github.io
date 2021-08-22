@@ -1,6 +1,6 @@
 window.fbAsyncInit = function() {
   FB.init({
-    appId      : '102135788849157',
+    appId      : '1229103174227463',
     cookie     : true,
     xfbml      : true,
     version    : 'v11.0'
@@ -21,9 +21,9 @@ window.fbAsyncInit = function() {
  function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-    //$.get("https://graph.facebook.com/1229103174227463?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
-      var access_token = response.authResponse.accessToken;
-    //});
+    $.get("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
+      var access_token = data.access_token;
+    });
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $("#Get_btn").click(function (){ 
        $.get(url1+"access_token="+access_token, function(data2, status){
