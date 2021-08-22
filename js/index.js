@@ -25,16 +25,15 @@ window.fbAsyncInit = function() {
     /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
     
     });).responseJSON.access_token;*/
-     var values = JSON.stringify($.getJSON({ 
+     $.getJSON({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' }, 
         success: function (data) {
+          var $access_token = data.access_token
         },
-    }));
- 
-     var access_token = values.access_token;
-    console.log(access_token)
+    });
+    console.log($access_token)
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $("#Get_btn").click(function (){ 
        $.get(url1+"access_token="+access_token, function(data2, status){
