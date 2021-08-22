@@ -27,8 +27,9 @@ window.fbAsyncInit = function() {
         else {
      console.log('Not authenticated');
    }
-    console.log(access_token);
+   
     $("#Get_btn").click(get(access_token));
+    console.log(access_token);
 
  }
 function checkLoginState() {
