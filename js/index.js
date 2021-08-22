@@ -21,7 +21,7 @@ window.fbAsyncInit = function() {
  function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-    var access_token =$.get("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data.access_token, status){
+    var access_token =$.get("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
 
     });
      console.log(access_token);
