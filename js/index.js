@@ -28,7 +28,7 @@ window.fbAsyncInit = function() {
      $.ajax({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken', 
-        data: { access_token: 'value' }, 
+        data: { get_param: 'value' }, 
         success: function (data) { 
             var names = data
             console.log(data);
