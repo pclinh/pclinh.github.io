@@ -7,6 +7,30 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1229103174227463',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v11.0'
+        });
+        (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+        }(document));
+        function logout(){
+          FB.logout(function(response){
+            console.log("ss");
+                window.location.href="index.html"
+        });
+        }
+    }
+      </script>
+    <button id="logout_btn" onclick="logout()">logout</button>
     <button id="Get_btn">Get</button>
     <div><p class="get"></p></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
