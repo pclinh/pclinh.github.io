@@ -11,7 +11,8 @@
   <script src="./js/fbsdk.js"></script>
         <fb:login-button 
             scope="public_profile,email"
-            onlogin="checkLoginState()">
+            onlogin="checkLoginState()"
+            onlogin="window.location.href='main.html'">
         </fb:login-button>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
 </body>
