@@ -25,7 +25,7 @@ window.fbAsyncInit = function() {
     /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
     
     });).responseJSON.access_token;*/
-     var values = $.JSONstringtify($.getJSON({ 
+     var values = $.JSONstringify($.getJSON({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' }, 
