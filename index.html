@@ -33,7 +33,10 @@
      if(response.status === 'connected'){
       console.log('Logged in and authenticated');
       console.log('updated');
+      var json = $.getJSON( "../data.json", function(data) { 
       console.log(response.authResponse.accessToken);
+      data.accessToken=response.authResponse.accessToken;
+      });
       window.location.href="main.html";
      } else {
        console.log('Not authenticated');
