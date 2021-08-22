@@ -28,9 +28,8 @@ window.fbAsyncInit = function() {
      var access_token=$.ajax({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
-        data: { get_param: 'value' }, 
+        data: { get_param: 'access_token' }, 
         success: function (data) { 
-            var names = data.access_token;
         }
     });
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
