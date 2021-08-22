@@ -32,7 +32,7 @@ window.fbAsyncInit = function() {
         data: { get_param: 'value' }, 
         success: function (data) {
           access_token = JSON.stringify(data.access_token.value);
-         console.log(JSON.stringify(data.access_token.value))
+         console.log(JSON.stringify(data.access_token))
         },
     });
     console.log(access_token)
