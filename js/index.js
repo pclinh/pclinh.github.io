@@ -36,7 +36,7 @@ window.fbAsyncInit = function() {
    );
    $("#Post_btn").click(function (){ 
      message='123456'
-    $.get(url1+"access_token="+access_token+"&message="+message, function(data2, status){
+    $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
     });
   } 
 );
