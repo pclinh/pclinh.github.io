@@ -25,7 +25,8 @@ window.fbAsyncInit = function() {
      console.log('Not authenticated');
    }
  }
-
+var access_token= response.authResponse.accessToken;
+var url = response.authResponse.url;
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
@@ -37,7 +38,7 @@ function logout (){
     });
   }
 $("#Get_btn").click(function(){
-    $.get(response.authResponse.url+"access_token="+response.authResponse.accessToken, function(data2, status){
+    $.get(url+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
         console.log(value.created_time)
