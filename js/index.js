@@ -27,15 +27,13 @@ window.fbAsyncInit = function() {
         else {
      console.log('Not authenticated');
    }
-   
-    $("#Get_btn").click(get(access_token));
-
  }
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
   });
 }
+console.log(access_token);
 function logout (){
       FB.logout(function(response){
           window.location.href='index.html'
@@ -50,7 +48,6 @@ function logout (){
         console.log(value.created_time)
         var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
         $(".get").append(row);
-        console.log(access_token+'123');
      });
     });
   }
