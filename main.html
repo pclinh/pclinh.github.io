@@ -5,28 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./js/fbsdk.js"></script>
 </head>
 <body>
-    <script>
-      (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1229103174227463',
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v11.0'
-        });
-    }
-   
-    </script>
-    <button id="logout_btn" onclick="window.location.href='index.html'">logout</button>
+    <button id="logout_btn" onclick="logout()">logout</button>
     <button id="Get_btn">Get</button>
     <div><p class="get"></p></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
