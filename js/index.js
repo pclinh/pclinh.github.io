@@ -30,7 +30,7 @@ window.fbAsyncInit = function() {
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' }, 
         success: function (data) { 
-            var names = $parseJSON(data.access_token);
+            var names = data.access_token;
             console.log(names);
         }
     });
