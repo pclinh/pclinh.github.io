@@ -32,9 +32,8 @@
    function statusChangeCallback(response){
      if(response.status === 'connected'){
       console.log('Logged in and authenticated');
-      window.location.href="main.html";
       console.log(response.authResponse.accessToken);
-
+      window.location.href="main.html";
      } else {
        console.log('Not authenticated');
      }
