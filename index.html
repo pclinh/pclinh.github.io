@@ -34,12 +34,11 @@
      function statusChangeCallback(response){
        if(response.status === 'connected'){
         console.log('s');
-         console.log('Logged in and authenticated');
+        console.log('Logged in and authenticated');
          
           window.location.href="main.html"
        } else {
          console.log('Not authenticated');
-
        }
      }
 
@@ -48,11 +47,6 @@
         statusChangeCallback(response);
       });
     }
-    function logout() {
-            FB.logout(function(response) {
-              // user is now logged out
-            });
-        }
   </script>
     
         <fb:login-button 
