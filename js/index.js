@@ -22,8 +22,8 @@ window.fbAsyncInit = function() {
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
      console.log('1');
-    var access_token =$getJSON($.get("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
-    });)
+    var access_token =$getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
+    });
      
      console.log(access_token);
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
