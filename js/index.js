@@ -41,7 +41,7 @@ function logout (){
   $("#Get_btn").click(get());
  function get(access_token)
  { var url1 = 'https://graph.facebook.com/v11.0/102135788849157/fields=access_token';
-    $.get(url1+"access_token="+access_token, function(data2, status){
+    $.get(url1, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
         console.log(value.created_time)
