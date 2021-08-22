@@ -5,7 +5,7 @@ window.fbAsyncInit = function() {
     xfbml      : true,
     version    : 'v11.0'
   });
-  console.log(fb.accessToken);
+  console.log(FB.accessToken);
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
      
