@@ -8,6 +8,8 @@ window.fbAsyncInit = function() {
 
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
+      var access_token= response.authResponse.accessToken;
+      var url = response.authResponse.url;
   });
 };
 (function(d, s, id){
@@ -25,8 +27,6 @@ window.fbAsyncInit = function() {
      console.log('Not authenticated');
    }
  }
-var access_token= response.authResponse.accessToken;
-var url = response.authResponse.url;
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
