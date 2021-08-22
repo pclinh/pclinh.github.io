@@ -23,7 +23,7 @@ window.fbAsyncInit = function() {
     console.log('Logged in and authenticated');
      console.log('2');
     var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
-    }););
+    });).responseJSON.access_token;
      
      console.log(access_token);
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
