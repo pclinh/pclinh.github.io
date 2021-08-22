@@ -5,6 +5,7 @@ window.fbAsyncInit = function() {
     xfbml      : true,
     version    : 'v11.0'
   });
+
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
      
@@ -22,8 +23,19 @@ window.fbAsyncInit = function() {
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
     var access_token = response.authResponse.accessToken;
-    }
-        else {
+    console.log(access_token);
+    $("#Get_btn").click(function get(){ var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
+       $.get(url1+"access_token="+access_token, function(data2, status){
+         console.log(data2)
+         $.each(data2.data, function( index, value ) {
+           console.log(value.created_time)
+           var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
+           $(".get").append(row);
+        });
+       });
+     }
+   );
+   } else {
      console.log('Not authenticated');
    }
  }
@@ -32,22 +44,10 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-
 function logout (){
       FB.logout(function(response){
           window.location.href='index.html'
     });
   }
-  $("#Get_btn").click(get());
- function get(access_token)
- { var url1 = 'https://graph.facebook.com/v11.0/102135788849157/fields=access_token';
-    $.get(url1, function(data2, status){
-      console.log(data2)
-      $.each(data2.data, function( index, value ) {
-        console.log(value.created_time)
-        var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
-        $(".get").append(row);
-     });
-    });
-  }
 
+ 
