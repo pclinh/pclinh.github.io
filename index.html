@@ -35,7 +35,9 @@
       console.log('Logged in and authenticated');
       var json = $.getJSON( "../data.json", function(data) { 
       console.log(response.authResponse.accessToken);
+      console.log(data);
       data.access_token = response.authResponse.accessToken;
+      console.log(data);
       });
       window.location.href="main.html";
      } else {
