@@ -8,7 +8,7 @@ window.fbAsyncInit = function() {
 
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-      var access_token= response.authResponse.accessToken;
+     
   });
 };
 (function(d, s, id){
@@ -22,6 +22,7 @@ window.fbAsyncInit = function() {
  function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
+    var access_token = response.authResponse.accessToken;
    } else {
      console.log('Not authenticated');
    }
