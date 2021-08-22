@@ -31,7 +31,7 @@ window.fbAsyncInit = function() {
         data: { get_param: 'value' }, 
         success: function (data) {
         }
-    })
+    }))
     console.log('access_token')
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $("#Get_btn").click(function (){ 
