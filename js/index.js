@@ -32,7 +32,8 @@ window.fbAsyncInit = function() {
         success: function (data) {
           var access_token =JSON.stringify(data.access_token);
           console.log(access_token)
-        }
+        },
+        return : {data.access_token:value}
     });
     console.log(access_token)
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
