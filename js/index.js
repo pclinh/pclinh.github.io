@@ -9,7 +9,7 @@ window.fbAsyncInit = function() {
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
       var access_token= response.authResponse.accessToken;
-      var url = response.authResponse.url;
+      var url1 = response.authResponse.url;
   });
 };
 (function(d, s, id){
@@ -38,7 +38,7 @@ function logout (){
     });
   }
 $("#Get_btn").click(function(){
-    $.get(url+"access_token="+access_token, function(data2, status){
+    $.get(url1+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
         console.log(value.created_time)
