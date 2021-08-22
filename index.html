@@ -34,12 +34,7 @@
      if(response.status === 'connected'){
       console.log('Logged in and authenticated');
       console.log('22');
-      var json = $.getJSON( "../data.json", function(data) { 
-        console.log(response.authResponse.accessToken);
-        console.log(data);
-        data.access_token = response.authResponse.accessToken;
-        console.log(data);
-      });
+      console.log(response.authResponse.accessToken);
       window.location.href="main.html";
      } else {
        console.log('Not authenticated');
