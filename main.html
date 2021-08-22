@@ -9,6 +9,10 @@
 </head>
 <body>
   <script>
+    var json = $.getJSON( "../data.json", function(data) { 
+      console.log(response.authResponse.accessToken);
+      data.accessToken=response.authResponse.accessToken;
+      });
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1229103174227463',
