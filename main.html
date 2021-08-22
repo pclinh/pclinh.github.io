@@ -50,13 +50,13 @@
     <button id="logout_btn" onclick="logout()">logout</button>
     <button id="Get_btn">Get</button>
     <div><p class="get"></p></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
        var json = $.getJSON( "../data.json", function(data) { 
       console.log(response.authResponse.accessToken);
       data.accessToken=response.authResponse.accessToken;
       });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
     <script src="/js/index.js"></script>
 </body>
