@@ -5,7 +5,7 @@ window.fbAsyncInit = function() {
     xfbml      : true,
     version    : 'v11.0'
   });
-  console.log(FB.authResponse.accessToken);
+  console.log(FB..accessToken);
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
      
@@ -39,8 +39,9 @@ function logout (){
           window.location.href='index.html'
     });
   }
+  $("#Get_btn").click(get());
  function get(access_token)
- { var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
+ { var url1 = 'https://graph.facebook.com/v11.0/102135788849157/fields=access_token&access_token=USER-ACCESS-TOKEN';
     $.get(url1+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
