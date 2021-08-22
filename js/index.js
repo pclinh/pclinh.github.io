@@ -23,6 +23,7 @@ window.fbAsyncInit = function() {
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
     var access_token = response.authResponse.accessToken;
+    console.log(access_token);
    } else {
      console.log('Not authenticated');
    }
@@ -39,7 +40,7 @@ function logout (){
   }
 $("#Get_btn").click(function(){
   var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
-  console.log(access_token);
+  
     $.get(url1+"access_token="+access_token, function(data2, status){
       console.log(data2)
       $.each(data2.data, function( index, value ) {
