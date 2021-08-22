@@ -23,15 +23,10 @@
             xfbml      : true,
             version    : 'v11.0'
         });
-        function logout (){
-          FB.logout(function(response){
-            console.log("ss");
-            window.location.href="index.html"
-        });
-        }
     }
+   
     </script>
-    <button id="logout_btn" onclick="console.log('123')">logout</button>
+    <button id="logout_btn" onclick="window.location.href='index.html'">logout</button>
     <button id="Get_btn">Get</button>
     <div><p class="get"></p></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
