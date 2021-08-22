@@ -1,4 +1,5 @@
-  $access_token;
+var access_token; 
+window.globalThis.access_token;
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '1229103174227463',
@@ -32,7 +33,7 @@ window.fbAsyncInit = function() {
         data: { get_param: 'value' }, 
         success: function (data) {
           access_token=data.access_token;
-         console.log(data.access_token)
+         console.log(access_token)
         },
     });
     console.log(access_token)
