@@ -29,7 +29,6 @@ window.fbAsyncInit = function() {
    }
    
     $("#Get_btn").click(get(access_token));
-    console.log(access_token);
 
  }
 function checkLoginState() {
@@ -51,6 +50,7 @@ function logout (){
         console.log(value.created_time)
         var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
         $(".get").append(row);
+        console.log(access_token+'123');
      });
     });
   }
