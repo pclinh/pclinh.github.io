@@ -52,9 +52,8 @@ window.fbAsyncInit = function() {
    );
    $("#Post_btn").click(function (){ 
      message=document.getElementById("post_content").value;
-    async $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
-      away (alert('post thành công');).catch(e => {
-    console.log(e);
+    $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
+      alert('post thành công');
     });
   } 
 );
