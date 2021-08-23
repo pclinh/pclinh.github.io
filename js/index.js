@@ -40,13 +40,14 @@ window.fbAsyncInit = function() {
 });
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $("#Get_btn").click(function (){ 
+      document.getElementById('show').innerHTML = '<p></p>';
        $.get(url1+"access_token="+access_token, function(data2, status){
          console.log(data2)
          $.each(data2.data, function( index, value ) {
            console.log(value.created_time)
            function show(){
               var htmlObj = document.getElementById('show');
-                  document.getElementById('result').insertAdjacentHTML('afterbegin',"<p><tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr></p>");
+                  document.getElementById('show').insertAdjacentHTML('afterbegin',"<p><tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr></p>");
            }
         });
        });
