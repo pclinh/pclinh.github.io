@@ -22,7 +22,7 @@ window.fbAsyncInit = function() {
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-     console.log('2');
+     console.log('3');
     /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
     
     });).responseJSON.access_token;*/
@@ -51,8 +51,10 @@ window.fbAsyncInit = function() {
      } 
    );
    $("#Post_btn").click(function (){ 
-     message=document.getElementById(“post_content”).value
-    $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
+     message=document.getElementById(“post_content”).value;
+    async $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
+      away (alert('post thành công');).catch(e => {
+    console.log(e);
     });
   } 
 );
