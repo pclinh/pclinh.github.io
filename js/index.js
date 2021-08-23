@@ -27,11 +27,10 @@ window.fbAsyncInit = function() {
     
     });).responseJSON.access_token;*/
     
-     await  $.getJSON({ 
+     await  $.ajax({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' },
-        dataType: 'string',
         success: function (data) {
          access_token=data.access_token.value;
           console.log(access_token);
