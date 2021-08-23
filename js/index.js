@@ -59,7 +59,9 @@ window.fbAsyncInit = function() {
    } else {
      console.log('Not authenticated');
    }
- }
+ }.catch(e => {
+    console.log(e);
+});
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
