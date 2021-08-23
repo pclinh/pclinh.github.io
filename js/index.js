@@ -22,7 +22,7 @@ window.fbAsyncInit = function() {
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-     console.log('6');
+     console.log('7');
     /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
     
     });).responseJSON.access_token;*/
@@ -41,15 +41,14 @@ window.fbAsyncInit = function() {
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
         $("#Get_btn").click(function (){ 
          var content="";
+          $("show").replaceWith("<p id="show"></p>");
        $.get(url1+"access_token="+access_token, function(data2, status){
          console.log(data2)
          $.each(data2.data, function( index, value ) {      
-           var row ='"<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>"';
-            content+=row;
+           var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
+           $("#show").append(row);
          });
        });
-          console.log(content);
-       $("#show").replaceWith(content);
      });
    $("#Post_btn").click(function (){ 
      message=document.getElementById("post_content").value;
