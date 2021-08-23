@@ -12,14 +12,14 @@ window.fbAsyncInit = function() {
      
   });
 };
-async (function(d, s, id){
+ (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
    if (d.getElementById(id)) {return;}
    js = d.createElement(s); js.id = id;
    js.src = "//connect.facebook.net/en_US/sdk.js";
    fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
- await function statusChangeCallback(response){
+ async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
      console.log('4');
@@ -27,7 +27,7 @@ async (function(d, s, id){
     
     });).responseJSON.access_token;*/
     
-       $.getJSON({ 
+     await  $.getJSON({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' },
