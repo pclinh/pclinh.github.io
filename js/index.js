@@ -22,7 +22,7 @@ window.fbAsyncInit = function() {
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-     console.log('1');
+     console.log('2');
     /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
     
     });).responseJSON.access_token;*/
@@ -48,7 +48,7 @@ window.fbAsyncInit = function() {
             content.append(row);
          });
        });
-       $("#show").repalceWith("<p>"+content+"</p>");
+       $("#show").replaceWith("<p>"+content+"</p>");
      });
    $("#Post_btn").click(function (){ 
      message=document.getElementById("post_content").value;
