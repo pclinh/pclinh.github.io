@@ -46,7 +46,7 @@ window.fbAsyncInit = function() {
            console.log(value.created_time)
            function show(){
               var htmlObj = document.getElementById('show');
-                  htmlObj.innerHTML = htmlObj.innerHTML + "<p><tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr></p>";
+                  document.getElementById('result').insertAdjacentHTML('afterbegin', html)="<p><tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr></p>";
            }
         });
        });
