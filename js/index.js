@@ -22,7 +22,7 @@ window.fbAsyncInit = function() {
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-     console.log('4');
+     console.log('5');
     /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
     
     });).responseJSON.access_token;*/
@@ -45,7 +45,7 @@ window.fbAsyncInit = function() {
          console.log(data2)
          $.each(data2.data, function( index, value ) {      
            var row ="<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>";
-            content.concat(row);
+            content+=row;
          });
        });
           console.log(content);
