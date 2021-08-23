@@ -44,8 +44,10 @@ window.fbAsyncInit = function() {
          console.log(data2)
          $.each(data2.data, function( index, value ) {
            console.log(value.created_time)
-           var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
-           $(".get").append(row);
+           function show(){
+              var htmlObj = document.getElementById('show');
+                  htmlObj.innerHTML = htmlObj.innerHTML + "<p><tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr></p>";
+           }
         });
        });
      } 
