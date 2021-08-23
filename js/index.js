@@ -33,6 +33,7 @@ window.fbAsyncInit = function() {
         dataType: 'string',
         success: function (data) {
          access_token=data.access_token;
+          console.log(access_token)
         },
     });
     console.log(access_token+"11")
