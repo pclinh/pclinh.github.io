@@ -41,7 +41,7 @@ window.fbAsyncInit = function() {
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
         $("#Get_btn").click(function (){ 
          var content="";
-          $("show").replaceWith("<p id="show"></p>");
+          $("show").replaceWith('<p id="show"></p>');
        $.get(url1+"access_token="+access_token, function(data2, status){
          console.log(data2)
          $.each(data2.data, function( index, value ) {      
