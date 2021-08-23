@@ -39,7 +39,7 @@ window.fbAsyncInit = function() {
     console.log(e);
 });
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
-    $("#Get_btn").click(function (){ 
+        $("#Get_btn").click(function (){ 
          var content="";
        $.get(url1+"access_token="+access_token, function(data2, status){
          console.log(data2)
@@ -48,9 +48,8 @@ window.fbAsyncInit = function() {
             content.append(row);
          });
        });
-     } 
-        $("#show").repalceWith("<p>"content"<>");
-   );
+       $("#show").repalceWith("<p>"+content+"</p>");
+     });
    $("#Post_btn").click(function (){ 
      message=document.getElementById("post_content").value;
     $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
