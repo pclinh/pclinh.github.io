@@ -36,7 +36,9 @@ window.fbAsyncInit = function() {
          access_token=data.access_token;
           console.log(access_token);
         },
-    });
+    }).catch(e => {
+    console.log(e);
+});
     console.log(access_token+11);
     var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
     $("#Get_btn").click(function (){ 
@@ -59,9 +61,7 @@ window.fbAsyncInit = function() {
    } else {
      console.log('Not authenticated');
    }
- }.catch(e => {
-    console.log(e);
-});
+ }
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
