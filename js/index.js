@@ -1,4 +1,5 @@
-access_token='';
+var access_token='';
+var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '1229103174227463',
@@ -23,10 +24,6 @@ window.fbAsyncInit = function() {
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
      console.log('final');
-    /*var access_token =$.parseJSON($.getJSON("https://graph.facebook.com/102135788849157?fields=access_token&access_token="+response.authResponse.accessToken, function(data, status){
-    
-    });).responseJSON.access_token;*/
-    
      await  $.ajax({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
@@ -38,24 +35,6 @@ window.fbAsyncInit = function() {
     }).catch(e => {
     console.log(e);
 });
-    var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
-        $("#Get_btn").click(function (){ 
-          $("#show").replaceWith('<p id="show"></p>');
-       $.get(url1+"access_token="+access_token, function(data2, status){
-         console.log(data2)
-         $.each(data2.data, function( index, value ) {      
-           var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr>");
-           $("#show").append(row);
-         });
-       });
-     });
-   $("#Post_btn").click(function (){ 
-     message=document.getElementById("post_content").value;
-    $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
-      alert('post thành công');
-    });
-  } 
-);
    } else {
      console.log('Not authenticated');
    }
@@ -65,9 +44,24 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-function logout (){
-      FB.logout(function(response){
-          window.location.href='index.html'
-    });
-  }
- 
+async function deletePost(id_post){
+  await $.delete(url1+"access_token="+access_token+"&id="+id_post)
+  alert('Delete succeed')
+};
+$("#Get_btn").click(function (){ 
+  $("#show").replaceWith('<p id="show"></p>');
+$.get(url1+"access_token="+access_token, function(data2, status){
+ console.log(data2)
+ $.each(data2.data, function( index, value ) {      
+   var row = $("<tr><td>" + "&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>" +"&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>" + "&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr><a onclick=deletePost("+index.id+")>delete</a>");
+   $("#show").append(row);
+ });
+});
+});
+$("#Post_btn").click(async function (){ 
+  message=document.getElementById("post_content").value;
+  await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
+  alert('Post succeed');
+});
+} 
+);
