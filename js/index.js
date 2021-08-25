@@ -65,11 +65,6 @@ $("#Get_btn").click(function (){
     $("#show").append(row);
    });
   });
-  $(".delete_btn").on('click', (function(){
-    alert('clicked');
-    console.log('ah');
-    console.log(event.target.id);
-  }));
 });
 
 $("#Post_btn").click(async function (){ 
@@ -81,3 +76,8 @@ $("#Post_btn").click(async function (){
   }
 )} 
 );
+$(".delete_btn").click(function(){
+    alert('clicked');
+    console.log('ah');
+    console.log(event.target.id);
+  });
