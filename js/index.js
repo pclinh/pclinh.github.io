@@ -72,7 +72,8 @@ $("#Post_btn").click(async function (){
   message=document.getElementById("post_content").value;
   await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
   alert('Post succeed');
-}).catch(e => {
+}).catch(e =>{
     console.log(e);
+  }
 } 
 );
