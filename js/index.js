@@ -1,4 +1,4 @@
-console.log('1');
+console.log('2');
 var access_token='';
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
@@ -62,10 +62,11 @@ $("#Get_btn").click(function (){
     console.log(data2)
    await $.each(data2.data, function( index, value ) {      
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'"+value.id+"\'>delete</button></td></tr>");
-    })
+    
     $("#show").append(row);
     document.getElementById(value.id).addEventListener('click',()=>{
     console.log('clicked')
+      });
    });
   });
 });
