@@ -76,6 +76,7 @@ $("#Post_btn").click(async function (){
   }
 )} 
 );
+
 $(".delete_btn").click(function(){
     alert('clicked');
     console.log('ah');
