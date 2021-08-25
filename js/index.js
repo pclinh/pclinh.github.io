@@ -43,16 +43,25 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-async function deletePost(id_post){
+async function deletePost(){ 
+  $.ajax({
+    url: 'url1+"access_token="+access_token+"&id="+id_post',
+    type: 'DELETE',
+    success: function(result) {
+        alert("Delete succeed");
+    }
+  });
+}
+/*async function deletePost(id_post){
   await $.delete(url1+"access_token="+access_token+"&id="+id_post)
   alert('Delete succeed')
-};
+};*/
 $("#Get_btn").click(function (){ 
   $("#show").replaceWith('<p id="show"></p>');
 $.get(url1+"access_token="+access_token, function(data2, status){
  console.log(data2)
  $.each(data2.data, function( index, value ) {      
-   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><a onclick=deletePost("+index.id+")>delete</a></td></tr>");
+   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><a onclick=deletePost("+index.id+")>delete</a></tr>");
    $("#show").append(row);
  });
 });
