@@ -1,4 +1,4 @@
-console.log('5');
+console.log('6');
 var access_token='';
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
@@ -58,13 +58,18 @@ async function deletePost(){
 };*/
 $("#Get_btn").click(function (){ 
   $("#show").replaceWith('<p id="show"></p>');
-  $.get(url1+"access_token="+access_token, function(data2, status){
+  $.get(url1+"access_token="+access_token, async function(data2, status){
     console.log(data2)
-  $.each(data2.data, function( index, value ) {      
+  await $.each(data2.data, function( index, value ) {      
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'"+value.id+"\'>delete</button></td></tr>");
     $("#show").append(row);
    });
   });
+  $(".delete_btn").on('click', (function(){
+    alert('clicked');
+    console.log('ah');
+    console.log(event.target.id);
+  }));
 });
 
 $("#Post_btn").click(async function (){ 
