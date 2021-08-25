@@ -65,7 +65,6 @@ $("#Get_btn").click(function (){
     $("#show").append(row);
    });
   });
-  });
 });
 
 $("#Post_btn").click(async function (){ 
