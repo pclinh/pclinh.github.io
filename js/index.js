@@ -43,7 +43,7 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-$(".delete_btn").click(function){
+$(".delete_btn").click(function(){
   console.log(this.id);
 });
 async function deletePost(){ 
