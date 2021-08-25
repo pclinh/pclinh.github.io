@@ -74,5 +74,5 @@ $("#Post_btn").click(async function (){
 }).catch(e =>{
     console.log(e);
   }
-} 
+)} 
 );
