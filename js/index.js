@@ -1,4 +1,4 @@
-console.log('1');
+console.log('2');
 var access_token='';
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
@@ -69,7 +69,6 @@ $.get(url1+"access_token="+access_token, function(data2, status){
 $(".delete_btn").click(function(){
   alert('clicked');
   console.log('ah');
-  console.log(event.target.id);
 });
 $("#Post_btn").click(async function (){ 
   message=document.getElementById("post_content").value;
