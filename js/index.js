@@ -58,23 +58,21 @@ async function deletePost(){
 };*/
 $("#Get_btn").click(function (){ 
   $("#show").replaceWith('<p id="show"></p>');
-$.get(url1+"access_token="+access_token, function(data2, status){
- console.log(data2)
- $.each(data2.data, function( index, value ) {      
-   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class='delete_btn' id=\'"+value.id+"\'>delete</button></td></tr>");
-   $("#show").append(row);
- });
-});
-  $(".delete_btn").click(function(){
-  alert('clicked');
-  console.log('ah');
-});
+  $.get(url1+"access_token="+access_token, function(data2, status){
+    console.log(data2)
+  $.each(data2.data, function( index, value ) {      
+    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class='delete_btn' id=\'"+value.id+"\'>delete</button></td></tr>");
+    $("#show").append(row);
+   });
+  });
+  });
 });
 
 $("#Post_btn").click(async function (){ 
   message=document.getElementById("post_content").value;
   await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
   alert('Post succeed');
-});
+}).catch(e => {
+    console.log(e);
 } 
 );
