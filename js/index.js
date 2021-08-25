@@ -76,3 +76,8 @@ $("#Post_btn").click(async function (){
   }
 )} 
 );
+$(".delete_btn").click(function(event){
+    alert('clicked');
+    console.log('ah');
+    console.log(event.target.id);
+  });
