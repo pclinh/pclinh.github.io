@@ -1,4 +1,4 @@
-console.log('5');
+console.log('6');
 var access_token='';
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
@@ -61,7 +61,7 @@ $("#Get_btn").click(function (){
 $.get(url1+"access_token="+access_token, function(data2, status){
  console.log(data2)
  $.each(data2.data, function( index, value ) {      
-   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><a onclick=deletePost('+index.id+')>&emsp;&emsp;&emsp delete</a></td></tr>);
+   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><a href=/js/index.js/deletePost("+value.id+")> &emsp;&emsp;&emsp delete</a></td></tr>);
    $("#show").append(row);
  });
 });
