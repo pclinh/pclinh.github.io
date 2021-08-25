@@ -45,7 +45,7 @@ function checkLoginState() {
 }
 $(".delete_btn").click(function){
   console.log(this.id);
-}
+});
 async function deletePost(){ 
   $.ajax({
     url: 'url1+"access_token="+access_token+"&id="+id_post',
