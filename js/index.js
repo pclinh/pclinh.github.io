@@ -1,4 +1,4 @@
-console.log('2');
+console.log('3');
 var access_token='';
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
@@ -65,11 +65,12 @@ $.get(url1+"access_token="+access_token, function(data2, status){
    $("#show").append(row);
  });
 });
-});
-$(".delete_btn").click(function(){
+  $(".delete_btn").click(function(){
   alert('clicked');
   console.log('ah');
 });
+});
+
 $("#Post_btn").click(async function (){ 
   message=document.getElementById("post_content").value;
   await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
