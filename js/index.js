@@ -61,7 +61,7 @@ $("#Get_btn").click(function (){
 $.get(url1+"access_token="+access_token, function(data2, status){
  console.log(data2)
  $.each(data2.data, function( index, value ) {      
-   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td></tr><a onclick=deletePost('+index.id+')>&emsp;&emsp;&emsp delete</a>");
+   var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><a onclick=deletePost('+index.id+')>&emsp;&emsp;&emsp delete</a></td></tr>);
    $("#show").append(row);
  });
 });
