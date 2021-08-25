@@ -1,3 +1,4 @@
+console.log('1');
 var access_token='';
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
@@ -23,14 +24,12 @@ window.fbAsyncInit = function() {
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
-     console.log('final');
      await  $.ajax({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' },
         success: function (data) {
          access_token=data.access_token;
-          console.log(access_token);
         },
     }).catch(e => {
     console.log(e);
