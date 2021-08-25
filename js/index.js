@@ -80,4 +80,5 @@ $(".delete_btn").on('click', (function(){
     alert('clicked');
     console.log('ah');
     console.log(event.target.id);
-  });
+  }));
+  
