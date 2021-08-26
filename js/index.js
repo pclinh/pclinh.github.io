@@ -1,4 +1,4 @@
-console.log('5');
+console.log('6');
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -58,13 +58,7 @@ $("#Get_btn").click(function (){
     $("#show").append(row);
     document.getElementById(value.id).addEventListener('click',()=>{function deletePost(){
           console(url+value.id+"?access_token="+access_token);
-          $.ajax({
-            url: 'url+value.id+"?access_token="+access_token',
-            method: 'DELETE',
-            success: function(result) {
-                alert("Delete succeed");
-            }
-          });
+          
         }
       });
    });
