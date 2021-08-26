@@ -44,11 +44,6 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-
-/*async function deletePost(id_post){
-  await $.delete(url1+"access_token="+access_token+"&id="+id_post)
-  alert('Delete succeed')
-};*/
 $("#Get_btn").click(function (){ 
   $("#show").replaceWith('<p id="show"></p>');
   $.get(url1+"access_token="+access_token, async function(data2, status){
@@ -56,9 +51,9 @@ $("#Get_btn").click(function (){
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'"+value.id+"\'>delete</button></td></tr>");
     $("#show").append(row);
           document.getElementById(value.id).addEventListener('click',()=>{
-          console.log(url+value.id+"?access_token="+access_token); 
+          rurl=url+value.id+"?access_token="+access_token; 
             $.ajax({
-            url: 'url+value.id+"?access_token="+access_token',
+            url: rurl,
             method: 'DELETE',
             success: function(result) {
                 alert("Delete succeed");
