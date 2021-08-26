@@ -1,4 +1,4 @@
-console.log('3');
+console.log('4');
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -56,9 +56,9 @@ $("#Get_btn").click(function (){
    await $.each(data2.data, function( index, value ) {      
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'"+value.id+"\'>delete</button></td></tr>");
     $("#show").append(row);
-    document.getElementById(value.id).addEventListener('click',()=>{function deletePost(){
+    document.getElementById(value.id).addEventListener('click',()=>{async function deletePost(){
           console(url+value.id+"?access_token="+access_token);
-          $.ajax({
+          await $.ajax({
             url: 'url+value.id+"?access_token="+access_token',
             method: 'DELETE',
             success: function(result) {
