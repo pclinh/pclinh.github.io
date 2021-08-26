@@ -75,5 +75,5 @@ $("#Post_btn").click(async function (){
 )} 
 );
 $(".delete_btn").click(function (){
-  console.log(clicked 2);
+  console.log('clicked 2');
 })
