@@ -1,5 +1,6 @@
 console.log('2');
 var access_token='';
+var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function() {
   FB.init({
@@ -57,7 +58,7 @@ $("#Get_btn").click(function (){
     $("#show").append(row);
     document.getElementById(value.id).addEventListener('click',()=>{async function deletePost(){ 
           $.ajax({
-            url: 'url1+"access_token="+access_token+"&id="+value.id',
+            url: 'url+value.id"access_token="+access_token',
             type: 'DELETE',
             success: function(result) {
                 alert("Delete succeed");
