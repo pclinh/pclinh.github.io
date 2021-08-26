@@ -64,11 +64,11 @@ $("#Get_btn").click(function (){
                 alert("Delete succeed");
             }
           });
-        }
+        })
       });
    });
-  });
 });
+
 
 $("#Post_btn").click(async function (){ 
   message=document.getElementById("post_content").value;
