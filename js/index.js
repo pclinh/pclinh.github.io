@@ -58,7 +58,7 @@ $("#Get_btn").click(function (){
     $("#show").append(row);
     document.getElementById(value.id).addEventListener('click',()=>{async function deletePost(){ 
           $.ajax({
-            url: 'url+value.id"access_token="+access_token',
+            url: 'url+value.id+"?access_token="+access_token',
             type: 'DELETE',
             success: function(result) {
                 alert("Delete succeed");
