@@ -48,9 +48,9 @@ $("#Get_btn").click(function (){
   $("#show").replaceWith('<p id="show"></p>');
   $.get(url1+"access_token="+access_token, async function(data2, status){
    await $.each(data2.data, function( index, value ) {      
-    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'"+value.id+"\'>delete</button></td></tr>");
+    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"delete_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     $("#show").append(row);
-          document.getElementById(value.id).addEventListener('click',()=>{
+          document.getElementById("delete_"+value.id).addEventListener('click',()=>{
           rurl=url+value.id+"?access_token="+access_token; 
             $.ajax({
             url: rurl,
