@@ -59,7 +59,7 @@ $("#Get_btn").click(function (){
     document.getElementById(value.id).addEventListener('click',()=>{async function deletePost(){ 
           $.ajax({
             url: 'url+value.id+"?access_token="+access_token',
-            type: 'DELETE',
+            method: 'DELETE',
             success: function(result) {
                 alert("Delete succeed");
             }
