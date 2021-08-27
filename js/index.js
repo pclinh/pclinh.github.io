@@ -1,4 +1,3 @@
-console.log('final');
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -37,6 +36,7 @@ window.fbAsyncInit = function() {
 });
    } else {
      console.log('Not authenticated');
+     window.location.href='index.html';
    }
  }
 function checkLoginState() {
@@ -74,6 +74,4 @@ $("#Post_btn").click(async function (){
   }
 )} 
 );
-$(".delete_btn").click(function (){
-  console.log('clicked 2');
-})
+
