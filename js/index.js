@@ -50,9 +50,10 @@ $("#Get_btn").click(function get_clicked(){
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
    await $.each(data2.data, function( index, value ) {
      console.log(value.permalink_url);
-    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"delete_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
+    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     $("#show").append(row);
       document.getElementById("update_"+value.id).addEventListener('click',()=>{
+            console.log(clicked);
             var content = "<div class=\'fb-post\' data-href=\'"+value.permalink_url +"\' data-width=\'500\'></div>"
             $("#showPost").replaceWith(content);
       })
