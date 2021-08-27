@@ -44,7 +44,7 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 }
-$("#Get_btn").click(function (){ 
+$("#Get_btn").click(function get_clicked(){ 
   $("#show").replaceWith('<p id="show"></p>');
   $.get(url1+"access_token="+access_token, async function(data2, status){
    await $.each(data2.data, function( index, value ) {      
@@ -57,6 +57,7 @@ $("#Get_btn").click(function (){
             method: 'DELETE',
             success: function(result) {
                 alert("Delete succeed");
+                get_clicked();
             }
           });
         })
