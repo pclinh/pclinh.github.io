@@ -58,7 +58,7 @@ $("#Get_btn").click(function get_clicked(){
             div.setAttribute('class', 'fb-post' );
             div.setAttribute('data-href', value.permalink_url);
             console.log(div);
-            document.querySelector('#refresh').innerHTML=div;
+            document.querySelector('#refresh').appendChild(div);
             //xong roi test lai thu coi
       })
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
