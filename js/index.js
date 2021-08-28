@@ -1,4 +1,4 @@
-console.log("11");
+console.log("12");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -52,11 +52,14 @@ $("#Get_btn").click(function get_clicked(){
      console.log(value.permalink_url);
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     $("#show").append(row);
-      document.getElementById("update_"+value.id).addEventListener('click',async ()=>{
-            var content = "<div class=\'fb-post\' data-href=\'"+value.permalink_url +"\' data-width=\'500\'>12</div>";
-            console.log(content);
-            await $("#refresh").replaceWith(content);
-                  $("#refresh").load(location.href+"#refresh","");
+            document.getElementById("update_"+value.id).addEventListener('click',()=>{
+            var content = "<div class=\'fb-post\' id='showPost' data-href=\'"+value.permalink_url +"\' data-width=\'500\'>12</div>";
+            let div = document.createElement('div');
+            div.setAttribute('class', 'fb-post' );
+            div.setAttribute('data-href', value.permalink_url);
+            console.log(div);
+            document.querySelector('#refresh').innerHTML=div;
+            //xong roi test lai thu coi
       })
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
           rurl=url+value.id+"?access_token="+access_token; 
