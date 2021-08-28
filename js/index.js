@@ -56,7 +56,7 @@ $("#Get_btn").click(function get_clicked(){
             var content = "<div class=\'fb-post\' data-href=\'"+value.permalink_url +"\' data-width=\'500\'></div>";
             console.log(content);
             $("#showPost").replaceWith(content);
-            location.reload(); 
+            window.location.href="main.html".reload(); 
       })
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
           rurl=url+value.id+"?access_token="+access_token; 
