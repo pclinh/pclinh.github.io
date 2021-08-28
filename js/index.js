@@ -1,4 +1,4 @@
-console.log("13");
+console.log("11");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -56,7 +56,7 @@ $("#Get_btn").click(function get_clicked(){
             var content = "<div class=\'fb-post\' data-href=\'"+value.permalink_url +"\' data-width=\'500\'>12</div>";
             console.log(content);
             await $("#showPost").replaceWith(content);
-                  $(".refresh").load();
+                  $("#refresh").load();
                    
 
       })
