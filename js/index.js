@@ -55,8 +55,9 @@ $("#Get_btn").click(function get_clicked(){
             document.getElementById("update_"+value.id).addEventListener('click',()=>{
             var content = "<div class='fb-post' id='showPost' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
             $("#showPost").replaceWith(content);
-            $("#showPost").load(location.href + " #showPost", "");
-      });
+            $("#showPost").load(location.href + content, "");
+            });
+     
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
           rurl=url+value.id+"?access_token="+access_token; 
             $.ajax({
