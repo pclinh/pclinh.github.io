@@ -54,15 +54,16 @@ $("#Get_btn").click(function get_clicked(){
     $("#show").append(row);
             document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
-            $("#showPost").replaceWith(content);
-              (function (callback) {
-    var script = document.createElement("script");
-    script.setAttribute("src", "/index.js");
-    script.addEventListener('load', callback);
-    document.body.appendChild(script);
-})(function () {
-    // Callback funtion here
-});
+            
+            $("#showPost").addEventListener('load',()=>{
+              $("#showPost").replaceWith(content);
+            });
+            /* let div = document.createElement('div');
+            div.setAttribute('class', 'fb-post' );
+            div.setAttribute('data-href', value.permalink_url);
+            div.setAttribute('data-width', 500);
+            console.log(div);
+            document.querySelector('#showPost').appendChild(div);*/
             });
      
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
