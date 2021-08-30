@@ -54,9 +54,7 @@ $("#Get_btn").click(function get_clicked(){
     $("#show").append(row);
             document.getElementById("update_"+value.id).addEventListener('click',async ()=>{
             var content = " <div class='fb-post' id='showPost' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
-            $("#mydiv").load(location.href + " #mydiv");
-            $("#showPost").load(content+,"");
-              
+            $("#showPost").load(content,"");
             });
      
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
