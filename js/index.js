@@ -52,10 +52,11 @@ $("#Get_btn").click(function get_clicked(){
      console.log(value.permalink_url);
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     $("#show").append(row);
-            document.getElementById("update_"+value.id).addEventListener('click',()=>{
+            document.getElementById("update_"+value.id).addEventListener('click',async ()=>{
             var content = " <div class='fb-post' id='showPost' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
             $("#showPost").replaceWith(content);
-            $("#showPost").load(location.href +content,"");
+            $("#showPost").load(location.href +" #showPost","");
+              console.log($("#showPost").value)
             });
      
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
