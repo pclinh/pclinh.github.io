@@ -58,7 +58,7 @@ $("#Get_btn").click(function get_clicked(){
              var content = "<div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
              function setAttr(){
               $("#showPost").setAttribute('class', 'fb-post' );
-              $("#showPost").setAttribute('data-href', value.permalink_url);
+              $("#showPost").setAttribute('data-href', "123456");
               $("#showPost").setAttribute('data-width', 500);
              }
              window.location.href='./show.html';
