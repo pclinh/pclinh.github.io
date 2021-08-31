@@ -1,4 +1,4 @@
-console.log("16");
+console.log("17");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -52,20 +52,15 @@ $("#Get_btn").click(function get_clicked(){
      console.log(value.permalink_url);
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
-    $("#show").html(content);
+    
     $("#show").append(row);
-    $("#show").show();
 
-           /* document.getElementById("update_"+value.id).addEventListener('click',()=>{
+
+           document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
-             $("#showPost").append(content);
-             let div = document.createElement('div');
-            div.setAttribute('class', 'fb-post' );
-            div.setAttribute('data-href', value.permalink_url);
-            div.setAttribute('data-width', 500);
-            console.log(div);
-            document.querySelector('#showPost').appendChild(div);
-            });*/
+             $("#showPost").html(content);
+             window.location.href="./show.html"
+            });
      
           document.getElementById("delete_"+value.id).addEventListener('click',()=>{
           rurl=url+value.id+"?access_token="+access_token; 
