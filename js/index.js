@@ -55,7 +55,7 @@ $("#Get_btn").click(function get_clicked(){
     
     $("#show").append(row);
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
-             var content = " <div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
+             var content = " <div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
              $("#showPost").replaceWith(content);
              $("#show").load(" #showPost")
             });
