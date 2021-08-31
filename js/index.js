@@ -53,7 +53,7 @@ $("#Get_btn").click(function get_clicked(){
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
     $("#show").append(row); 
-    $("#showPost").load(content);
+    $("#showPost").html(content);
 
            /* document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
