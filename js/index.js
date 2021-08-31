@@ -57,11 +57,11 @@ $("#Get_btn").click(function get_clicked(){
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = "<div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
              window.location.href='./show.html';
-             window.onload(function(){
+             window.onload()= function(){
               $("#showPost").setAttribute('class', 'fb-post' );
               $("#showPost").setAttribute('data-href', value.permalink_url);
               $("#showPost").setAttribute('data-width', 500);
-             })
+             }
                       
             });
      
