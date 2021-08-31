@@ -54,7 +54,7 @@ $("#Get_btn").click(function get_clicked(){
     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
     $("#show").append(row);
     $("#show").append(content);
-     location.reload();
+    $("#show").reload();
 
            /* document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
