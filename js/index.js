@@ -1,4 +1,4 @@
-console.log("11");
+console.log("12");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -57,9 +57,13 @@ $("#Get_btn").click(function get_clicked(){
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = "<div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
              window.location.href='./show.html';
-             $(document).ready(function(){
+             $(document).ready(async function(){
                console.log(content);
-              $("#showPost").replaceWith(content);
+             await function addattr (){
+                      $("#showPost").setAttribute('class', 'fb-post' );
+                      $("#showPost").setAttribute('data-href', value.permalink_url);
+                      $("#showPost").setAttribute('data-width', 500);
+             }
              });
           
             });
