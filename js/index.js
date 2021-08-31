@@ -1,4 +1,4 @@
-console.log("14");
+console.log("15");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -57,7 +57,7 @@ $("#Get_btn").click(function get_clicked(){
       type: "GET",
       url: value.permalink_url
     }).done(function(data) {
-      $("#LoadPages").load(content);
+      $("#show").load(content);
     });
 
            /* document.getElementById("update_"+value.id).addEventListener('click',()=>{
