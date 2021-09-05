@@ -53,7 +53,7 @@ $("#Get_btn").click(function get_clicked(){
       //Số ký tự của từ
       var char = 4;
       var showtxt = value.message;
-      var txtStart = showtxt.slice(0,limitW).replace(/\w+$/,'');
+      var txtStart = showtxt.slice(0,limitW);
         console.log(txtStart);
       var txtEnd = showtxt.slice(txtStart.length);
       if ( showtxt > limitW ) {
