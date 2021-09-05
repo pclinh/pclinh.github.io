@@ -51,7 +51,8 @@ $("#Get_btn").click(function get_clicked(){
    await $.each(data2.data, function( index, value ) {
      console.log(value.permalink_url);
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
-    var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
+    idshow = "#Show_"+value.id;
+     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
     $("#show").append(row);
      function detail(){
        var limitW = 10;
@@ -61,7 +62,7 @@ $("#Get_btn").click(function get_clicked(){
       var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
       var txtEnd = txt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-        $('.show_content').html([
+        $(idshow).html([
             txtStart,
             '<a href="#" class="more">xem thêm...</a>',
             '<span class="detail">',
