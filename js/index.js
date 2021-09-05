@@ -63,7 +63,7 @@ $("#Get_btn").click(function get_clicked(){
       var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
       var txtEnd = txt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-        $(idshow).html(textStart+"<a>...more</a>);
+        $(idshow).html(textStart+"<a>...more</a>");
     }    
     };
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
