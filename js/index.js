@@ -55,6 +55,7 @@ $("#Get_btn").click(function get_clicked(){
       var txt = value.message;
       var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
         console.log(txtStart);
+      var txtEnd = txt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
         var showtxt = textStart+"<a>...more</a>";
       }
