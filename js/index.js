@@ -50,9 +50,27 @@ $("#Get_btn").click(function get_clicked(){
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
    await $.each(data2.data, function( index, value ) {
      console.log(value.permalink_url);
-    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td class'Show_content'>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
+    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
     $("#show").append(row);
+     function detail(){
+       var limitW = 10;
+      //Số ký tự của từ
+      var char = 4;
+      var txt = $('.show_content').html();
+      var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
+      var txtEnd = txt.slice(txtStart.length);
+      if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
+        $('.show_content').html([
+            txtStart,
+            '<a href="#" class="more">xem thêm...</a>',
+            '<span class="detail">',
+            txtEnd,
+            '</span>'
+        ].join('')
+      );
+    }    
+    };
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = "<div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
              function setAttr(){
@@ -78,24 +96,7 @@ $("#Get_btn").click(function get_clicked(){
         })
       });
    });
-function detail(){
-  var limitW = 10;
-  //Số ký tự của từ
-  var char = 4;
-  var txt = $('.show_content').html();
-  var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
-  var txtEnd = txt.slice(txtStart.length);
-  if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-    $('.show_content').html([
-        txtStart,
-        '<a href="#" class="more">xem thêm...</a>',
-        '<span class="detail">',
-        txtEnd,
-        '</span>'
-    ].join('')
-  );
-}    
-};
+});
 
 
 $("#Post_btn").click(async function (){ 
