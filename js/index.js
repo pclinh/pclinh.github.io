@@ -58,13 +58,13 @@ $("#Get_btn").click(function get_clicked(){
      var limitW = 10;
       //Số ký tự của từ
       var char = 4;
-      var txt = $(idshow).value();
+      var txt = $(idshow).val();
           console.log(txt)
       var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
         console.log(txtStart);
       var txtEnd = txt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-        $(idshow).value(textStart+"<a>...more</a>");
+        $(idshow).val(textStart+"<a>...more</a>");
       }    
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = "<div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
