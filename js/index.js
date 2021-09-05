@@ -59,7 +59,7 @@ $("#Get_btn").click(function get_clicked(){
       if ( showtxt > limitW ) {
           showtxt = txtStart+"...";
       }
-    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td class='show_content'id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+showtxt + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
+    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td class='show_content'id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_"+value.id+"\'>detail</button><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     idshow = "'#Show_"+value.id+"'";
      console.log(idshow);
      var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
