@@ -49,23 +49,20 @@ $("#Get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
    await $.each(data2.data, function( index, value ) {
-     console.log(value.permalink_url);
-    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td class='show_content'id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+value.message + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
-    idshow = "'#Show_"+value.id+"'";
-     console.log(idshow);
-     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
-    $("#show").append(row);
      var limitW = 10;
       //Số ký tự của từ
       var char = 4;
-      var txt = $(idshow).val();
-          console.log(txt)
+      var txt = value.message;
       var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
         console.log(txtStart);
-      var txtEnd = txt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-        $(idshow).val(textStart+"<a>...more</a>");
-      }    
+        var showtxt = textStart+"<a>...more</a>";
+      }
+    var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td class='show_content'id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+showtext + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
+    idshow = "'#Show_"+value.id+"'";
+     console.log(idshow);
+     var content = " <div class='fb-post' data-href='"+value.permalink_url +"' data-width='500'>12</div>";
+    $("#show").append(row)
            document.getElementById("update_"+value.id).addEventListener('click',()=>{
              var content = "<div class='fb-post' data-show-text='true' data-href='"+value.permalink_url +"' data-width='500'></div>";
              function setAttr(){
