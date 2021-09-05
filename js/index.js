@@ -78,7 +78,7 @@ $("#Get_btn").click(function get_clicked(){
         })
       });
    });
-    function(){
+    function detail(){
       var limitW = 10;
       //Số ký tự của từ
       var char = 4;
@@ -95,11 +95,6 @@ $("#Get_btn").click(function get_clicked(){
         ].join('')
       );
     }    
-    $('span.detail').hide();
-    $('a.more').click(function() {
-        $(this).hide().next('span.detail').fadeIn();
-        return false;
-    });
 });
 });
 
