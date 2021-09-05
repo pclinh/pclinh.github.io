@@ -58,7 +58,7 @@ $("#Get_btn").click(function get_clicked(){
        var limitW = 10;
       //Số ký tự của từ
       var char = 4;
-      var txt = $('.show_content').html();
+      var txt = $(idshow).html();
       var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
       var txtEnd = txt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
