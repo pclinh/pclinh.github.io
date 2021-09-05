@@ -78,25 +78,24 @@ $("#Get_btn").click(function get_clicked(){
         })
       });
    });
-    function detail(){
-      var limitW = 10;
-      //Số ký tự của từ
-      var char = 4;
-      var txt = $('.show_content').html();
-      var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
-      var txtEnd = txt.slice(txtStart.length);
-      if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-        $('.show_content').html([
-            txtStart,
-            '<a href="#" class="more">xem thêm...</a>',
-            '<span class="detail">',
-            txtEnd,
-            '</span>'
-        ].join('')
-      );
-    }    
-});
-});
+function detail(){
+  var limitW = 10;
+  //Số ký tự của từ
+  var char = 4;
+  var txt = $('.show_content').html();
+  var txtStart = txt.slice(0,limitW).replace(/\w+$/,'');
+  var txtEnd = txt.slice(txtStart.length);
+  if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
+    $('.show_content').html([
+        txtStart,
+        '<a href="#" class="more">xem thêm...</a>',
+        '<span class="detail">',
+        txtEnd,
+        '</span>'
+    ].join('')
+  );
+}    
+};
 
 
 $("#Post_btn").click(async function (){ 
