@@ -1,4 +1,4 @@
-console.log("13");
+console.log("11");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -57,7 +57,7 @@ $("#Get_btn").click(function get_clicked(){
         console.log(txtStart);
       var txtEnd = showtxt.slice(txtStart.length);
       if ( txtEnd.replace(/\s+$/,'').split(' ').length > char ) {
-          showtxt = textStart+"<a>...more</a>";
+          showtxt = textStart+"'<a>...more</a>'";
       }
     var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+value.id + "</td><td>&emsp;&emsp;Created time:&emsp; "+value.created_time+ "</td><td class='show_content'id='Show_"+value.id+"'>&emsp;&emsp;Content:&emsp;"+showtxt + "</td><td><button class=\"delete_btn\" id=\'delete_"+value.id+"\'>delete</button></td><td><button class=\"update_btn\" id=\'update_"+value.id+"\'>update</button></td></tr>");
     idshow = "'#Show_"+value.id+"'";
