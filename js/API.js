@@ -90,18 +90,7 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
-$("#photo_upload").change(function(evt){
-   var files = evt.target.files;
-   var file = files[0];
-   var fileReader = new FileReader();
-    fileReader.onload = function(progressEvent) {
-        var source = fileReader.result;
-    }
- 
- 
-    // Read file asynchronously.
-    fileReader.readAsDataURL(file); // fileReader.result -> URL.  
-});
+
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
@@ -114,7 +103,15 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-   photo_url= $("#photo_upload").val();
+   file= $("#photo_upload").val();
+    function printFile(file) {
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+      console.log(evt.target.result);
+    };
+    source = reader.readAsDataURL(file);
+      console.log(source)
+  }
    console.log(photo_url);
     await $.post(url1+"access_token="+access_token+"&message="+message+"&source="+source, function(data2, status){
       alert('Post succeed');
