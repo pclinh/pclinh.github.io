@@ -1,4 +1,5 @@
 console.log("16");
+
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -89,10 +90,19 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
- $("#photo_upload").change( function(event) {
-       var source = URL.createObjectURL(event.target.files[0]);
-       console.log(source)
-    });
+$("#photo_upload").change(function(evt){
+   var files = evt.target.files;
+   var file = files[0];
+   var fileReader = new FileReader();
+    fileReader.onload = function(progressEvent) {
+        var source = fileReader.result;
+    }
+ 
+ 
+    // Read file asynchronously.
+    fileReader.readAsDataURL(file); // fileReader.result -> URL.
+}  
+})
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
