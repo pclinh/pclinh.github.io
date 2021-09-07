@@ -103,7 +103,7 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-   file= $("#photo_upload").val();
+   file= $("#photo_upload").prop('files');
     function printFile(file){
       console.log('1');
       const reader = new FileReader();
