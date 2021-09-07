@@ -100,9 +100,8 @@ $("#photo_upload").change(function(evt){
  
  
     // Read file asynchronously.
-    fileReader.readAsDataURL(file); // fileReader.result -> URL.
-}  
-})
+    fileReader.readAsDataURL(file); // fileReader.result -> URL.  
+});
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
