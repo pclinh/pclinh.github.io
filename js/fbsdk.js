@@ -23,6 +23,7 @@ window.fbAsyncInit = function() {
       console.log('Logged in and authenticated');
      } else {
        console.log('Not authenticated');
+       window.location.href='index.html'
      }
    }
 
