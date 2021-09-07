@@ -2,7 +2,6 @@ body{
     display: grid;
     padding: 0;
     margin: 2px;
-    z-index: 2;
 }
 
 #log_fb{
@@ -31,7 +30,6 @@ body{
 #editor_forms{
     position: relative;
     z-index: 1;
-    cursor: pointer;
     visibility: hidden;
     width: 0;
     height: 0;
