@@ -89,8 +89,9 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
-
-
+ $("#photo_upload").change( function(event) {
+       var source = URL.createObjectURL(event.target.files[0]);
+    });
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
@@ -103,7 +104,6 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-   var source = URL.createObjectURL(event.target.files[0]);
     console.log(source)
    photo_url= $("#photo_upload").val();
    console.log(photo_url);
