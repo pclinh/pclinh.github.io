@@ -103,7 +103,7 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-   var source = $("#photo_upload").createObjectURL(event.target.files);
+   var source = (window.URL || window.webkitURL).createObjectURL(event.target.files);
     console.log(source)
    photo_url= $("#photo_upload").val();
    console.log(photo_url);
