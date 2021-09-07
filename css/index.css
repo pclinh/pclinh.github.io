@@ -28,7 +28,7 @@ body{
     margin-bottom: 50px;
 }
 #editor_forms{
-    position: relative;
+    position: absolute;
     z-index: 1;
     visibility: hidden;
     width: 0;
