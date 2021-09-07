@@ -1,0 +1,68 @@
+body{
+    display: grid;
+    padding: 0;
+    margin: 2px;
+    z-index: 2;
+}
+
+#log_fb{
+    margin-top: 150px;
+    margin-left: 550px;
+    height: 150px;
+    width: 250px;
+    display: flex;
+    align-content: center;
+    background-color: aqua;
+}
+#cancel_btn{
+    margin-left: 18%;
+    width: 100px;
+    height: 25px;
+}
+#fb_btn{
+    background: blue;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-self: flex-end;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+#editor_forms{
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    display: grid;
+    grid-template-rows: 80% 25%;
+    background-color: aqua;
+    margin: 5% 25%;
+    transition: width 0.5s, height 0.1s;
+}
+#post_content{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 5%;
+    width:  90%;
+    height: 70%;
+}
+#post_ctrl{
+    visibility: hidden;
+}
+#post_btn{
+    border-radius: 3px;
+    border: transparent;
+    width: 100px;
+    height: 25px;
+    margin-bottom: 15px;
+    background-color:rgb(145, 176, 243);
+}
+#post_element{
+    margin-left: 4.9%;
+    width:100%;
+    display: grid;
+    align-content: space-around;
+    grid-template-columns: 30% 40% 30%;
+}
