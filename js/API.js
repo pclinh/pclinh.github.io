@@ -104,7 +104,8 @@ $("#post_btn").click(async function (){
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
    file= $("#photo_upload").val();
-    function printFile(file) {
+    function printFile(file){
+      console.log('1');
       const reader = new FileReader();
       reader.onload = function(evt) {
       console.log(evt.target.result);
@@ -112,7 +113,6 @@ $("#post_btn").click(async function (){
     source = reader.readAsDataURL(file);
       console.log(source)
   }
-   console.log(photo_url);
     await $.post(url1+"access_token="+access_token+"&message="+message+"&source="+source, function(data2, status){
       alert('Post succeed');
       }).catch(e =>{
