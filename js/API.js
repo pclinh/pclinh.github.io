@@ -1,4 +1,4 @@
-console.log("13");
+console.log("14");
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -92,8 +92,8 @@ $("#get_btn").click(function get_clicked(){
 
 
 $("#post_btn").click(async function (){ 
-  if($("#photo_upload").prop('files').length=0){ 
-    url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
+  if($("#photo_upload").prop('files').length==0){ 
+    let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
     message=document.getElementById("post_content").value;
     await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
       alert('Post succeed');
@@ -101,7 +101,7 @@ $("#post_btn").click(async function (){
         console.log(e);
       }) 
   }else{
-    url1="https://graph.facebook.com/v11.0/102135788849157/photo?"
+   let url1="https://graph.facebook.com/v11.0/102135788849157/photo?"
    message=document.getElementById("post_content").value;
    photo_url= $("#photo_upload").value;
    console.log(photo_url);
