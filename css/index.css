@@ -51,11 +51,9 @@ body{
 }
 #post_btn{
     border-radius: 3px;
-    border: transparent;
     width: 100px;
     height: 25px;
     margin-bottom: 15px;
-    background-color:rgb(145, 176, 243);
 }
 #post_element{
     margin-left: 4.9%;
