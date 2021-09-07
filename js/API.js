@@ -92,7 +92,7 @@ $("#get_btn").click(function get_clicked(){
 
 
 $("#post_btn").click(async function (){ 
-  if($("#photo_upload").prop('files').length<0){ 
+  if($("#photo_upload").prop('files').length=0){ 
     url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
     message=document.getElementById("post_content").value;
     await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
