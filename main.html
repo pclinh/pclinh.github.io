@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=1229103174227463&autoLogAppEvents=1" nonce="BfoGS15I"></script>
 </head>
 <body>
-  <script>
+ <script>
   console.log('1');
   window.fbAsyncInit = function() {
     FB.init({
@@ -35,7 +35,7 @@
      if(response.status === 'connected'){
      } else {
        console.log('Not authenticated');
-       window.location.href='index.html'
+      // window.location.href='index.html'
      }
    }
   function checkLoginState() {
@@ -45,16 +45,38 @@
   }
   function logout (){
         FB.logout(function(response){
-            window.location.href='index.html'
+          //  window.location.href='index.html'
       });
     }</script>
-    <button id="logout_btn" onclick="logout()">logout</button>
-    <button id="Get_btn">Get</button>
-    <button id="Post_btn">Post</button>
-    <div id="show"></div>
-    <input type="text" id="post_content">
-    
+    <div>
+    <div id="main_ctrl" style="position: absolute;">
+      <button id="post_ctrl_btn">Post manage</button>
+    </div>
+    <div id="post_ctrl">
+      <div>
+        <button class="back_btn">Back</button>
+        <button id="logout_btn" onclick="logout()">logout</button>
+        <button id="get_btn">Get</button>
+        <button id="post_create_btn">Post</button>
+        <div id="show"></div>
+      </div>
+      <div>
+        <div class="transition" id="editor_forms">
+          <div>
+            <p style="margin-left:40%; font-weight: bolder; font-size: 30px; position:relative;">Nhập nội dung</p>
+            <textarea id="post_content"></textarea>
+            <p  style="margin-left:5%;">Choose photos and video below:</p>
+          </div>
+          <div id="post_element"><input type="file" multiple id="photo_upload" accept=".jpg">
+              <button id="cancel_btn">Cancel</button>
+              <button id="post_btn">Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/index.js"></script>
+    <script src=""></script>
+    <script src="./js/control.js"></script>
+
 </body>
 </html>
