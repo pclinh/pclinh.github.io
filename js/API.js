@@ -96,6 +96,7 @@ $("#photo_upload").change(function(evt){
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
+  var url= URL.createObjectURL(file);
     console.log(file.url);
   var fileReader = new FileReader();
   console.log("123")
