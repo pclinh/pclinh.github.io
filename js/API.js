@@ -90,7 +90,7 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
-$("#photo_upload").change(function(){
+$("#photo_upload").change(function(evt){
     alert("trggied");
     var files = evt.dataTransfer.files
     var file = files[0];
