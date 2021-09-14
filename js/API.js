@@ -1,5 +1,6 @@
 console.log("12");
 
+var source="";
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
@@ -96,8 +97,8 @@ $("#photo_upload").change(function(evt){
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
-  var url= URL.createObjectURL(file);
-    console.log(url);
+  source = URL.createObjectURL(file);
+    console.log(source);
   var fileReader = new FileReader();
   console.log("123")
   fileReader.onloadstart = function(){
@@ -110,7 +111,7 @@ $("#photo_upload").change(function(evt){
         console.logog("onload!");
  
         var stringData = fileReader.result;
-        source = reader.readAsDataURL(file);
+
         console.log(source)
         console.log(" ---------------- File Content ----------------: ");
         console.log(stringData);
