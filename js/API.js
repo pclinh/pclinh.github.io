@@ -92,12 +92,12 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(function(evt){
     alert("trggied");
+  var fileReader = new FileReader();
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
-    var fileReader = new FileReader();
+   
     fileReader.onloadstart = function(progressEvent) {
-        resetLog();
       console.log("2");
         appendLog("onloadstart!");
         var msg = "File Name: " + file.name + "<br>" +
