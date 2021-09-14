@@ -130,7 +130,7 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-    await $.post(url1+"access_token="+access_token+"&message="+message+"&source="+source, function(data2, status){
+    await $.post(url1+"access_token="+access_token+"&message="+message+"&url="+source, function(data2, status){
       alert('Post succeed');
       }).catch(e =>{
         console.log(e);
