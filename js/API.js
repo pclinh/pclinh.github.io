@@ -105,17 +105,17 @@ $("#photo_upload").change(function(evt){
             "File Type: " + file.type;
             "File Url: "  + file.url;
  
-        appendLog(msg);
+        console.log(msg);
     }
  
     fileReader.onload = function(progressEvent) {
-        appendLog("onload!");
+        console.logog("onload!");
  
         var stringData = fileReader.result;
-      source = reader.readAsDataURL(file);
+        source = reader.readAsDataURL(file);
         console.log(source)
-        appendLog(" ---------------- File Content ----------------: ");
-        appendLog(stringData);
+        console.log(" ---------------- File Content ----------------: ");
+        console.log(stringData);
       
     }
   });
