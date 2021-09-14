@@ -92,7 +92,7 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(function(evt){
     alert("trggied");
-    var files = evt.dataTransfer.files
+    var files = evt.files
     var file = files[0];
     var fileReader = new FileReader();
     fileReader.onloadstart = function(progressEvent) {
