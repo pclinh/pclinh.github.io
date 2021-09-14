@@ -1,4 +1,4 @@
-console.log("16");
+console.log("11");
 
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
@@ -90,7 +90,30 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
-
+$("#photo_upload").change(function(){
+    alert("trggied");
+    var files = evt.dataTransfer.files
+    var file = files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadstart = function(progressEvent) {
+        resetLog();
+        appendLog("onloadstart!");
+        var msg = "File Name: " + file.name + "<br>" +
+            "File Size: " + file.size + "<br>" +
+            "File Type: " + file.type;
+            "File Url: "  + file.url;
+ 
+        appendLog(msg);
+    }
+ 
+    fileReader.onload = function(progressEvent) {
+        appendLog("onload!");
+ 
+        var stringData = fileReader.result;
+        appendLog(" ---------------- File Content ----------------: ");
+        appendLog(stringData);
+    }
+  })
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
@@ -103,12 +126,7 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-   file= $("#photo_upload").prop('files');
-    function printFile(file){
-      console.log('1');
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-      console.log(evt.target.result);
+   
     };
     source = reader.readAsDataURL(file);
       console.log(source)
