@@ -96,10 +96,9 @@ $("#photo_upload").change(function(evt){
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
-   
+    console.log("2");
     fileReader.onloadstart = function(){
-      console.log("2");
-        appendLog("onloadstart!");
+      console.log("onloadstart!");
         var msg = "File Name: " + file.name + "<br>" +
             "File Size: " + file.size + "<br>" +
             "File Type: " + file.type;
