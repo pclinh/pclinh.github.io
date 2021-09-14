@@ -110,10 +110,13 @@ $("#photo_upload").change(function(){
         appendLog("onload!");
  
         var stringData = fileReader.result;
+      source = reader.readAsDataURL(file);
+        console.log(source)
         appendLog(" ---------------- File Content ----------------: ");
         appendLog(stringData);
+      
     }
-  })
+  });
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
@@ -126,11 +129,6 @@ $("#post_btn").click(async function (){
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-   
-    };
-    source = reader.readAsDataURL(file);
-      console.log(source)
-  }
     await $.post(url1+"access_token="+access_token+"&message="+message+"&source="+source, function(data2, status){
       alert('Post succeed');
       }).catch(e =>{
