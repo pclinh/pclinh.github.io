@@ -92,12 +92,14 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(function(evt){
     alert("trggied");
-  var fileReader = new FileReader();
+  
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
-    console.log("2");
-    fileReader.onloadstart = function(){
+    console.log(file.url);
+  var fileReader = new FileReader();
+  console.log("123")
+  fileReader.onloadstart = function(){
       console.log("onloadstart!");
         var msg = "File Name: " + file.name + "<br>" +
             "File Size: " + file.size + "<br>" +
@@ -106,7 +108,7 @@ $("#photo_upload").change(function(evt){
  
         console.log(msg);
     }
- 
+     
     fileReader.onload = function() {
         console.logog("onload!");
  
