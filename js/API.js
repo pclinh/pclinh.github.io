@@ -1,4 +1,4 @@
-console.log("11");
+console.log("12");
 
 var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
@@ -92,11 +92,13 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(function(evt){
     alert("trggied");
-  var files = evt.target.files;  
+  var files = evt.target.files;
+  console.log(files);
   var file = files[0];
     var fileReader = new FileReader();
     fileReader.onloadstart = function(progressEvent) {
         resetLog();
+      console.log("2");
         appendLog("onloadstart!");
         var msg = "File Name: " + file.name + "<br>" +
             "File Size: " + file.size + "<br>" +
