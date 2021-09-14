@@ -97,16 +97,12 @@ $("#photo_upload").change(function(evt){
   console.log(files);
   var file = files[0];
   var url= URL.createObjectURL(file);
-    console.log(file.url);
+    console.log(url);
   var fileReader = new FileReader();
   console.log("123")
   fileReader.onloadstart = function(){
       console.log("onloadstart!");
-        var msg = "File Name: " + file.name + "<br>" +
-            "File Size: " + file.size + "<br>" +
-            "File Type: " + file.type;
-            "File Url: "  + file.url;
- 
+        var msg = ("File Name: " + file.name + "File Size: " + file.size +"File Type: " + file.type)
         console.log(msg);
     }
      
