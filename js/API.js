@@ -97,7 +97,7 @@ $("#photo_upload").change(function(evt){
   console.log(files);
   var file = files[0];
    
-    fileReader.onloadstart = function(progressEvent) {
+    fileReader.onloadstart = function(){
       console.log("2");
         appendLog("onloadstart!");
         var msg = "File Name: " + file.name + "<br>" +
@@ -108,7 +108,7 @@ $("#photo_upload").change(function(evt){
         console.log(msg);
     }
  
-    fileReader.onload = function(progressEvent) {
+    fileReader.onload = function() {
         console.logog("onload!");
  
         var stringData = fileReader.result;
