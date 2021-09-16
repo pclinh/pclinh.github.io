@@ -35,7 +35,6 @@
      if(response.status === 'connected'){
      } else {
        console.log('Not authenticated');
-      // window.location.href='index.html'
      }
    }
   function checkLoginState() {
@@ -45,7 +44,6 @@
   }
   function logout (){
         FB.logout(function(response){
-          //  window.location.href='index.html'
       });
     }</script>
     <div>
@@ -61,7 +59,7 @@
         <div id="show"></div>
       </div>
       <div>
-        <div class="transition" id="editor_forms">
+        <form action="post" class="transition" id="editor_forms">
           <div>
             <p style="margin-left:40%; font-weight: bolder; font-size: 30px; position:relative;">Nhập nội dung</p>
             <textarea id="post_content"></textarea>
@@ -72,7 +70,7 @@
               <button id="cancel_btn">Cancel</button>
               <button id="post_btn">Post</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
