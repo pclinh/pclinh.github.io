@@ -1,5 +1,5 @@
 console.log("12");
-$.getScript("fbsdk.js");
+$.getScript("./js/fbsdk.js");
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
