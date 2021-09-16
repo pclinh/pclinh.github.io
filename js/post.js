@@ -1,6 +1,7 @@
 $.getScript("fbsdk.js");
-console.log(access_token)
+
 $("#post_btn").click(async function(){
+    console.log(access_token)
     await if(message=document.getElementById("post_content").value="")
     alert("Vui lòng nhập nội dung");
     else if($("#photo_upload").prop('files').length==0){ 
