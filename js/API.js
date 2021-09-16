@@ -102,13 +102,13 @@ $("#photo_upload").change(function(evt){
   var x= $("#editor_forms").append("source",file);
   console.log(x)
   });
-$("#post_btn").click(async function (){ 
+$("#post_btn").click(function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
     message=document.getElementById("post_content").value;
-    await FB.api('/102135788849157/feed','POST',{"message":message},
+    FB.api('/102135788849157/feed','POST',{"message":message},
       function(response) {
-          console.log("success")
+          console.log("response")
       }
     );
   }else{
