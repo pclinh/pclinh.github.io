@@ -1,7 +1,7 @@
 $.getScript("fbsdk.js");
 console.log(access_token)
-$("#post_btn").click(function(){
-    if($("#photo_upload").prop('files').length==0){ 
+$("#post_btn").click(async function(){
+    await if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
     FB.api(
   'https://graph.facebook.com/v11.0/102135788849157/feed',
