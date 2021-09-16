@@ -58,12 +58,13 @@ $("#photo_upload").change(function(evt){
 
 $("#post_btn").click(async function(){
     console.log(access_token)
-    if(message=document.getElementById("post_content").value==""){
+    if(document.getElementById("post_content").value==""){
       alert("Vui lòng nhập nội dung");
     }
     else if($("#photo_upload").prop('files').length==0){ 
-       await message=document.getElementById("post_content").value;
-        FB.api(
+       message=document.getElementById("post_content").value;
+      console.log(message) 
+      FB.api(
       '102135788849157/feed',
       'POST',
       {"message":message},
