@@ -57,8 +57,9 @@ $("#photo_upload").change(function(evt){
 
 $("#post_btn").click(function(){
     console.log(access_token)
-    if(message=document.getElementById("post_content").value=="")
+    if(message=document.getElementById("post_content").value==""){
       alert("Vui lòng nhập nội dung");
+    }
     else if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
         FB.api(
