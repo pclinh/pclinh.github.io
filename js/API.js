@@ -67,8 +67,9 @@ $("#post_btn").click(async function(){
       FB.api(
       '102135788849157/feed',
       'POST',
-      {"message":message},
-      {"access_token":access_token},
+      {
+        "message":document.getElementById("post_content").value,
+        "access_token":access_token},
       function(response) {
           console.log(response);
       }
@@ -80,7 +81,7 @@ $("#post_btn").click(async function(){
     '/102135788849157/photos',
     'POST',
     {
-    "message":document.getElementById("post_content").value
+    "message":document.getElementById("post_content").value,
     "access_token":access_token
     },
     function(response) {
