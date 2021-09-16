@@ -1,4 +1,3 @@
-
 console.log("12");
 $.getScript("fbsdk.js");
 $("#get_btn").click(function get_clicked(){
@@ -56,20 +55,20 @@ $("#photo_upload").change(function(evt){
   });
 
 
-$("#post_btn").click(async function(){
+$("#post_btn").click(function(){
     console.log(access_token)
-    await if(message=document.getElementById("post_content").value=="")
-    alert("Vui lòng nhập nội dung");
+    if(message=document.getElementById("post_content").value=="")
+      alert("Vui lòng nhập nội dung");
     else if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
-    FB.api(
-  '102135788849157/feed',
-  'POST',
-  {"message":"123\n"},
-  function(response) {
-      alert(reponse);
-  }
-);      
+        FB.api(
+      '102135788849157/feed',
+      'POST',
+      {"message":"123\n"},
+      function(response) {
+          alert(reponse);
+      }
+    );      
   }else{
     message=document.getElementById("post_content").value;
     FB.api(
