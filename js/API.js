@@ -108,7 +108,7 @@ $("#post_btn").click(function (){
     message=document.getElementById("post_content").value;
     FB.api('/102135788849157/feed','POST',{"message":message},
       function(response) {
-          console.log("response")
+          console.log(response)
       }
     );
   }else{
