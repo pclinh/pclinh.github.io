@@ -65,9 +65,9 @@ $("#post_btn").click(function(){
         FB.api(
       '102135788849157/feed',
       'POST',
-      {"message":"123\n"},
+      {"message":message},
       function(response) {
-          alert(reponse);
+          alert(response);
       }
     );      
   }else{
