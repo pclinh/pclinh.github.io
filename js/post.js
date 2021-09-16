@@ -1,4 +1,5 @@
 $.getScript("fbsdk.js");
+console.log(access_token)
 if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
     FB.api(
