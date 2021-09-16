@@ -120,7 +120,7 @@ function post(){
         console.log(e);
       })
     }
-  });
+  };
 
 
 
