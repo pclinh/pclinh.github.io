@@ -75,8 +75,8 @@ $("#post_btn").click(function(){
     FB.api(
     '/102135788849157/photos',
     'POST',
-    {"message":message
-      "access_token":access_token},
+    {"message":message},
+    {"access_token":access_token},
     function(response) {
         // Insert your code here
     })
