@@ -66,6 +66,7 @@ $("#post_btn").click(function(){
       '102135788849157/feed',
       'POST',
       {"message":message},
+      {"access_token":access_token},
       function(response) {
           console.log(response);
       }
