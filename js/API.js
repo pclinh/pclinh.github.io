@@ -1,7 +1,7 @@
 
 console.log("12");
 
-var access_token='EAARd3OIXlgcBALRecAnGzbtZANZBHuu6g5ZC1scxJxEvc8loFlRELVhARKDZAWSdHEq2dZBeN6Y9xcOPMuNOyIZCCR31JzFXlaXQ3Nc516vL3X5htm3u2ZAapIjoyusxOBlo2aZAjudxd8GQ4MxT7uLLZAZAMrgtWitDDEZAqyGRZAdkZCLxL1xKiI85l';
+var access_token='';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function(){
