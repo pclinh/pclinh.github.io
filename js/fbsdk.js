@@ -1,3 +1,4 @@
+var access_token="";
 window.fbAsyncInit = function() {
     FB.init({
       appId      : '1229103174227463',
