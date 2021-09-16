@@ -1,13 +1,14 @@
 $.getScript("fbsdk.js");
 console.log(access_token)
-if($("#photo_upload").prop('files').length==0){ 
+$("#post_btn").click(function(){
+    if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
     FB.api(
   'https://graph.facebook.com/v11.0/102135788849157/feed',
   'POST',
   {"message":"123\n"},
   function(response) {
-      // Insert your code here
+      alert(reponse);
   }
 );      
   }else{
@@ -20,3 +21,4 @@ if($("#photo_upload").prop('files').length==0){
         // Insert your code here
     })
 }
+});
