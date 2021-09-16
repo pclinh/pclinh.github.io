@@ -67,7 +67,7 @@ $("#post_btn").click(function(){
       'POST',
       {"message":message},
       function(response) {
-          alert(response);
+          console.log(response);
       }
     );      
   }else{
