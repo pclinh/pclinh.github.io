@@ -1,4 +1,4 @@
-console.log("12");
+console.log("13");
 $.getScript("./js/fbsdk.js");
 var message="";
 $("#get_btn").click(function get_clicked(){
@@ -56,13 +56,13 @@ $("#photo_upload").change(function(evt){
   });
 
 
-$("#post_btn").click(function(){
+$("#post_btn").click(async function(){
     console.log(access_token)
     if(message=document.getElementById("post_content").value==""){
       alert("Vui lòng nhập nội dung");
     }
     else if($("#photo_upload").prop('files').length==0){ 
-        message=document.getElementById("post_content").value;
+       await message=document.getElementById("post_content").value;
         FB.api(
       '102135788849157/feed',
       'POST',
@@ -73,7 +73,7 @@ $("#post_btn").click(function(){
       }
     );      
   }else{
-    message=document.getElementById("post_content").value;
+    await message=document.getElementById("post_content").value;
     FB.api(
     '/102135788849157/photos',
     'POST',
