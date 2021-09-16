@@ -1,7 +1,7 @@
+
 console.log("12");
 
-var source="";
-var access_token='';
+var access_token='EAARd3OIXlgcBALRecAnGzbtZANZBHuu6g5ZC1scxJxEvc8loFlRELVhARKDZAWSdHEq2dZBeN6Y9xcOPMuNOyIZCCR31JzFXlaXQ3Nc516vL3X5htm3u2ZAapIjoyusxOBlo2aZAjudxd8GQ4MxT7uLLZAZAMrgtWitDDEZAqyGRZAdkZCLxL1xKiI85l';
 var url = 'https://graph.facebook.com/v11.0/'
 var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
 window.fbAsyncInit = function(){
@@ -39,7 +39,7 @@ window.fbAsyncInit = function(){
 });
    } else {
      console.log('Not authenticated');
-     window.location.href='index.html';
+     //window.location.href='index.html';
    }
  }
 function checkLoginState() {
@@ -50,6 +50,7 @@ function checkLoginState() {
 
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
+  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
    await $.each(data2.data, function( index, value ) {
      var limitW = 10;
@@ -93,47 +94,33 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(function(evt){
     alert("trggied");
-  
+  var fileReader = new FileReader();
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
-  source = URL.createObjectURL(file);
-    console.log(source);
-  var fileReader = new FileReader();
-  console.log("123")
-  fileReader.onloadstart = function(){
-      console.log("onloadstart!");
-        var msg = ("File Name: " + file.name + "File Size: " + file.size +"File Type: " + file.type)
-        console.log(msg);
-    }
-     
-    fileReader.onload = function() {
-        console.logog("onload!");
- 
-        var stringData = fileReader.result;
-
-        console.log(source)
-        console.log(" ---------------- File Content ----------------: ");
-        console.log(stringData);
-      
-    }
+  console.log(file);
+  var x= $("#editor_forms").append("source",file);
+  console.log(x)
   });
 $("#post_btn").click(async function (){ 
   if($("#photo_upload").prop('files').length==0){ 
     let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
     message=document.getElementById("post_content").value;
-    await $.post(url1+"access_token="+access_token+"&message="+message, function(data2, status){
-      alert('Post succeed');
-      }).catch(e =>{
-        console.log(e);
-      }) 
+    await FB.api('/102135788849157/feed','POST',{"message":message},
+      function(response) {
+          console.log("success")
+      }
+    );
   }else{
    let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
    message=document.getElementById("post_content").value;
-    await $.post(url1+"access_token="+access_token+"&message="+message+"&url="+source, function(data2, status){
+    await $.post(url1+"access_token="+access_token+"&message="+message+"&source="+source, function(data2, status){
       alert('Post succeed');
       }).catch(e =>{
         console.log(e);
       })
     }
   });
+
+
+
