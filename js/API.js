@@ -1,56 +1,8 @@
 
 console.log("12");
-
-var access_token='';
-var url = 'https://graph.facebook.com/v11.0/'
-var url1 = 'https://graph.facebook.com/v11.0/102135788849157/feed?';
-window.fbAsyncInit = function(){
-  FB.init({
-    appId      : '1229103174227463',
-    cookie     : true,
-    xfbml      : true,
-    version    : 'v11.0'
-  });
-
-  FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-     
-  });
-};
- (function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
- async function statusChangeCallback(response){
-   if(response.status === 'connected'){
-    console.log('Logged in and authenticated');
-     await  $.ajax({ 
-        type: 'GET', 
-        url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
-        data: { get_param: 'value' },
-        success: function (data) {
-         access_token=data.access_token;
-        },
-    }).catch(e => {
-    console.log(e);
-});
-   } else {
-     console.log('Not authenticated');
-     window.location.href='index.html';
-   }
- }
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-
+$.getScript("fbsdk.js");
 $("#get_btn").click(function get_clicked(){
-  $("#show").replaceWith('<p id="show"></p>');
-  
+  $("#show").replaceWith('<p id="show"></p>');  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
    await $.each(data2.data, function( index, value ) {
      var limitW = 10;
@@ -102,25 +54,30 @@ $("#photo_upload").change(function(evt){
   var x= $("#editor_forms").append("source",file);
   console.log(x)
   });
-function post(){ 
-  if($("#photo_upload").prop('files').length==0){ 
-    let url1="https://graph.facebook.com/v11.0/102135788849157/feed?";
+
+
+$("#post_btn").click(async function(){
+    console.log(access_token)
+    await if(message=document.getElementById("post_content").value="")
+    alert("Vui lòng nhập nội dung");
+    else if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
-    FB.api('/102135788849157/feed','POST',{"message":message},
-      function(response) {
-          console.log(response)
-      }
-    );
+    FB.api(
+  '102135788849157/feed',
+  'POST',
+  {"message":"123\n"},
+  function(response) {
+      alert(reponse);
+  }
+);      
   }else{
-   let url1="https://graph.facebook.com/v11.0/102135788849157/photos?"
-   message=document.getElementById("post_content").value;
-   $.post(url1+"access_token="+access_token+"&message="+message+"&source="+source, function(data2, status){
-      alert('Post succeed');
-      }).catch(e =>{
-        console.log(e);
-      })
-    }
-  };
-
-
-
+    message=document.getElementById("post_content").value;
+    FB.api(
+    '/102135788849157/photos',
+    'POST',
+    {"message":message},
+    function(response) {
+        // Insert your code here
+    })
+}
+});
