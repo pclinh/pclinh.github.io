@@ -58,6 +58,7 @@ $("#photo_upload").change(function(evt){
 
 $("#post_btn").click(async function(){
     console.log(access_token)
+    message=document.getElementById("post_content").value
     if(document.getElementById("post_content").value==""){
       alert("Vui lòng nhập nội dung");
     }
@@ -75,7 +76,6 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-    message=document.getElementById("post_content").value;
     console.log(message)
     FB.api(
     '/102135788849157/photos',
