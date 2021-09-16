@@ -80,7 +80,7 @@ $("#post_btn").click(async function(){
     '/102135788849157/photos',
     'POST',
     {
-    "message":message,
+    "message":document.getElementById("post_content").value
     "access_token":access_token
     },
     function(response) {
