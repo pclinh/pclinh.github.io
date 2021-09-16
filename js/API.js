@@ -73,7 +73,8 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-    await message=document.getElementById("post_content").value;
+    message=document.getElementById("post_content").value;
+    console.log(message)
     FB.api(
     '/102135788849157/photos',
     'POST',
