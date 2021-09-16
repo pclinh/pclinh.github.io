@@ -39,7 +39,7 @@ window.fbAsyncInit = function(){
 });
    } else {
      console.log('Not authenticated');
-     //window.location.href='index.html';
+     window.location.href='index.html';
    }
  }
 function checkLoginState() {
