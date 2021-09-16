@@ -1,5 +1,6 @@
 console.log("12");
 $.getScript("./js/fbsdk.js");
+var message="";
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
@@ -61,7 +62,7 @@ $("#post_btn").click(function(){
       alert("Vui lòng nhập nội dung");
     }
     else if($("#photo_upload").prop('files').length==0){ 
-   var message=document.getElementById("post_content").value;
+        message=document.getElementById("post_content").value;
         FB.api(
       '102135788849157/feed',
       'POST',
