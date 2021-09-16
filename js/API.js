@@ -58,7 +58,7 @@ $("#photo_upload").change(function(evt){
 
 $("#post_btn").click(async function(){
     console.log(access_token)
-    await if(message=document.getElementById("post_content").value="")
+    await if(message=document.getElementById("post_content").value=="")
     alert("Vui lòng nhập nội dung");
     else if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
