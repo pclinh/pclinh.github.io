@@ -57,11 +57,10 @@ $("#photo_upload").change(async function(evt){
   reader.onload = function() { 
   var url = URL.revokeObjectURL(file);
     console.log(url);
-    console.log(url)
      var blobAsDataUrl = reader.result;
      window.location = blobAsDataUrl;
    };
-   reader.readAsDataURL(recoveredBlob);
+   reader.readAsDataURL(url);
 });
 $("#post_btn").click(async function(){
     console.log(access_token)
