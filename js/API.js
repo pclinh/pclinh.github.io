@@ -77,16 +77,15 @@ $("#post_btn").click(async function(){
     url = reader.result;
    console.log(url)
     var data = new FormData();
-       
-            data.append('source', url);
-
+        data.append('source', url);
+    console.log(data.source)
     FB.api(
     '/102135788849157/photos',
     'POST',
     {
     "message":document.getElementById("post_content").value,
     "access_token":access_token,
-    "url":url
+    "url":data.source
     },
     function(response) {
        console.log(response)
