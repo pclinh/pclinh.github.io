@@ -79,8 +79,8 @@ $("#post_btn").click(async function(){
         data.append('message',message);
         console.log(src);
         data.append('source', src);
-      console.log(data.val())
-   
+      console.log(data.val());
+  };
     reader.readAsDataURL(file);
 }
     
