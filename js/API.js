@@ -65,23 +65,22 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-    console.log(message)
-  var file = $("#photo_upload").prop('files')[0];
-  console.log(file); 
-  console.log("1")
-  const reader = new FileReader();
-  reader.onload = function(){
-  var src = URL.createObjectURL(file);
-    console.log(src);
-    var data = new FormData();
-        data.append('access_token', access_token);
-        console.log(message);
-        data.append('message',message);
-        console.log(src);
-        data.append('source', src);
-      console.log(data.val());
-  };
-    reader.readAsDataURL(file);
-}
-    
+const fileReader = new FileReader();
+const file = document.getElementById('photo_upload').files[0];
+
+  fileReader.onloadend = async () => {
+	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
+	const formData = new FormData();
+	
+	formData.append('access_token', access_token);
+	formData.append('source', photoData);
+	formData.append('message',message);
+	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
+		body: formData,
+		method: 'post'
+	});
+	response = await response.json();
+	console.log(response);
+};
+fileReader.readAsArrayBuffer(file);
 });
