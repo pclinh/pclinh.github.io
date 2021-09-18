@@ -80,7 +80,7 @@ $("#post_btn").click(async function(){
         console.log(src);
         data.append('source', src); 
     $.ajax({
-                url: 'https://graph.facebook.com/me/photos?'
+                url: 'https://graph.facebook.com/me/photos?',
                 type: 'POST',
                 data: data,
                 processData: false,
