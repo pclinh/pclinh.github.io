@@ -46,6 +46,7 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(async function(evt){
     alert("trggied");
+  var url;
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
@@ -55,7 +56,7 @@ $("#photo_upload").change(async function(evt){
     console.log(src);
   const reader = new FileReader();
   reader.onload = function() { 
-  var url = URL.revokeObjectURL(file);
+   url = URL.revokeObjectURL(file);
     console.log(url);
      var blobAsDataUrl = reader.result;
      window.location = blobAsDataUrl;
