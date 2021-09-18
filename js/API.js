@@ -1,6 +1,7 @@
 console.log("16");
 $.getScript("./js/fbsdk.js");
 var message;
+var url;
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
@@ -73,18 +74,16 @@ $("#post_btn").click(async function(){
   reader.onload = function(){
   var src = URL.createObjectURL(file);
   console.log(src);
-  var url = URL.revokeObjectURL(file);
-    console.log(url);
-    blobAsDataUrl = reader.result;
+    url = reader.result;
    };
-   console.log(blobAsDataUrl)
+   console.log(url)
     FB.api(
     '/102135788849157/photos',
     'POST',
     {
     "message":document.getElementById("post_content").value,
     "access_token":access_token,
-    "url":reader.result
+    "url":url
     },
     function(response) {
 
