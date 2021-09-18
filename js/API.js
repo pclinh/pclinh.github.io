@@ -46,26 +46,16 @@ $("#get_btn").click(function get_clicked(){
 });
 $("#photo_upload").change(function(evt){
     alert("trggied");
-  var fileReader = new FileReader();
   var files = evt.target.files;
   console.log(files);
   var file = files[0];
-  console.log(file);
-  var x= $("#editor_forms").append("source",file);
-  console.log(x)
-  });
-$("#photo_upload").change(function(){
-    console.log("1")
-    const img = document.createElement("img");
-    img.classList.add("obj");
-    img.file = file;
-    preview.appendChild(img); // Assuming that "preview" is the div output where the content will be displayed.
-    const reader = new FileReader();
+  console.log(file); 
+  console.log("1")
+  const reader = new FileReader();
     reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
     var source = reader.readAsDataURL(file);
     console.log(source)
-  }
-})
+  })
 $("#post_btn").click(async function(){
     console.log(access_token)
     message=document.getElementById("post_content").value
