@@ -63,10 +63,6 @@ $("#photo_upload").change(async function(evt){
    };
    reader.readAsDataURL(recoveredBlob);
 });
-
-xhr.open('GET', blobUrl);
-xhr.send();
-  })
 $("#post_btn").click(async function(){
     console.log(access_token)
     message=document.getElementById("post_content").value
