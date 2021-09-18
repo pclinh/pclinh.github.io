@@ -65,23 +65,24 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-const fileReader = new FileReader();
-const file = document.getElementById('photo_upload').files[0];
+	const fileReader = new FileReader();
+	const file = document.getElementById('photo_upload').files[0];
 
-  fileReader.onloadend = async () => {
+  	fileReader.onloadend = async () => {
 	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
 	const formData = new FormData();
-	
 	formData.append('access_token', access_token);
 	formData.append('source', photoData);
 	formData.append('message',message);
-	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
-		body: formData,
-		method: 'post'
-	});
-	response = await response.json();
-	console.log(response);
-};
-fileReader.readAsArrayBuffer(file);
+	FB.api(
+      '102135788849157/feed',
+      'POST',
+      {"body":formData},
+      function(response) {
+          console.log(response);
+      }
+    );      
+	};
+	fileReader.readAsArrayBuffer(file);
   }
 });
