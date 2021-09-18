@@ -71,7 +71,6 @@ $("#post_btn").click(async function(){
   console.log("1")
   const reader = new FileReader();
   reader.onload = function(){
-    console.log(blob)
   var src = URL.createObjectURL(file);
   console.log(src);
     url = reader.result;
