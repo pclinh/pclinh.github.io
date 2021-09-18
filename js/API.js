@@ -72,24 +72,30 @@ $("#post_btn").click(async function(){
   const reader = new FileReader();
   reader.onload = function(){
   var src = URL.createObjectURL(file);
-  console.log(src);
-    url = reader.result;
-   console.log(url)
+    console.log(src);
     var data = new FormData();
+        data.append('access_token', access_token);
+        data.append('message',message);
         data.append('source', src);
     console.log(data.source)
-    FB.api(
-    '/102135788849157/photos',
-    'POST',
-    {
-    "message":document.getElementById("post_content").value,
-    "access_token":access_token,
-    "url":data.source
-    },
-    function(response) {
-       console.log(response)
-      }
-    )
+    $.ajax({
+                url: 'https://graph.facebook.com/me/photos?access_token='+ FB.getAccessToken(),
+                type: 'POST',
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success:function (data) {
+                    $('#status').append('<p>Photo was successfully uploaded, object id is: ' + data.id + '</p>');
+                    console.log(data)
+                },
+                error:function (data) {
+                    console.log(data);
+                },
+                complete: function () {
+                    $('#uploading').hide();
+                }
+            });
       };
     reader.readAsDataURL(file);
 }
