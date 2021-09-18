@@ -54,9 +54,9 @@ $("#photo_upload").change(async function(evt){
   var src = URL.createObjectURL(file);
     console.log(src);
   const reader = new FileReader();
-  var ss = reader.readAsDataURL(src);
+  var ss = reader.readAsDataURL(file);
     console.log(ss);
-  var url = URL.revokeObjectURL(src);
+  var url = URL.revokeObjectURL(file);
     console.log(url);
   })
 $("#post_btn").click(async function(){
