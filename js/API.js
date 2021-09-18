@@ -44,7 +44,7 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
-$("#photo_upload").change(function(evt){
+$("#photo_upload").change(async function(evt){
     alert("trggied");
   var files = evt.target.files;
   console.log(files);
@@ -52,7 +52,7 @@ $("#photo_upload").change(function(evt){
   console.log(file); 
   console.log("1")
   const reader = new FileReader();
-  var source = reader.readAsDataURL(file);
+ await var source = reader.readAsDataURL(file);
     console.log(source.url);
   })
 $("#post_btn").click(async function(){
