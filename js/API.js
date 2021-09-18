@@ -1,4 +1,4 @@
-console.log("15");
+console.log("16");
 $.getScript("./js/fbsdk.js");
 var message="";
 $("#get_btn").click(function get_clicked(){
@@ -52,8 +52,10 @@ $("#photo_upload").change(async function(evt){
   console.log(file); 
   console.log("1")
   const reader = new FileReader();
- await var source = reader.readAsDataURL(file);
-    console.log(source.url);
+  reader.readAsDataURL(file);
+  var src = URL.createObjectURL(file);
+  var url = URL.revokeObjectURL(src);
+    console.log(url);
   })
 $("#post_btn").click(async function(){
     console.log(access_token)
