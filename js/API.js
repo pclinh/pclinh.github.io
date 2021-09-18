@@ -75,7 +75,7 @@ $("#post_btn").click(async function(){
   var src = URL.createObjectURL(file);
   console.log(src);
     url = reader.result;
-   };
+ 
    console.log(url)
     FB.api(
     '/102135788849157/photos',
@@ -89,5 +89,7 @@ $("#post_btn").click(async function(){
 
        console.log(response)
     })
+      };
 }
+    
 });
