@@ -70,13 +70,13 @@ $("#post_btn").click(async function(){
   var file = $("#photo_upload").prop('files')[0];
   console.log(file); 
   console.log("1")
-    const reader = new FileReader();
+  const reader = new FileReader();
   reader.onload = function(){
   var src = URL.createObjectURL(file);
   console.log(src);
     url = reader.result;
- 
    console.log(url)
+    };
     FB.api(
     '/102135788849157/photos',
     'POST',
@@ -86,10 +86,10 @@ $("#post_btn").click(async function(){
     "url":url
     },
     function(response) {
-
        console.log(response)
-    })
-      };
+      }
+    )
+      
 }
     
 });
