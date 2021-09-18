@@ -53,7 +53,7 @@ $("#photo_upload").change(function(evt){
   console.log("1")
   const reader = new FileReader();
   var source = reader.readAsDataURL(file);
-    console.log(source)
+    console.log(source.url)
   })
 $("#post_btn").click(async function(){
     console.log(access_token)
