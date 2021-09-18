@@ -87,7 +87,7 @@ $("#post_btn").click(async function(){
     "url":blAsDataUrl;
     },;
     function(response) {
-        // Insert your code here
+       console.log(response)
     })
 }
 });
