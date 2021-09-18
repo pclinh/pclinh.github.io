@@ -79,26 +79,8 @@ $("#post_btn").click(async function(){
         data.append('message',message);
         console.log(src);
         data.append('source', src);
-      console.log(data)
-    $.ajax({
-                url: 'https://graph.facebook.com/me/photos?access_token='+access_token,
-                type: 'POST',
-                data: data,
-                processData: false,
-                contentType: false,
-                cache: false,
-                success:function (data) {
-                    $('#status').append('<p>Photo was successfully uploaded, object id is: ' + data.id + '</p>');
-                    console.log(data)
-                },
-                error:function (data) {
-                    console.log(data);
-                },
-                complete: function () {
-                    $('#uploading').hide();
-                }
-            });
-      };
+      console.log(data.val())
+   
     reader.readAsDataURL(file);
 }
     
