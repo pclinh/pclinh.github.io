@@ -73,13 +73,11 @@ $("#post_btn").click(async function(){
   reader.onload = function(){
   var src = URL.createObjectURL(file);
   console.log(src);
-  url = URL.revokeObjectURL(file);
+  var url = URL.revokeObjectURL(file);
     console.log(url);
     blobAsDataUrl = reader.result;
-    console.log(reader.result)
    };
-   console.log(reader.readAsDataURL(file));
-    console.log(reader.result)
+   console.log(blobAsDataUrl)
     FB.api(
     '/102135788849157/photos',
     'POST',
