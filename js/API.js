@@ -71,7 +71,7 @@ $("#post_btn").click(async function(){
   console.log("1")
   const reader = new FileReader();
   reader.onload = function(e){
-  var blob = new Blob([arrayBuffer], { type: file.type });
+  var blob = new Blob(e.target.result, { type: file.type });
     console.log(blob)
   var src = URL.createObjectURL(file);
   console.log(src);
