@@ -52,8 +52,10 @@ $("#photo_upload").change(async function(evt){
   console.log(file); 
   console.log("1")
   const reader = new FileReader();
-  reader.readAsDataURL(file);
+  var ss = reader.readAsDataURL(file);
+    console.log(ss);
   var src = URL.createObjectURL(file);
+    console.log(src);
   var url = URL.revokeObjectURL(src);
     console.log(url);
   })
