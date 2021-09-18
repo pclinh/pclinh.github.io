@@ -83,4 +83,5 @@ const file = document.getElementById('photo_upload').files[0];
 	console.log(response);
 };
 fileReader.readAsArrayBuffer(file);
+  }
 });
