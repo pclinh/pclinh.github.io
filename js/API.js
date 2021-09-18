@@ -69,15 +69,16 @@ $("#post_btn").click(async function(){
   var file = $("#photo_upload").prop('files')[0];
   console.log(file); 
   console.log("1")
+    const reader = new FileReader();
+  reader.onload = function(){
   var src = URL.createObjectURL(file);
   console.log(src);
-  const reader = new FileReader();
-  reader.onload = function() { 
-   url = URL.revokeObjectURL(file);
+  url = URL.revokeObjectURL(file);
     console.log(url);
     blobAsDataUrl = reader.result;
+    console.log(reader.result)
    };
-   reader.readAsDataURL(file);
+   console.log(reader.readAsDataURL(file));
     console.log(reader.result)
     FB.api(
     '/102135788849157/photos',
