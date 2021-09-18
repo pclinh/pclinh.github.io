@@ -61,7 +61,7 @@ $("#photo_upload").change(async function(evt){
      var blobAsDataUrl = reader.result;
      window.location = blobAsDataUrl;
    };
-   reader.readAsDataURL(url);
+   reader.readAsDataURL(file);
 });
 $("#post_btn").click(async function(){
     console.log(access_token)
