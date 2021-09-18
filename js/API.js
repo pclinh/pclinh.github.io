@@ -1,6 +1,6 @@
 console.log("16");
 $.getScript("./js/fbsdk.js");
-var message="";
+var message;
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
@@ -44,39 +44,20 @@ $("#get_btn").click(function get_clicked(){
       });
    });
 });
-$("#photo_upload").change(async function(evt){
-    alert("trggied");
-  var url;
-  var files = evt.target.files;
-  console.log(files);
-  var file = files[0];
-  console.log(file); 
-  console.log("1")
-  var src = URL.createObjectURL(file);
-    console.log(src);
-  const reader = new FileReader();
-  reader.onload = function() { 
-   url = URL.revokeObjectURL(file);
-    console.log(url);
-     var blobAsDataUrl = reader.result;
-     window.location = blobAsDataUrl;
-   };
-   reader.readAsDataURL(file);
-});
 $("#post_btn").click(async function(){
     console.log(access_token)
-    message=document.getElementById("post_content").value
-    if(document.getElementById("post_content").value==""){
+    message=document.getElementById("post_content").value;
+    if(message==""){
       alert("Vui lòng nhập nội dung");
     }
     else if($("#photo_upload").prop('files').length==0){ 
-       message=document.getElementById("post_content").value;
+    message=document.getElementById("post_content").value;
       console.log(message) 
       FB.api(
       '102135788849157/feed',
       'POST',
       {
-        "message":document.getElementById("post_content").value,
+        "message":massage,
         "access_token":access_token},
       function(response) {
           console.log(response);
@@ -84,13 +65,27 @@ $("#post_btn").click(async function(){
     );      
   }else{
     console.log(message)
+  var blobAsDataUrl;
+  var file = $("#photo_upload").prop('files')[0];
+  console.log(file); 
+  console.log("1")
+  var src = URL.createObjectURL(file);
+  console.log(src);
+  const reader = new FileReader();
+  reader.onload = function() { 
+   url = URL.revokeObjectURL(file);
+    console.log(url);
+    blobAsDataUrl = reader.result;
+   };
+   reader.readAsDataURL(file);
     FB.api(
     '/102135788849157/photos',
     'POST',
     {
     "message":document.getElementById("post_content").value,
     "access_token":access_token
-    },
+    "url":blAsDataUrl;
+    },;
     function(response) {
         // Insert your code here
     })
