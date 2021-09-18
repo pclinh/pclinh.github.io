@@ -62,7 +62,7 @@ $("#photo_upload").change(async function(evt){
      window.location = blobAsDataUrl;
    };
    reader.readAsDataURL(recoveredBlob);
-};
+});
 
 xhr.open('GET', blobUrl);
 xhr.send();
