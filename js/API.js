@@ -78,6 +78,7 @@ $("#post_btn").click(async function(){
     blobAsDataUrl = reader.result;
    };
    reader.readAsDataURL(file);
+    console.log(reader.result)
     FB.api(
     '/102135788849157/photos',
     'POST',
@@ -87,6 +88,7 @@ $("#post_btn").click(async function(){
     "url":reader.result
     },
     function(response) {
+
        console.log(response)
     })
 }
