@@ -84,7 +84,7 @@ $("#post_btn").click(async function(){
     {
     "message":document.getElementById("post_content").value,
     "access_token":access_token,
-    "url":blAsDataUrl
+    "url":blobAsDataUrl
     },
     function(response) {
        console.log(response)
