@@ -52,8 +52,7 @@ $("#photo_upload").change(function(evt){
   console.log(file); 
   console.log("1")
   const reader = new FileReader();
-    reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-    var source = reader.readAsDataURL(file);
+  var source = reader.readAsDataURL(file);
     console.log(source)
   })
 $("#post_btn").click(async function(){
