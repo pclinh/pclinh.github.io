@@ -71,14 +71,13 @@ $("#post_btn").click(async function(){
   console.log("1")
   const reader = new FileReader();
   reader.onload = function(){
-  var blob = new Blob(file, { type: file.type });
     console.log(blob)
   var src = URL.createObjectURL(file);
   console.log(src);
     url = reader.result;
    console.log(url)
     var data = new FormData();
-        data.append('source', blob);
+        data.append('source', src);
     console.log(data.source)
     FB.api(
     '/102135788849157/photos',
