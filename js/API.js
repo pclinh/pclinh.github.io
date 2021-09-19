@@ -65,15 +65,14 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	 const formData = new FormData()
+	const formData = new FormData()
 	formData.append('access_token', access_token);
-	
 	formData.append('message',message);
 	
 $("#photo_upload").files.foreach(	  
 	const fileReader = new FileReader();
-	const file = document.getElementById('photo_upload').files[index];
-	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
+	const file = item;
+	const photoData = new Blob([fileReader.result], {type: 'image/*'});
 	formData.append('source', photoData);
 )
   fileReader.onloadend = async () => {
