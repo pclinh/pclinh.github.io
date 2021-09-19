@@ -83,7 +83,7 @@ $("#post_btn").click(async function(){
 	});
 	response = await response.json();
 	console.log(response);
-};
+}; 
 fileReader.readAsArrayBuffer(file);
   }
 });
