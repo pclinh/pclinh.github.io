@@ -51,7 +51,7 @@ $("#post_btn").click(async function(){
     if(message==""){
       alert("Vui lòng nhập nội dung");
     }
-    else if($("#photo_upload").prop('files').length==0){ 
+    else if($("#photo_upload").files.length==0){ 
     message=document.getElementById("post_content").value;
       console.log(message) 
       FB.api(
@@ -65,16 +65,19 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-const fileReader = new FileReader();
-const file = document.getElementById('photo_upload').files[0];
-
-  fileReader.onloadend = async () => {
-	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
-	const formData = new FormData();
-	
+	 const formData = new FormData()
 	formData.append('access_token', access_token);
-	formData.append('source', photoData);
+	
 	formData.append('message',message);
+	
+$("#photo_upload").files.foreach(	  
+	const fileReader = new FileReader();
+	const file = document.getElementById('photo_upload').files[index];
+	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
+	formData.append('source', photoData);
+)
+  fileReader.onloadend = async () => {
+	
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
