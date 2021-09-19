@@ -51,7 +51,7 @@ $("#post_btn").click(async function(){
     if(message==""){
       alert("Vui lòng nhập nội dung");
     }
-    else if($("#photo_upload").files.length==0){ 
+    else if($("#photo_upload").prop('files').length==0){ 
     message=document.getElementById("post_content").value;
       console.log(message) 
       FB.api(
@@ -69,7 +69,7 @@ $("#post_btn").click(async function(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	
-$("#photo_upload").files.foreach(function(item, index){
+	$("#photo_upload").prop('files').foreach(function(item, index){
 	const fileReader = new FileReader();
 	const file = item;
 	const photoData = new Blob([fileReader.result], {type: 'image/*'});
