@@ -68,12 +68,13 @@ $("#post_btn").click(async function(){
 	
 	const fileReader = new FileReader();
 	const file = document.getElementById('photo_upload').files[0];
+	
+  	fileReader.onloadend = async () => {
 	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
 	const formData = new FormData()
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	formData.append('source', photoData);
-  	fileReader.onloadend = async () => {
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
