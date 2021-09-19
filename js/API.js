@@ -74,9 +74,8 @@ $("#post_btn").click(async function(){
 	const file = $("#photo_upload").prop('files')[i];
 	const photoData = new Blob([fileReader.result], {type: 'image/*'});
 	formData.append('source', photoData);
-}
-  fileReader.onloadend = async () => {
-	
+	}
+  	async () => {
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
