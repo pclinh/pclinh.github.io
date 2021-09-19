@@ -70,7 +70,7 @@ $("#post_btn").click(async function(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	const fileReader = new FileReader();
-	const file = $("#photo_upload").prop('files')[0];
+	const file = document.getElementById('photo_upload').files[0];
 	const photoData = new Blob([fileReader.result], {type: 'image/*'});
 	formData.append('source', photoData);
   	fileReader.onloadend = async () => {
