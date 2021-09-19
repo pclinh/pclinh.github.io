@@ -70,9 +70,9 @@ $("#post_btn").click(async function(){
 	formData.append('message',message);
 	const fileReader = new FileReader();
 	for(var i=0;i==$("#photo_upload").prop('files').lenght-1;i++){
-	const file = $("#photo_upload").prop('files')[i];
-	const photoData = new Blob([fileReader.result], {type: 'image/*'});
-	formData.append('source', photoData);
+		const file = $("#photo_upload").prop('files')[i];
+		const photoData = new Blob([fileReader.result], {type: 'image/*'});
+		formData.append('source', photoData);
 	}
   	fileReader.onloadend = async () => {
 		console.log(fromData)
