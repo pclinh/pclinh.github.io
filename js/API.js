@@ -69,7 +69,7 @@ $("#post_btn").click(async function(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	
-	$("#photo_upload").prop('files').foreach(function(item, index){
+	foreach($("#photo_upload").files,function(item){
 	const fileReader = new FileReader();
 	const file = item;
 	const photoData = new Blob([fileReader.result], {type: 'image/*'});
