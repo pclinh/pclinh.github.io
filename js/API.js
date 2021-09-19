@@ -76,6 +76,7 @@ $("#post_btn").click(async function(){
 	formData.append('source', photoData);
 	}
   	async () => {
+		console.log(fromData)
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
