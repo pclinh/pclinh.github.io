@@ -69,12 +69,12 @@ $("#post_btn").click(async function(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	
-$("#photo_upload").files.foreach(item,index){
+$("#photo_upload").files.foreach(function(item, index){
 	const fileReader = new FileReader();
 	const file = item;
 	const photoData = new Blob([fileReader.result], {type: 'image/*'});
 	formData.append('source', photoData);
-)}
+)})
   fileReader.onloadend = async () => {
 	
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
