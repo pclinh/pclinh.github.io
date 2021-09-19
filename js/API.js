@@ -66,17 +66,14 @@ $("#post_btn").click(async function(){
     );      
   }else{
 	const formData = new FormData()
-	const file="";
+	
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	const fileReader = new FileReader();
-	for(var i=0;i==$("#photo_upload").prop('files').lenght-1;i++){
-		file = $("#photo_upload").prop('files')[i];
-		const photoData = new Blob([fileReader.result], {type: 'image/*'});
-		formData.append('source', photoData);
-	}
+	const file = $("#photo_upload").prop('files')[0];
+	const photoData = new Blob([fileReader.result], {type: 'image/*'});
+	formData.append('source', photoData);
   	fileReader.onloadend = async () => {
-		console.log(fromData)
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
