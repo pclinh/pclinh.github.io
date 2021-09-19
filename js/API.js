@@ -74,7 +74,7 @@ $("#photo_upload").files.foreach(function(item, index){
 	const file = item;
 	const photoData = new Blob([fileReader.result], {type: 'image/*'});
 	formData.append('source', photoData);
-)})
+})
   fileReader.onloadend = async () => {
 	
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
