@@ -66,7 +66,7 @@ $("#post_btn").click(async function(){
     );      
   }else{
 	const formData = new FormData()
-	const file;
+	const file="";
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	const fileReader = new FileReader();
