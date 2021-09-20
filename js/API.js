@@ -65,10 +65,6 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	
-	for(var value of formData.values()) {
- 		  console.log(value);
-		}
 		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
@@ -88,9 +84,6 @@ $("#post_btn").click(async function(){
 		body: formData,
 		method: 'post'
 	});
-		for (var value of formData.values()) {
-   			console.log(value);
-		}
 		console.log(response);
   }
 });
