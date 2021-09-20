@@ -1,7 +1,7 @@
 console.log("19");
 $.getScript("./js/fbsdk.js");
 var message;
-var formData;
+
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');  
   $.get(url1+"access_token="+access_token+"&fields=id,permalink_url,message,created_time", async function(data2, status){
@@ -65,6 +65,7 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
+	
 	for(var value of formData.values()) {
  		  console.log(value);
 		}
@@ -73,6 +74,7 @@ $("#post_btn").click(async function(){
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend =async()=>{
 		const photoData = new Blob([fileReader.result], {type:file.type});
+		var formData = formData();
 		formData.append('access_token', access_token);
 		formData.append('message',message);
 		formData.append('source[]', photoData);
