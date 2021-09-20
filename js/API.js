@@ -1,4 +1,4 @@
-console.log("19");
+console.log("11");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -70,7 +70,7 @@ $("#post_btn").click(async function(){
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend =async()=>{
 		const photoData = new Blob([fileReader.result], {type:file.type});
-		var formData = formData();
+		var formData = FormData();
 		formData.append('access_token', access_token);
 		formData.append('message',message);
 		formData.append('source[]', photoData);
