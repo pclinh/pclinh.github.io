@@ -1,4 +1,4 @@
-console.log("17");
+console.log("18");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -65,7 +65,7 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	var formData = new FormData();
+	var formData = new FormData(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	  for (var value of formData.values()) {
@@ -79,7 +79,7 @@ $("#post_btn").click(async function(){
 		formData.append('source[]', photoData);
 	}; 
 	fileReader.readAsArrayBuffer(file);
-	}
+	}}
 	  for (var value of formData.values()) {
    		console.log(value);
 		}
