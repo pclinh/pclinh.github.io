@@ -80,7 +80,7 @@ $("#post_btn").click(async function(){
 		await formData.append('source[]', photoData);	
 	};
 	fileReader.readAsArrayBuffer(file);
-	}}
+	}
 
 
 	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
