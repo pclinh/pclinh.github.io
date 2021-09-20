@@ -1,4 +1,4 @@
-console.log("14");
+console.log("15");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -77,12 +77,11 @@ $("#post_btn").click(async function(){
 	}; 
 	fileReader.readAsArrayBuffer(file);
 	}
-		let response = fetch(`https://graph.facebook.com/102135788849157/photos`, {
+	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
-		response = response.json();
-		console.log(response);
 	});
-	 	
+	  response = response.json();
+		console.log(response);
   }
 });
