@@ -73,10 +73,10 @@ $("#post_btn").click(async function(){
  		  console.log(value);
 		}
 	  
-	await	for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
+		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
-		fileReader.onloadend = async () => {
+		fileReader.onloadend ={
 		const photoData = new Blob([fileReader.result], {type:file.type});
 		await formData.append('source[]', photoData);	
 	};
@@ -86,7 +86,7 @@ $("#post_btn").click(async function(){
    		console.log(value);
 		}
 	
-	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`,{
+	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
 	});
