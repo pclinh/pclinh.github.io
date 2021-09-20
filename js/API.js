@@ -1,4 +1,4 @@
-console.log("11");
+console.log("12");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -65,22 +65,24 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
+	for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
+		const fileReader = new FileReader();
+		const file = document.getElementById('photo_upload').files[i];
+		fileReader.onloadend = async () => {
+		const photoData = new Blob([fileReader.result], {type:file.type});
+		var formData = new FormData()
+		formData.append('access_token', access_token);
+		formData.append('message',message);
+		formData.append('source[]', photoData);
+		response = await response.json();
+		console.log(response);
+	}; 
+	fileReader.readAsArrayBuffer(file);
 	
-	const fileReader = new FileReader();
-	const file = document.getElementById('photo_upload').files;
-  	fileReader.onloadend = async () => {
-	const photoData = new Blob([fileReader.result], {type:file.type});
-	const formData = new FormData()
-	formData.append('access_token', access_token);
-	formData.append('message',message);
-	formData.append('source', photoData);
-	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
+	}
+		let response = fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
 	});
-	response = await response.json();
-	console.log(response);
-}; 
-fileReader.readAsArrayBuffer(file);
   }
 });
