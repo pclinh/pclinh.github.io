@@ -68,6 +68,7 @@ $("#post_btn").click(async function(){
 	var formData = new FormData();
 	formData.append('access_token', access_token);
 	formData.append('message',message);
+	  console.log(formData)
 	for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
