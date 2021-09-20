@@ -81,7 +81,6 @@ $("#post_btn").click(async function(){
 		body: formData,
 		method: 'post'
 	});
-	  response = response.json();
 		console.log(response);
   }
 });
