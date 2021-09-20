@@ -69,13 +69,13 @@ $("#post_btn").click(async function(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	async () =>{
-	await ()=>{ for(var value of formData.values()) {
+	for(var value of formData.values()) {
  		  console.log(value);
 		}
-		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
+		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
-		fileReader.onloadend =async () => {
+		await fileReader.onloadend =async () => {
 		const photoData = new Blob([fileReader.result], {type:file.type});
 		await formData.append('source[]', photoData);
 	};
