@@ -65,9 +65,7 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	formData = new FormData();
-	formData.append('access_token', access_token);
-	formData.append('message',message);
+	
 	
 	for(var value of formData.values()) {
  		  console.log(value);
@@ -78,7 +76,9 @@ $("#post_btn").click(async function(){
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend =async()=>{
 		const photoData = new Blob([fileReader.result], {type:file.type});
-		await formData.append('source[]', photoData);
+		formData.append('access_token', access_token);
+		formData.append('message',message);
+		formData.append('source[]', photoData);
 			for (var value of formData.values()) {
    			console.log(value);
 		}
