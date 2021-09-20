@@ -73,7 +73,7 @@ $("#post_btn").click(async function(){
  		  console.log(value);
 		}
 	  
-		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
+	await	for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend = async () => {
