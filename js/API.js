@@ -1,4 +1,4 @@
-console.log("13");
+console.log("14");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -80,8 +80,9 @@ $("#post_btn").click(async function(){
 		let response = fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
-	});
-	 	response = await response.json();
+		response = response.json();
 		console.log(response);
+	});
+	 	
   }
 });
