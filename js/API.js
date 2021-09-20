@@ -1,4 +1,4 @@
-console.log("18");
+console.log("11");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -67,10 +67,9 @@ $("#post_btn").click(async function(){
   }else{
 	
 	const fileReader = new FileReader();
-	const file = document.getElementById('photo_upload').files[0];
-	
+	const file = document.getElementById('photo_upload').files;
   	fileReader.onloadend = async () => {
-	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
+	const photoData = new Blob([fileReader.result], {type:file.type});
 	const formData = new FormData()
 	formData.append('access_token', access_token);
 	formData.append('message',message);
