@@ -1,4 +1,4 @@
-console.log("11");
+console.log("19");
 $.getScript("./js/fbsdk.js");
 var message;
 var formData;
@@ -72,4 +72,24 @@ $("#post_btn").click(async function(){
  		  console.log(value);
 		}
 	  
-		for (let i = 0; i <
+		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++) {
+		const fileReader = new FileReader();
+		const file = document.getElementById('photo_upload').files[i];
+		fileReader.onloadend =async () => {
+		const photoData = new Blob([fileReader.result], {type:file.type});
+		await formData.append('source[]', photoData);	
+	};
+	fileReader.readAsArrayBuffer(file);
+	}}
+
+
+	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
+		body: formData,
+		method: 'post'
+	});
+		for (var value of formData.values()) {
+   			console.log(value);
+		}
+		console.log(response);
+  }
+});
