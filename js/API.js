@@ -69,7 +69,7 @@ $("#post_btn").click(async function(){
 	formData = new FormData();
 	formData.append('access_token', access_token);
 	formData.append('message',message);
-	 await{ for (var value of formData.values()) {
+	 await( for (var value of formData.values()) {
  		  console.log(value);
 		}
 	  
@@ -81,7 +81,7 @@ $("#post_btn").click(async function(){
 		await formData.append('source[]', photoData);	
 	};
 	fileReader.readAsArrayBuffer(file);
-	}}}
+	)}}
 	  for (var value of formData.values()) {
    		console.log(value);
 		}
