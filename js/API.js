@@ -65,7 +65,7 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	var formData = new FormData(){
+	var formData = new FormData();
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	  for (var value of formData.values()) {
@@ -76,10 +76,10 @@ $("#post_btn").click(async function(){
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend = async () => {
 		const photoData = new Blob([fileReader.result], {type:file.type});
-		formData.append('source[]', photoData);
-	}; 
+	};
+	formData.append('source[]', photoData);	
 	fileReader.readAsArrayBuffer(file);
-	}}
+	}
 	  for (var value of formData.values()) {
    		console.log(value);
 		}
