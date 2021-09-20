@@ -65,12 +65,9 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	
-	
 	for(var value of formData.values()) {
  		  console.log(value);
 		}
-	  async () =>{
 		for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
@@ -84,7 +81,7 @@ $("#post_btn").click(async function(){
 		}
 	};
 	fileReader.readAsArrayBuffer(file);
-	}}
+	}
 	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
