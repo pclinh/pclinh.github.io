@@ -65,11 +65,10 @@ $("#post_btn").click(async function(){
       }
     );      
   }else{
-	async () => {  
 	formData = new FormData();
 	formData.append('access_token', access_token);
 	formData.append('message',message);
-	 await( for (var value of formData.values()) {
+	for (var value of formData.values()) {
  		  console.log(value);
 		}
 	  
@@ -82,14 +81,15 @@ $("#post_btn").click(async function(){
 	};
 	fileReader.readAsArrayBuffer(file);
 	)}}
-	  for (var value of formData.values()) {
-   		console.log(value);
-		}
+	  
 	
 	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
 	});
+		for (var value of formData.values()) {
+   			console.log(value);
+		}
 		console.log(response);
   }
 });
