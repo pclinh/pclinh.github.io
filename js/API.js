@@ -77,7 +77,7 @@ $("#post_btn").click(async function(){
 	}; 
 	fileReader.readAsArrayBuffer(file);
 	}
-	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
+	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
 	});
