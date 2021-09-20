@@ -1,4 +1,4 @@
-console.log("15");
+console.log("16");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -77,6 +77,7 @@ $("#post_btn").click(async function(){
 	}; 
 	fileReader.readAsArrayBuffer(file);
 	}
+	  console.log(formData)
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
