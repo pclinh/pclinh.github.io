@@ -82,14 +82,15 @@ $("#post_btn").click(async function(){
 	fileReader.readAsArrayBuffer(file);
 		}
 	});
-	promiseA.then( (formData) =>let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
+	promiseA.then( (formData) => {let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
 	});
 	  for (var value of formData.values()){
    			console.log(value);
 		}
-		console.log(response); );
+		console.log(response); 
+		});
 	
 			  }
 });
