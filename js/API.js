@@ -89,10 +89,10 @@ $("#post_btn").click(async function () {
         }
       })
    
-    Promise.all([promise]).then(body => {
-      console.log(body)
+    Promise.all([promise]).then(photoData => {
+      formData.append('source[]', photoData);
       fetch("https://graph.facebook.com/102135788849157/photos", {
-        body,
+        body: formData,
         method: 'post'
       })
         .then(res => {
