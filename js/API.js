@@ -82,7 +82,6 @@ $("#post_btn").click(async function(){
 	fileReader.readAsArrayBuffer(file);
 		}
 	});
-	
 	promiseA.then(()=>{let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
@@ -91,5 +90,5 @@ $("#post_btn").click(async function(){
    			console.log(value);
 		}
 		console.log(response);
-  )}}
+			  })}
 });
