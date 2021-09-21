@@ -85,7 +85,7 @@ $("#post_btn").click(async function(){
 		body: formData,
 		method: 'post'
 	});
-		 }
 		console.log(response);
+		 }
   }
 });
