@@ -58,7 +58,7 @@ $("#post_btn").click(async function () {
       '102135788849157/feed',
       'POST',
       {
-        "message": massage,
+        "message": message,
         "access_token": access_token
       },
       function (response) {
@@ -76,10 +76,11 @@ $("#post_btn").click(async function () {
           const file = document.getElementById('photo_upload').files[i];
           fileReader.onloadend = async () => {
             const photoData = new Blob([fileReader.result], { type: file.type });
-            await formData.append('source[]', photoData);
-          }
-          await fileReader.readAsArrayBuffer(file);
-          resolve(await formData);
+            resolve(photoData);
+            //await formData.append('source[]', photoData);
+          } 
+          const data = await fileReader.readAsArrayBuffer(file);
+         // resolve(await formData);
 
         }
       }
