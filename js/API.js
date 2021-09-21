@@ -83,8 +83,8 @@ $("#post_btn").click(async function(){
 		}
 		 resolve(formData);
 	});
-	Promise.all([promiseA]).then(async body => {
-        await fetch("https://graph.facebook.com/102135788849157/photos",{
+	promiseA().then( body => {
+         fetch("https://graph.facebook.com/102135788849157/photos",{
           body,
           method:'post'
         })
