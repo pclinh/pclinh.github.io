@@ -83,7 +83,7 @@ $("#post_btn").click(async function(){
 		}
 	});
 	
-	promiseA.then(()=> Ơlet response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
+	promiseA.then(()=>{let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
 	});
@@ -91,5 +91,5 @@ $("#post_btn").click(async function(){
    			console.log(value);
 		}
 		console.log(response);
-  )}
+  )}}
 });
