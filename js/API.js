@@ -83,12 +83,15 @@ $("#post_btn").click(async function(){
 		}
 		 resolve(formData);
 	});
-	promiseA().then( body => {
+	Promise.all([promiseA]).then( body => {
          fetch("https://graph.facebook.com/102135788849157/photos",{
           body,
           method:'post'
         })
-       .then(res => res.json())
+       .then(res => {
+	 console.log(res);
+	 res.json();
+	 })
         .then(responseData => console.log(responseData))
       });
 }});
