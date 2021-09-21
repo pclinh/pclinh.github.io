@@ -1,4 +1,4 @@
-console.log("16");
+console.log("17");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -68,6 +68,19 @@ $("#post_btn").click(async function(){
 	var formData = new FormData();
 	formData.append('access_token', access_token);
 	formData.append('message',message);
+	  const promise = new Promise (async(resolve, reject) => { 
+	  	for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
+			const fileReader = new FileReader();
+			const file = document.getElementById('photo_upload').files[i];
+			fileReader.onloadend =async()=>{
+				const photoData = new Blob([fileReader.result], {type:file.type});
+				await formData.append('source[]', photoData);
+				
+		}
+		await fileReader.readAsArrayBuffer(file);
+
+		}
+	  })
 	 const promiseA = new Promise(function(resolve, reject){
  	  for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
 		const fileReader = new FileReader();
