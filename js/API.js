@@ -87,21 +87,7 @@ $("#post_btn").click(async function () {
           console.log(err)
         }
       })
-    const promiseA = new Promise(function (resolve, reject) {
-      for (let i = 0; i < $("#photo_upload").prop('files').length; i++) {
-        const fileReader = new FileReader();
-        const file = document.getElementById('photo_upload').files[i];
-        fileReader.onloadend = async () => {
-          const photoData = new Blob([fileReader.result], { type: file.type });
-          await formData.append('source[]', photoData);
-          for (var value of formData.values()) {
-            console.log(value);
-          }
-        };
-        fileReader.readAsArrayBuffer(file);
-      }
-      resolve(formData);
-    });
+
     Promise.all([promise]).then(body => {
       console.log(body)
       fetch("https://graph.facebook.com/102135788849157/photos", {
