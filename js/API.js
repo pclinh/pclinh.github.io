@@ -87,7 +87,7 @@ $("#post_btn").click(async function(){
 		body: formData,
 		method: 'post'
 	});
-		console.log(response); 
+		console.log("123"); 
 		for (var value of formData.values()) {
    			console.log(value);
 		}		      
