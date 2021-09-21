@@ -81,7 +81,7 @@ $("#post_btn").click(async function(){
 		await fileReader.readAsArrayBuffer(file);
 		resolve(formData);
 		}
-		}cathc(err) {
+		cathc(err) {
 			console.log(err)
 		}
 	  })
