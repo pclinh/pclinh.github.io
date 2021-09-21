@@ -69,7 +69,7 @@ $("#post_btn").click(async function(){
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	  
-	async for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
+	async()=>{ for (let i = 0; i < $("#photo_upload").prop('files').length ; i++){
 		const fileReader = new FileReader();
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend =()=>{
@@ -80,7 +80,7 @@ $("#post_btn").click(async function(){
 		}
 	};
 	fileReader.readAsArrayBuffer(file);
-	}
+	}}
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
