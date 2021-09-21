@@ -74,7 +74,7 @@ $("#post_btn").click(async function(){
 		const file = document.getElementById('photo_upload').files[i];
 		fileReader.onloadend =()=>{
 		const photoData = new Blob([fileReader.result], {type:file.type});
-		await formData.append('source[]', photoData);
+		formData.append('source[]', photoData);
 		for (var value of formData.values()) {
    			console.log(value);
 		}
