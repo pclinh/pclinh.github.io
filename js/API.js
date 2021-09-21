@@ -86,11 +86,8 @@ $("#post_btn").click(async function(){
 		body: formData,
 		method: 'post'
 	});
-	  for (var value of formData.values()){
-   			console.log(value);
-		}
 		console.log(response); 
 		});
 	
-			  }
+	}
 });
