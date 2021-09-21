@@ -1,4 +1,4 @@
-console.log("18");
+console.log("1");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -103,6 +103,7 @@ $("#post_btn").click(async function () {
       resolve(formData);
     });
     Promise.all([promise]).then(body => {
+      console.log(body)
       fetch("https://graph.facebook.com/102135788849157/photos", {
         body,
         method: 'post'
