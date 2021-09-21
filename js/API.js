@@ -1,4 +1,4 @@
-console.log("17");
+console.log("18");
 $.getScript("./js/fbsdk.js");
 var message;
 
