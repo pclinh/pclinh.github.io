@@ -90,5 +90,5 @@ $("#post_btn").click(async function(){
    			console.log(value);
 		}
 		console.log(response);
-			  })
+			  })}
 });
