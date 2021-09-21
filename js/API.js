@@ -91,12 +91,17 @@ $("#post_btn").click(async function () {
    
     Promise.all([promise]).then(photoData => {
       formData.append('source[]', photoData);
+      console.log('FormDataFormDataFormDataFormDataFormDataFormDataFormDataFormData');
+      for (var value of formData.values()) {
+         console.log(value);
+      }
+      
+      console.log('FormDataFormDataFormDataFormDataFormDataFormDataFormDataFormData');
       fetch("https://graph.facebook.com/102135788849157/photos", {
         body: formData,
         method: 'post'
       })
         .then(res => {
-          console.log(res);
           res.json();
         })
         .then(responseData => console.log(responseData))
