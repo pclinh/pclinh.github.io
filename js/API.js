@@ -80,11 +80,12 @@ $("#post_btn").click(async function () {
 
           }
           await fileReader.readAsArrayBuffer(file);
+          console.log("FormData:",  formData);
           resolve(formData);
         }
       }
         catch(err) {
-          console.log(err)
+         reject(err);
         }
       })
     const promiseA = new Promise(function (resolve, reject) {
