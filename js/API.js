@@ -91,7 +91,7 @@ $("#post_btn").click(async function () {
    
     Promise.all([promise]).then(photoData => {
       console.log(photoData[0]);
-      formData.append('source[]', photoData[0]);
+      formData.append('source', photoData[0]);
       console.log('FormDataFormDataFormDataFormDataFormDataFormDataFormDataFormData');
       for (var value of formData.values()) {
          console.log(value);
