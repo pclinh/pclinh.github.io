@@ -1,4 +1,4 @@
-console.log("12");
+console.log("13");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -82,7 +82,7 @@ $("#post_btn").click(async function(){
 	fileReader.readAsArrayBuffer(file);
 		}
 	});
-	promiseA.then(()=>{let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
+	let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
 	});
@@ -90,5 +90,5 @@ $("#post_btn").click(async function(){
    			console.log(value);
 		}
 		console.log(response);
-			  })}
+			  }
 });
