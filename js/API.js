@@ -86,11 +86,7 @@ $("#post_btn").click(async function(){
 	promiseA.then((formData) => {let response = fetch(`https://graph.facebook.com/102135788849157/photos`,{
 		body: formData,
 		method: 'post'
-	});
-		console.log("123"); 
-		for (var value of formData.values()) {
-   			console.log(value);
-		}		      
+	});	      
 		});
 	
 	}
