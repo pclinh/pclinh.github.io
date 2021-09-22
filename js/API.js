@@ -1,4 +1,4 @@
-console.log("15")
+console.log("16")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -37,14 +37,10 @@ $("#get_btn").click(function get_clicked(){
       }); 
       await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         rurl = url + value.id + "?access_token=" + access_token;
-        $.ajax({
-          url: rurl,
-          method: 'DELETE',
-          success: function (result) {
-            alert("Delete succeed");
-            get_clicked();
-          }
-        });
+        FB.api(
+    "/102135788849157/feed",
+    "DELETE",
+        )
       })
     });
   }}
