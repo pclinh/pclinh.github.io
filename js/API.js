@@ -15,7 +15,7 @@ $("#get_btn").click(function get_clicked(){
        $.each(response.data,function (index, value){
       var limitW = 10;
       //Số ký tự của từ
-      const showtxt = value.message;
+      var showtxt = value.message;
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
       var txtEnd = showtxt.slice(txtStart.length);
