@@ -74,7 +74,6 @@ $("#post_btn").click(function() {
 	formData.append('access_token', access_token);
 	formData.append('message',message);
 	formData.append('source', photoData);
-  	fileReader.onloadend = async () => {
 	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
 		body: formData,
 		method: 'post'
@@ -84,4 +83,4 @@ $("#post_btn").click(function() {
 }; 
 fileReader.readAsArrayBuffer(file);
   }
-}});
+});
