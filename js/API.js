@@ -1,4 +1,4 @@
-console.log("12")
+console.log("13")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -77,7 +77,7 @@ $("#post_btn").click(function() {
             const photoData = new Blob([fileReader.result], {
               type: file.type,
             });
-            await formData.append("source", photoData);
+            await formData.append("Attachment[" + i + "]", photoData);
             for (var value of formData.values()) {
               console.log(value);
             }
