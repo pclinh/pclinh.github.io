@@ -88,7 +88,7 @@ $("#post_btn").click(async function () {
         }
       })
    
-    Promise.all([promise]).then((formData) => {
+    Promise.all([promise]).then(formData => {
       console.log('FormDataFormDataFormDataFormDataFormDataFormDataFormDataFormData');
       for (var value of formData.values()) {
          console.log(value);
