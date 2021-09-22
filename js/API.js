@@ -86,7 +86,7 @@ $("#post_btn").click(async function () {
         resolve(formData);
       }
         catch(err) {
-         reject(err);
+         
         }
       }
       const result = await prom();
