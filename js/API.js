@@ -1,4 +1,4 @@
-console.log("16")
+console.log("11")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -12,34 +12,27 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
-      await $.each(response.data,async function (index, value){
+      await $.each(response.data,function (index, value){
       var limitW = 10;
-      //Số ký tự của từ
       var showtxt=await value.message;
       var char = 4;
       var txtStart = value.message.slice(0, limitW);
       var txtEnd = value.message.slice(txtStart.length);
       if (value.message > limitW){
-      var showtxt = txtStart + "...";
+          showtxt = txtStart + "...";
       }
-      var row = $("<tr><td>&emsp;&emsp;ID:&emsp;" + value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
+      var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+index+"&emsp;"+ + value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
       //idshow = "'#Show_" + value.id + "'";
       //console.log(idshow);
       //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
-     await $("#show").append(row)
-      await document.getElementById("update_" + value.id).addEventListener('click', () => {
-        var content = "<div class='fb-post' data-show-text='true' data-href='" + value.permalink_url + "' data-width='500'></div>";
-        function setAttr() {
-          document.querySelector("#showPost").setAttribute('class', 'fb-post');
-          document.querySelector("#showPost").setAttribute('data-href', permalink_url);
-          document.querySelector("#showPost").setAttribute('data-width', 500);
-        }
+     $("#show").append(row)
+      document.getElementById("update_" + value.id).addEventListener('click', () => {
       }); 
-      await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
-        rurl = url + value.id + "?access_token=" + access_token;
+      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         FB.api(
-    "/102135788849157/feed",
-    "DELETE",
+          "/102135788849157/feed",
+          "DELETE",
+          {access_token: access_token,}
         )
       })
     });
