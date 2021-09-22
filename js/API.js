@@ -89,8 +89,8 @@ $("#post_btn").click(async function () {
          reject(err);
         }
       }
-      await prom;
-      (resolve)=>{
+      const result = await prom();
+      (result)=>{
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
