@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -12,12 +12,44 @@ $("#get_btn").click(function get_clicked(){
     },
     async function (response){
       if (response && !response.error){
-        alert("succeed")
-        console.log(response)
-      }
-    }
-   );
-})
+ await $.each(response.data, function (index, value) {
+      var limitW = 10;
+      //Số ký tự của từ
+      var char = 4;
+      var showtxt = value.message;
+      var txtStart = showtxt.slice(0, limitW);
+      console.log(txtStart);
+      var txtEnd = showtxt.slice(txtStart.length);
+      if (showtxt > limitW)
+      showtxt = txtStart + "...";
+      var row = $("<tr><td>&emsp;&emsp;ID:&emsp;" + value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
+      idshow = "'#Show_" + value.id + "'";
+      console.log(idshow);
+      var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
+      $("#show").append(row)
+      document.getElementById("update_" + value.id).addEventListener('click', () => {
+        var content = "<div class='fb-post' data-show-text='true' data-href='" + value.permalink_url + "' data-width='500'></div>";
+        function setAttr() {
+          document.querySelector("#showPost").setAttribute('class', 'fb-post');
+          document.querySelector("#showPost").setAttribute('data-href', permalink_url);
+          document.querySelector("#showPost").setAttribute('data-width', 500);
+        }
+        window.location.href = './show.html';
+      }); 
+      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
+        rurl = url + value.id + "?access_token=" + access_token;
+        $.ajax({
+          url: rurl,
+          method: 'DELETE',
+          success: function (result) {
+            alert("Delete succeed");
+            get_clicked();
+          }
+        });
+      })
+    });
+  }}
+  )})
 
 $("#post_btn").click(function() {
   console.log(access_token);
