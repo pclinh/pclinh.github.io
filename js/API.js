@@ -90,7 +90,7 @@ $("#post_btn").click(async function () {
          reject(err);
         }
       })
-      .then(function(formData){
+      .then(function(resolve){
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
