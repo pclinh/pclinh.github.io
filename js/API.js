@@ -65,22 +65,33 @@ $("#post_btn").click(function() {
       }
     );
   } else {
-    	const fileReader = new FileReader();
-	const file = document.getElementById('photo_upload').files[0];
-
-  	fileReader.onloadend = async () => {
-	const photoData = new Blob([fileReader.result], {type: 'image/jpg'});
-	const formData = new FormData()
-	formData.append('access_token', access_token);
-	formData.append('message',message);
-	formData.append('source', photoData);
-	let response = await fetch(`https://graph.facebook.com/102135788849157/photos`, {
-		body: formData,
-		method: 'post'
-	});
-	response = await response.json();
-	console.log(response);
-}; 
-fileReader.readAsArrayBuffer(file);
-  }
+    	var formData = new FormData();
+    formData.append("access_token", access_token);
+    formData.append("message", message);
+    const prom = async () => {
+      try {
+        for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
+          const fileReader = new FileReader();
+          const file = document.getElementById("photo_upload").files[i];
+          fileReader.onloadend = async () => {
+            const photoData = new Blob([fileReader.result], {
+              type: file.type,
+            });
+            await formData.append("source", photoData);
+            for (var value of formData.values()) {
+              console.log(value);
+            }
+          };
+          fileReader.readAsArrayBuffer(file);
+          //resolve(photoData);
+        }
+        return formData;
+      } catch (err){}
+    };
+    const data= prom();
+      fetch("https://graph.facebook.com/102135788849157/photos",{
+        body: formData,
+        method: "post",
+      });
+    };
 });
