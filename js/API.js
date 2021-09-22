@@ -1,4 +1,4 @@
-console.log("1.4");
+console.log("1.5");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -80,10 +80,10 @@ $("#post_btn").click(async function () {
             for (var value of formData.values()) {
                    console.log(value);
             }
+            resolve(formData);
           } 
            fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
-            resolve(formData);
         }
       }
         catch(err) {
@@ -91,7 +91,7 @@ $("#post_btn").click(async function () {
         }
       })
    
-    await Promise.all([promise]).then(formData => {
+    Promise.all([promise]).then(formData => {
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
