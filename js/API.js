@@ -1,4 +1,4 @@
-console.log("16")
+console.log("17")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -12,7 +12,8 @@ $("#get_btn").click(function get_clicked(){
     },
     async function (response){
       if (response && !response.error){
-    await $.each(data.data, function (index, value) {
+        alert("succeed")
+    await $.each(data, function (index, value) {
       var limitW = 10;
       //Số ký tự của từ
       var char = 4;
