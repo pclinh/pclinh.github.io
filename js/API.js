@@ -1,4 +1,4 @@
-console.log("1.1");
+console.log("1.2");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -76,12 +76,11 @@ $("#post_btn").click(async function () {
           const file = document.getElementById('photo_upload').files[i];
           fileReader.onloadend = async () => {
             const photoData = new Blob([fileReader.result], { type: file.type });
-            await formData.append('source[]', photoData);
+            await formData.append('source[]',photoData);
           } 
           await fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
           resolve(formData);
-
         }
       }
         catch(err) {
@@ -89,7 +88,7 @@ $("#post_btn").click(async function () {
         }
       })
    
-    Promise.all([promise]).then(fromData => {
+    Promise.all([promise]).then((formData) => {
       console.log('FormDataFormDataFormDataFormDataFormDataFormDataFormDataFormData');
       for (var value of formData.values()) {
          console.log(value);
