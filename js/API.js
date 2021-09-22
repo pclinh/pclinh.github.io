@@ -91,7 +91,7 @@ $("#post_btn").click(async function () {
         }
       })
    
-    promise.then(function(formData)=> {
+    promise.then(function(formData)=>{
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
@@ -105,5 +105,4 @@ $("#post_btn").click(async function () {
         })
         .then(responseData => console.log(responseData))
     });
-  }
 }); 
