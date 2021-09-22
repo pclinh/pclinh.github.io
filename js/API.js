@@ -1,4 +1,4 @@
-console.log("13")
+console.log("14")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -15,10 +15,9 @@ $("#get_btn").click(function get_clicked(){
  await $.each(response.data,async function (index, value) {
       var limitW = 10;
       //Số ký tự của từ
-      var showtxt = await value.message;
+     await var showtxt = value.message;
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
-      console.log(txtStart);
       var txtEnd = showtxt.slice(txtStart.length);
       if (showtxt > limitW)
       showtxt = txtStart + "...";
