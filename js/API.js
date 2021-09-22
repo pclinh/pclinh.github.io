@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -12,7 +12,7 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
-      await $.each(response.data,function (index, value){
+      await $.each(response.data,async function (index, value){
       var limitW = 10;
       var showtxt=value.message;
       var char = 4;
@@ -25,14 +25,15 @@ $("#get_btn").click(function get_clicked(){
       //idshow = "'#Show_" + value.id + "'";
       //console.log(idshow);
       //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
-     $("#show").append(row)
+    await $("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () => {
       }); 
-      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
+     await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         FB.api(
           "/102135788849157/feed",
           "DELETE",
-          {access_token: access_token,}
+          {access_token: access_token,
+          id:value.id}
         )
       })
     });
