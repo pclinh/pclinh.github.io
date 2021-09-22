@@ -91,7 +91,7 @@ $("#post_btn").click(async function () {
         }
       })
    
-    Promise.all([promise]).then(formData => {
+    await Promise.all([promise]).then(formData => {
       for (var value of formData.values()) {
          console.log(value);
       }
