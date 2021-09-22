@@ -77,7 +77,7 @@ $("#post_btn").click(async function() {
             const photoData = new Blob([fileReader.result], {
               type: file.type,
             });
-            formData.append("source[]", photoData);
+            await formData.append("source[]", photoData);
             for (var value of formData.values()) {
               console.log(value);
             }
@@ -88,7 +88,7 @@ $("#post_btn").click(async function() {
         return formData;
       } catch (err) {}
     };
-    const result=await prom();
+    const result= await prom();
       fetch("https://graph.facebook.com/102135788849157/photos", {
         body: result,
         method: "post",
