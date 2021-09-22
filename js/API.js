@@ -85,7 +85,7 @@ $("#post_btn").click(async function() {
           fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
         }
-        return formData;
+        await return formData;
       } catch (err) {}
     };
     const result= await prom();
