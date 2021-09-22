@@ -1,4 +1,4 @@
-console.log("17")
+console.log("18")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -77,7 +77,7 @@ $("#post_btn").click(function() {
             const photoData = new Blob([fileReader.result], {
               type: file.type,
             });
-            await formData.append("source[]", photoData);
+            await formData.append("source["+i+"]", photoData);
             for (var value of formData.values()) {
               console.log(value);
             }
@@ -85,7 +85,7 @@ $("#post_btn").click(function() {
           fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
         }
-        return await formData;
+        return formData;
       } catch (err){}
     };
     const data= prom();
