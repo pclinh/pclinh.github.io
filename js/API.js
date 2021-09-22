@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -29,12 +29,15 @@ $("#get_btn").click(function get_clicked(){
       document.getElementById("update_" + value.id).addEventListener('click', () => {
       }); 
      await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
-        FB.api(
-          "/102135788849157/feed",
-          "DELETE",
-          {access_token : access_token,
-          id : value.id}
-        )
+        var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
+       $.ajax({
+          url:url,
+          method: 'DELETE',
+          success: function (result) {
+            alert("Delete succeed");
+            get_clicked();
+          }
+        });
       })
     });
   }}
