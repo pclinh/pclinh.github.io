@@ -8,7 +8,7 @@ $("#get_btn").click(function get_clicked(){
     "/102135788849157/feed",
     "GET",
     {access_token: access_token,
-     fields:id,permalink_url,message,created_time,  
+     fields:"id,permalink_url,message,created_time",  
     },
     function (response) {
       if (response && !response.error) {
