@@ -70,7 +70,7 @@ $("#post_btn").click(async function () {
     formData.append('access_token', access_token);
     formData.append('message', message);
     const promise = new Promise(async (resolve, reject) =>{
-      await try {
+      try {
         for (let i = 0; i < $("#photo_upload").prop('files').length; i++) {
           const fileReader = new FileReader();
           const file = document.getElementById('photo_upload').files[i];
@@ -91,7 +91,7 @@ $("#post_btn").click(async function () {
         }
       })
    
-    Promise.all([promise]).then(function(formData)=> {
+    promise.then(function(formData)=> {
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
