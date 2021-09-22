@@ -1,4 +1,4 @@
-console.log("1.2")
+console.log("1.3")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -90,7 +90,7 @@ $("#post_btn").click(async function() {
     };
     const result= await prom();
       fetch("https://graph.facebook.com/102135788849157/photos", {
-        body: result,
+        body: formData,
         method: "post",
       });
     };
