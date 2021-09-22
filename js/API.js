@@ -12,7 +12,7 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
-      await $.each(response.data,function (index, value){
+      $.each(response.data,async function (index, value){
       var limitW = 10;
       //Số ký tự của từ
       var showtxt=value.message
@@ -26,7 +26,7 @@ $("#get_btn").click(function get_clicked(){
       //idshow = "'#Show_" + value.id + "'";
       //console.log(idshow);
       //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
-      $("#show").append(row)
+      await$("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () => {
         var content = "<div class='fb-post' data-show-text='true' data-href='" + value.permalink_url + "' data-width='500'></div>";
         function setAttr() {
