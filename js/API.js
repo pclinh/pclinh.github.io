@@ -18,7 +18,7 @@ $("#get_btn").click(function get_clicked(){
       var char = 4;
       var txtStart = value.message.slice(0, limitW);
       var txtEnd = value.message.slice(txtStart.length);
-      if (value.message > limitW){
+      if (value.message < limitW){
           showtxt = txtStart + "...";
       }
       var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+index+"&emsp;"+ + value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
