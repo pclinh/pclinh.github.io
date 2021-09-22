@@ -1,4 +1,4 @@
-console.log("15")
+console.log("16")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -10,10 +10,9 @@ $("#get_btn").click(function get_clicked(){
     {access_token: access_token,
      fields:"id,permalink_url,message,created_time",  
     },
-    function (response) {
+    function (data, response) {
       if (response && !response.error) {
-       async function data(data2, status) {
-    await $.each(data2.data, function (index, value) {
+    await $.each(data.data, function (index, value) {
       var limitW = 10;
       //Số ký tự của từ
       var char = 4;
@@ -49,7 +48,7 @@ $("#get_btn").click(function get_clicked(){
         });
       })
     });
-  }}});
+  }});
 })
 $("#post_btn").click(function() {
   console.log(access_token);
