@@ -12,11 +12,11 @@ $("#get_btn").click(function get_clicked(){
     },
     async function (response){
       if (response && !response.error){
- await $.each(response.data, function (index, value) {
+ await $.each(response.data,async function (index, value) {
       var limitW = 10;
       //Số ký tự của từ
+      var showtxt = await value.message;
       var char = 4;
-      var showtxt = value.message;
       var txtStart = showtxt.slice(0, limitW);
       console.log(txtStart);
       var txtEnd = showtxt.slice(txtStart.length);
