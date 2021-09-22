@@ -10,14 +10,14 @@ $("#get_btn").click(function get_clicked(){
     {access_token: access_token,
      fields:"id,permalink_url,message,created_time",  
     },
-    async function (response){
+    function (response){
       if (response && !response.error){
- await $.each(response.data,async function (index, value){
+       $.each(response.data,function (index, value){
       var limitW = 10;
       //Số ký tự của từ
       const showtxt = value.message;
       var char = 4;
-      var txtStart = await showtxt.slice(0, limitW);
+      var txtStart = showtxt.slice(0, limitW);
       var txtEnd = showtxt.slice(txtStart.length);
       if (showtxt > limitW)
       showtxt = txtStart + "...";
