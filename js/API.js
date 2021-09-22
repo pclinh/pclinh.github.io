@@ -77,6 +77,9 @@ $("#post_btn").click(async function () {
           fileReader.onloadend = async () => {
             const photoData = new Blob([fileReader.result], { type: file.type });
             await formData.append('source[]',photoData);
+            for (var value of formData.values()) {
+                   console.log(value);
+            }
           } 
            fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
@@ -89,7 +92,6 @@ $("#post_btn").click(async function () {
       })
    
     Promise.all([promise]).then(formData => {
-      console.log('FormDataFormDataFormDataFormDataFormDataFormDataFormDataFormData');
       for (var value of formData.values()) {
          console.log(value);
       }
