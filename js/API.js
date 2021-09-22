@@ -12,7 +12,7 @@ $("#get_btn").click(function get_clicked(){
     },
     function (response) {
       if (response && !response.error) {
-       async function (data2, status) {
+       async function data(data2, status) {
     await $.each(data2.data, function (index, value) {
       var limitW = 10;
       //Số ký tự của từ
