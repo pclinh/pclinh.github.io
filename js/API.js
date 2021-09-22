@@ -1,4 +1,4 @@
-console.log("1.1");
+console.log("1.2");
 $.getScript("./js/fbsdk.js");
 var message;
 
