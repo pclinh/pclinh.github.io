@@ -69,7 +69,7 @@ $("#post_btn").click(async function () {
     var formData = new FormData();
     formData.append('access_token', access_token);
     formData.append('message', message);
-    const promise = new Promise(async (resolve, reject) =>{
+    const prom = new Promise(async (resolve, reject) =>{
       try {
         for (let i = 0; i < $("#photo_upload").prop('files').length; i++) {
           const fileReader = new FileReader();
@@ -90,7 +90,7 @@ $("#post_btn").click(async function () {
          reject(err);
         }
       })
-      .then(function(resolve){
+      prom.then(function(resolve){
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
@@ -102,4 +102,4 @@ $("#post_btn").click(async function () {
     });
   }
 }); 
-console.log("1.3");
+console.log("1.4");
