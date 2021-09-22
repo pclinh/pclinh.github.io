@@ -16,8 +16,8 @@ $("#get_btn").click(function get_clicked(){
       var limitW = 10;
       var showtxt= await value.message;
       var char = 4;
-      var txtStart = value.message.slice(0, limitW);
-      var txtEnd = value.message.slice(txtStart.length);
+      var txtStart = showtxt.slice(0, limitW);
+      var txtEnd = showtxt.slice(txtStart.length);
       if (value.message < limitW){
           showtxt = txtStart + "...";
       }
