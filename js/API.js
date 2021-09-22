@@ -11,9 +11,10 @@ $("#get_btn").click(function get_clicked(){
      fields:"id,permalink_url,message,created_time",  
     },
     async function (response)
-      if (response && !response.error)
+      if (response && !response.error){
         alert("succeed")
         console.log(response)
+      }
    );
 })
 
