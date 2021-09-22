@@ -1,4 +1,3 @@
-
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -99,8 +98,7 @@ $("#post_btn").click(async function () {
       fetch("https://graph.facebook.com/102135788849157/photos", {
         body: formData,
         method: 'post'
-      }
-    });
+      })
+    };
   }
 }); 
-console.log("1.5");
