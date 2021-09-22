@@ -10,7 +10,7 @@ $("#get_btn").click(function get_clicked(){
     {access_token: access_token,
      fields:"id,permalink_url,message,created_time",  
     },
-    function (data, response) {
+    async function (data, response) {
       if (response && !response.error) {
     await $.each(data.data, function (index, value) {
       var limitW = 10;
