@@ -69,7 +69,7 @@ $("#post_btn").click(async function () {
     var formData = new FormData();
     formData.append('access_token', access_token);
     formData.append('message', message);
-    const prom = new Promise(async (resolve, reject) =>{
+    const await prom = Promise(async (resolve, reject) =>{
       try {
         for (let i = 0; i < $("#photo_upload").prop('files').length; i++) {
           const fileReader = new FileReader();
