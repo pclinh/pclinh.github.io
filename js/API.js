@@ -69,7 +69,7 @@ $("#post_btn").click(async function () {
     var formData = new FormData();
     formData.append('access_token', access_token);
     formData.append('message', message);
-    const promise = await new Promise(async (resolve, reject) =>{
+    const promise = new Promise(async (resolve, reject) =>{
       try {
         for (let i = 0; i < $("#photo_upload").prop('files').length; i++) {
           const fileReader = new FileReader();
@@ -84,13 +84,7 @@ $("#post_btn").click(async function () {
            fileReader.readAsArrayBuffer(file);
            //resolve(photoData);
         }
-        resolve(formData);
-      }
-        catch(err) {
-         reject(err);
-        }
-      })
-    await  promise.then(function(formData){
+        promise.then(function(formData){
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
@@ -100,5 +94,12 @@ $("#post_btn").click(async function () {
         method: 'post'
       })
     });
+        resolve(formData);
+      }
+        catch(err) {
+         reject(err);
+        }
+      })
+      
   }
 }); 
