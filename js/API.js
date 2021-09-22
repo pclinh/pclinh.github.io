@@ -14,7 +14,7 @@ $("#get_btn").click(function get_clicked(){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
       var limitW = 10;
-      var showtxt=value.message;
+      var showtxt= await value.message;
       var char = 4;
       var txtStart = value.message.slice(0, limitW);
       var txtEnd = value.message.slice(txtStart.length);
