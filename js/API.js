@@ -82,9 +82,9 @@ $("#post_btn").click(async function () {
             }  
           } 
            fileReader.readAsArrayBuffer(file);
-           resolve(fromData);
-          //resolve(photoData);
+           //resolve(photoData);
         }
+        resolve(formData);
       }
         catch(err) {
          reject(err);
