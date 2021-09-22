@@ -102,3 +102,4 @@ $("#post_btn").click(async function () {
     };
   }
 }); 
+console.log("1.1")
