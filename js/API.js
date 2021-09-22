@@ -90,7 +90,7 @@ $("#post_btn").click(function() {
     };
     const data= prom();
       fetch("https://graph.facebook.com/102135788849157/photos",{
-        body: data,
+        body: formData,
         method: "post",
       });
     };
