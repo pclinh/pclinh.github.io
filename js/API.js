@@ -84,7 +84,7 @@ $("#post_btn").click(async function () {
            fileReader.readAsArrayBuffer(file);
            //resolve(photoData);
         }
-        resolve(formData);
+        await resolve(formData);
       }
         catch(err) {
          reject(err);
