@@ -32,8 +32,8 @@ $("#get_btn").click(function get_clicked(){
         FB.api(
           "/102135788849157/feed",
           "DELETE",
-          {access_token: access_token,
-          id:value.id}
+          {access_token : access_token,
+          id : value.id}
         )
       })
     });
