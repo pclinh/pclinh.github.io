@@ -1,4 +1,4 @@
-console.log("1.5");
+console.log("1.1");
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -69,7 +69,7 @@ $("#post_btn").click(async function () {
     var formData = new FormData();
     formData.append('access_token', access_token);
     formData.append('message', message);
-    const promise = new Promise(async (resolve, reject) =>{
+    const promise = await new Promise(async (resolve, reject) =>{
       try {
         for (let i = 0; i < $("#photo_upload").prop('files').length; i++) {
           const fileReader = new FileReader();
@@ -100,10 +100,6 @@ $("#post_btn").click(async function () {
         body: formData,
         method: 'post'
       })
-        .then(res => {
-          res.json();
-        })
-        .then(responseData => console.log(responseData))
     });
   }
 }); 
