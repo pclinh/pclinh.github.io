@@ -77,7 +77,7 @@ $("#post_btn").click(function() {
             const photoData = new Blob([fileReader.result], {
               type: file.type,
             });
-            await formData.append("source", photoData);
+            await formData.append("source"+i, photoData);
             for (var value of formData.values()) {
               console.log(value);
             }
