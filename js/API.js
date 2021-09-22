@@ -1,4 +1,4 @@
-console.log("1.2");
+
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -102,3 +102,4 @@ $("#post_btn").click(async function () {
     });
   }
 }); 
+console.log("1.3");
