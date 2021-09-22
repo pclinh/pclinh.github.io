@@ -85,7 +85,12 @@ $("#post_btn").click(async function () {
            //resolve(photoData);
         }
         resolve(formData);
-          promise.then(function(formData){
+      }
+        catch(err) {
+         reject(err);
+        }
+      })
+      .then(function(formData){
       console.log("123")
       for (var value of formData.values()) {
          console.log(value);
@@ -95,11 +100,5 @@ $("#post_btn").click(async function () {
         method: 'post'
       })
     });
-      }
-        catch(err) {
-         reject(err);
-        }
-      })
-      
   }
 }); 
