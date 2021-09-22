@@ -1,4 +1,4 @@
-console.log("14")
+console.log("15")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -12,10 +12,10 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
-      $.each(response.data,async function (index, value){
+      await $.each(response.data,async function (index, value){
       var limitW = 10;
       //Số ký tự của từ
-      var showtxt=value.message
+      var showtxt=await value.message;
       var char = 4;
       var txtStart = value.message.slice(0, limitW);
       var txtEnd = value.message.slice(txtStart.length);
@@ -26,8 +26,8 @@ $("#get_btn").click(function get_clicked(){
       //idshow = "'#Show_" + value.id + "'";
       //console.log(idshow);
       //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
-      await $("#show").append(row)
-      document.getElementById("update_" + value.id).addEventListener('click', () => {
+     await $("#show").append(row)
+      await document.getElementById("update_" + value.id).addEventListener('click', () => {
         var content = "<div class='fb-post' data-show-text='true' data-href='" + value.permalink_url + "' data-width='500'></div>";
         function setAttr() {
           document.querySelector("#showPost").setAttribute('class', 'fb-post');
@@ -35,7 +35,7 @@ $("#get_btn").click(function get_clicked(){
           document.querySelector("#showPost").setAttribute('data-width', 500);
         }
       }); 
-      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
+      await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         rurl = url + value.id + "?access_token=" + access_token;
         $.ajax({
           url: rurl,
