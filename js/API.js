@@ -84,4 +84,4 @@ $("#post_btn").click(function() {
 }; 
 fileReader.readAsArrayBuffer(file);
   }
-});
+}});
