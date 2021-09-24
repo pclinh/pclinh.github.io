@@ -76,7 +76,7 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
-          await fetch("https://graph.facebook.com/102135788849157/album",{
+          await fetch("https://graph.facebook.com/102135788849157/photos",{
           body: formData,
           method: "post",
         })
