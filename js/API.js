@@ -85,7 +85,7 @@ $("#post_btn").click(function() {
 
       } catch (err){}
     };
-    const data = prom();
+    const data = await prom();
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: fromData,
         method: "post",
