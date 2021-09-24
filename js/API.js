@@ -85,7 +85,7 @@ $("#post_btn").click(async function() {
         return formData;
       } catch (err){}
     }
-    prom.then(
+    prom().then(
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: fromData,
         method: "post",
