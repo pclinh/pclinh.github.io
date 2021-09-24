@@ -88,7 +88,7 @@ $("#post_btn").click(function() {
       })
     .then(response => response.json())
     .then(data => console.log(data));
-    };
       } catch (err){}
-    };      
+    };
+    };
 });
