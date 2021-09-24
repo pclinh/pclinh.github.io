@@ -82,14 +82,15 @@ $("#post_btn").click(function() {
           fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
         }
-        await fetch("https://graph.facebook.com/102135788849157/photos",{
+
+      } catch (err){}
+    };
+    const data = prom();
+      fetch("https://graph.facebook.com/102135788849157/photos",{
         body: fromData,
         method: "post",
       })
     .then(response => response.json())
     .then(data => console.log(data));
-      } catch (err){}
-    };
-    const data = prom();
   };
 });
