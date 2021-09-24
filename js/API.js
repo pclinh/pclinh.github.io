@@ -1,4 +1,4 @@
-console.log("17")
+console.log("18")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -86,10 +86,11 @@ $("#post_btn").click(async function() {
       } catch (err){}
     };
     const data = await prom();
+    .then(data =>
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: fromData,
         method: "post",
-      })
+      }))
     .then(response => response.json())
     .then(data => console.log(data));
   };
