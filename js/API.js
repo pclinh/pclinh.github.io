@@ -1,4 +1,4 @@
-console.log("12")
+console.log("13")
 var message;
 var formData
 //$.getScript("./js/fbsdk.js");
@@ -45,7 +45,6 @@ $("#get_btn").click(function get_clicked(){
 $("#photo_upload").change(function(){
   formData = new FormData();
   formData.append("access_token", access_token);
-  
   for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
         const fileReader = new FileReader();
         const file = document.getElementById("photo_upload").files[i];
@@ -53,11 +52,7 @@ $("#photo_upload").change(function(){
           const photoData = new Blob([fileReader.result], {
             type: file.type,
           });
-          
           formData.append("source", photoData);
-          for (var value of formData.values()) {
-            console.log(value);
-          }
         };
         fileReader.readAsArrayBuffer(file);
     }
@@ -86,6 +81,6 @@ $("#post_btn").click(async function() {
           method: "post",
         })
       .then(response => response.json())
-      .then(data => console.log("11"))
+      .then(data => console.log(data))
       }
 });
