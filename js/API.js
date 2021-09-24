@@ -1,6 +1,6 @@
-console.log("18")
+console.log("19")
 var message;
-
+$.getScript("./js/fbsdk.js");
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
