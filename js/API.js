@@ -2,7 +2,7 @@ console.log("12")
 $.getScript("./js/fbsdk.js");
 var message;
 
-$("#get_btn").click(async function get_clicked(){
+$("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
     "/102135788849157/feed",
@@ -43,7 +43,7 @@ $("#get_btn").click(async function get_clicked(){
   }}
   )})
 
-$("#post_btn").click(function() {
+$("#post_btn").click(async function() {
   console.log(access_token);
   message = document.getElementById("post_content").value;
   if (message == "") {
@@ -86,7 +86,7 @@ $("#post_btn").click(function() {
         return formData;
       } catch (err){}
     };
-    const data= await prom();
+    const data= prom();
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: formData,
         method: "post",
