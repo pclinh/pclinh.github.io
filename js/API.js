@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var formData
 //$.getScript("./js/fbsdk.js");
@@ -81,7 +81,7 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
-          await fetch("https://graph.facebook.com/102135788849157/photos",{
+          await fetch("https://graph.facebook.com/102135788849157/albums",{
           body: formData,
           method: "post",
         })
