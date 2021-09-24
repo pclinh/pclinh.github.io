@@ -65,7 +65,7 @@ $("#post_btn").click(async function() {
     	var formData = new FormData();
     formData.append("access_token", access_token);
     formData.append("message", message);
-    const prom = async () => {
+    async prom() => {
       try {
         for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
           const fileReader = new FileReader();
@@ -84,9 +84,8 @@ $("#post_btn").click(async function() {
         }
         return formData;
       } catch (err){}
-    };
-    const data = await prom();
-    .then(data =>
+    }
+    prom.then(data =>
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: fromData,
         method: "post",
