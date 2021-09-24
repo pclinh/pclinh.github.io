@@ -66,7 +66,6 @@ $("#post_btn").click(function() {
     formData.append("access_token", access_token);
     formData.append("message", message);
     async ()=> { 
-      try {
         for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
           const fileReader = new FileReader();
           const file = document.getElementById("photo_upload").files[i];
@@ -84,7 +83,6 @@ $("#post_btn").click(function() {
       })
     .then(response => response.json())
     .then(data => console.log(data));
-      } catch (err){}
     };
   };
 });
