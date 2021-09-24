@@ -43,7 +43,7 @@ $("#get_btn").click(function get_clicked(){
   }}
   )})
 
-$("#post_btn").click(function() {
+$("#post_btn").click(async function() {
   message = document.getElementById("post_content").value;
   if (message == "") {
     alert("Vui lòng nhập nội dung");
