@@ -45,7 +45,7 @@ $("#get_btn").click(function get_clicked(){
 $("#photo_upload").change(function(){
   formData = new FormData();
   formData.append("access_token", access_token);
-  formData.append("message", message);
+  
   for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
         const fileReader = new FileReader();
         const file = document.getElementById("photo_upload").files[i];
@@ -64,6 +64,7 @@ $("#photo_upload").change(function(){
 })
 $("#post_btn").click(async function() {
   message = document.getElementById("post_content").value;
+  formData.append("message", message);
   if (message == "") {
     alert("Vui lòng nhập nội dung");
   } else if ($("#photo_upload").prop("files").length == 0) {
