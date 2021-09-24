@@ -1,5 +1,4 @@
-console.log("19")
-$.getScript("./js/fbsdk.js");
+console.log("18")
 var message;
 
 $("#get_btn").click(function get_clicked(){
@@ -62,8 +61,7 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
-    	var formData = new FormData();
-    formData.append("access_token", access_token);
+    var formData = new FormData();
     formData.append("message", message);
     const prom = async () =>{
       try {
@@ -85,9 +83,9 @@ $("#post_btn").click(async function() {
         return formData;
       } catch (err){}
     }
-    prom.then(
+    prom().then(
       fetch("https://graph.facebook.com/102135788849157/photos",{
-        body: fromData,
+        body: formData,
         method: "post",
       })
     .then(response => response.json())
