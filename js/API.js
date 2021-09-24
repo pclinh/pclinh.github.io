@@ -1,4 +1,4 @@
-console.log("14")
+console.log("17")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -62,25 +62,34 @@ $("#post_btn").click(function() {
       }
     );
   } else {
-   	var formData = new FormData();
+    	var formData = new FormData();
     formData.append("access_token", access_token);
     formData.append("message", message);
+    const prom = async () => {
+      try {
         for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
           const fileReader = new FileReader();
           const file = document.getElementById("photo_upload").files[i];
-          fileReader.onloadend = () => {
+          fileReader.onloadend = async () => {
             const photoData = new Blob([fileReader.result], {
               type: file.type,
             });
             formData.append("source", photoData);
-           };
+            for (var value of formData.values()) {
+              console.log(value);
+            }
+          };
           fileReader.readAsArrayBuffer(file);
+          //resolve(photoData);
         }
-      fetch("https://graph.facebook.com/102135788849157/photos",{
-          body: fromData,
-          method: "post",
+        await fetch("https://graph.facebook.com/102135788849157/photos",{
+        body: fromData,
+        method: "post",
       })
     .then(response => response.json())
     .then(data => console.log(data));
+      } catch (err){}
+    };
+    const data = prom();
   };
 });
