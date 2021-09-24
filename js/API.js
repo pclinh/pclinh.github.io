@@ -90,8 +90,8 @@ $("#post_btn").click(function() {
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: formData,
         method: "post",
-      });
-    .then(response => response.json());
+      })
+    .then(response => response.json())
     .then(data => console.log(data));
     };
 });
