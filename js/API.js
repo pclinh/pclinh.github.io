@@ -44,7 +44,6 @@ $("#get_btn").click(function get_clicked(){
   )})
 
 $("#post_btn").click(function() {
-  console.log(access_token);
   message = document.getElementById("post_content").value;
   if (message == "") {
     alert("Vui lòng nhập nội dung");
@@ -87,6 +86,7 @@ $("#post_btn").click(function() {
       } catch (err){}
     };
     const data = prom();
+    console.log(data)
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: data,
         method: "post",
