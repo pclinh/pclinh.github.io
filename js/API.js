@@ -1,4 +1,4 @@
-console.log("12")
+console.log("13")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -66,6 +66,7 @@ $("#post_btn").click(function() {
     formData.append("access_token", access_token);
     formData.append("message", message);
     async ()=> { 
+      console.log("1")
         for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
           const fileReader = new FileReader();
           const file = document.getElementById("photo_upload").files[i];
