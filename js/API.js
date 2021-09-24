@@ -81,7 +81,7 @@ $("#post_btn").click(function() {
           fileReader.readAsArrayBuffer(file);
           //resolve(photoData);
         }
-        await fetch("https://graph.facebook.com/102135788849157/photos",{
+        fetch("https://graph.facebook.com/102135788849157/photos",{
         body: fromData,
         method: "post",
       })
