@@ -1,4 +1,4 @@
-console.log("19")
+console.log("11")
 var message;
 $.getScript("./js/fbsdk.js");
 $("#get_btn").click(function get_clicked(){
@@ -62,6 +62,7 @@ $("#post_btn").click(async function() {
     );
   } else {
     var formData = new FormData();
+    formData.append("access_token", access_token);
     formData.append("message", message);
     const prom = async () =>{
       try {
