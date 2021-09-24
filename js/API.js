@@ -1,6 +1,7 @@
-console.log("12")
+console.log("11")
 var message;
-$.getScript("./js/fbsdk.js");
+var formData
+//$.getScript("./js/fbsdk.js");
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
@@ -41,14 +42,32 @@ $("#get_btn").click(function get_clicked(){
     });
   }}
   )})
-
+$("#photo_upload").change(function(){
+  formData = new FormData();
+  formData.append("access_token", access_token);
+  formData.append("message", message);
+  for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
+        const fileReader = new FileReader();
+        const file = document.getElementById("photo_upload").files[i];
+        fileReader.onload = () => {
+          const photoData = new Blob([fileReader.result], {
+            type: file.type,
+          });
+          
+          formData.append("source", photoData);
+          for (var value of formData.values()) {
+            console.log(value);
+          }
+        };
+        fileReader.readAsArrayBuffer(file);
+    }
+})
 $("#post_btn").click(async function() {
   message = document.getElementById("post_content").value;
   if (message == "") {
     alert("Vui lòng nhập nội dung");
   } else if ($("#photo_upload").prop("files").length == 0) {
     message = document.getElementById("post_content").value;
-    console.log(message);
     FB.api(
       "102135788849157/feed",
       "POST",
@@ -61,36 +80,11 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
-    var formData = new FormData();
-    
-    const prom = async () =>{
-      try {
-        for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
-          const fileReader = new FileReader();
-          const file = document.getElementById("photo_upload").files[i];
-          fileReader.onloadend = async () => {
-            const photoData = new Blob([fileReader.result], {
-              type: file.type,
-            });
-            formData.append("access_token", access_token);
-            formData.append("message", message);
-            formData.append("source", photoData);
-            for (var value of formData.values()) {
-              console.log(value);
-            }
-          };
-          fileReader.readAsArrayBuffer(file);
-          //resolve(photoData);
-        }
-        return formData;
-      } catch (err){}
-    }
-    prom().then(
-      fetch("https://graph.facebook.com/102135788849157/photos",{
-        body: formData,
-        method: "post",
-      })
-    .then(response => response.json())
-    .then(data => console.log(data)));
-  };
+          await fetch("https://graph.facebook.com/102135788849157/photos",{
+          body: formData,
+          method: "post",
+        })
+      .then(response => response.json())
+      .then(data => console.log("11"))
+      }
 });
