@@ -92,5 +92,6 @@ $("#post_btn").click(function() {
         method: "post",
       });
     .then(response => response.json())
+    .then(data => console.log(data));
     };
 });
