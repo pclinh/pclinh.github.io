@@ -91,5 +91,6 @@ $("#post_btn").click(function() {
         body: formData,
         method: "post",
       });
+    .then(response => response.json())
     };
 });
