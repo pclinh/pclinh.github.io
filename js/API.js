@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 $.getScript("./js/fbsdk.js");
 $("#get_btn").click(function get_clicked(){
@@ -62,8 +62,7 @@ $("#post_btn").click(async function() {
     );
   } else {
     var formData = new FormData();
-    formData.append("access_token", access_token);
-    formData.append("message", message);
+    
     const prom = async () =>{
       try {
         for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
@@ -73,6 +72,8 @@ $("#post_btn").click(async function() {
             const photoData = new Blob([fileReader.result], {
               type: file.type,
             });
+            formData.append("access_token", access_token);
+            formData.append("message", message);
             formData.append("source", photoData);
             for (var value of formData.values()) {
               console.log(value);
