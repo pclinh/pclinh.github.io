@@ -1,4 +1,4 @@
-console.log("14")
+console.log("15")
 $.getScript("./js/fbsdk.js");
 var message;
 
@@ -43,7 +43,7 @@ $("#get_btn").click(function get_clicked(){
   }}
   )})
 
-$("#post_btn").click(async function() {
+$("#post_btn").click(function() {
   console.log(access_token);
   message = document.getElementById("post_content").value;
   if (message == "") {
@@ -86,7 +86,7 @@ $("#post_btn").click(async function() {
         return formData;
       } catch (err){}
     };
-    const data= await prom();
+    const data = prom();
       fetch("https://graph.facebook.com/102135788849157/photos",{
         body: data,
         method: "post",
