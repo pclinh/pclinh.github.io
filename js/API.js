@@ -1,8 +1,8 @@
-console.log("11")
+console.log("12")
 $.getScript("./js/fbsdk.js");
 var message;
 
-$("#get_btn").click(function get_clicked(){
+$("#get_btn").click(async function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
     "/102135788849157/feed",
