@@ -52,7 +52,7 @@ $("#photo_upload").change(function(){
           const photoData = new Blob([fileReader.result], {
             type: file.type,
           });
-          formData.append("source".[i], photoData);
+          formData.append("source", photoData);
         };
         fileReader.readAsArrayBuffer(file);
     }
