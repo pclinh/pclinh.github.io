@@ -84,15 +84,15 @@ $("#post_btn").click(async function() {
           method: "post",
         })
       .then(response => response.json())
-      .then(data => console.log(data))
-      }
+      .then(data => alert(data.message))
+    }
     else(type.search("video")>=0){
           await fetch("https://graph.facebook.com/102135788849157/videos",{
           body: formData,
           method: "post",
         })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => alert(data.message))
       }
   }
 });
