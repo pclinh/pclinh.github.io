@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var formData;
 var type;
@@ -52,11 +52,11 @@ $("#photo_upload").change(function(){
         fileReader.onload = () =>{
            type= file.type;
           if(type.search("image")>=0){
-           const photoData = new Blob([fileReader.result], {type: jpg,});
+           const photoData = new Blob([fileReader.result], {type: image/jpg,});
             formData.append("source", photoData);
           }
           else if(type.search("video")>=0){
-           const photoData = new Blob([fileReader.result], {type: mp4,});
+           const photoData = new Blob([fileReader.result], {type: video/mp4,});
             formData.append("source", photoData);
               for (var value of formData.values()) {
           console.log(value);
