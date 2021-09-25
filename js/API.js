@@ -86,7 +86,7 @@ $("#post_btn").click(async function() {
       .then(response => response.json())
       .then(data => alert(data.message))
     }
-    else(type.search("video")>=0){
+    else if(type.search("video")>=0){
           await fetch("https://graph.facebook.com/102135788849157/videos",{
           body: formData,
           method: "post",
