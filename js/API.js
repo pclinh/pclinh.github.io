@@ -94,7 +94,7 @@ $("#post_btn").click(async function() {
             method: "post",
           })
         .then(response => response.json())
-        .then(data => alert(data))
+        .then(data => console.log(data))
         }
     }
 });
