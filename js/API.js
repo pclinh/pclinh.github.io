@@ -1,6 +1,7 @@
-console.log("14")
+console.log("11")
 var message;
-var formData
+var formData;
+var type;
 //$.getScript("./js/fbsdk.js");
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
@@ -48,6 +49,7 @@ $("#photo_upload").change(function(){
   for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
         const fileReader = new FileReader();
         const file = document.getElementById("photo_upload").files[i];
+        type= file.type;
         fileReader.onload = () => {
           const photoData = new Blob([fileReader.result], {
             type: file.type,
@@ -76,6 +78,7 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
+    if(type.search("image")>=0){
           await fetch("https://graph.facebook.com/102135788849157/photos",{
           body: formData,
           method: "post",
@@ -83,4 +86,13 @@ $("#post_btn").click(async function() {
       .then(response => response.json())
       .then(data => console.log(data))
       }
+    else(type.search("video")>=0){
+          await fetch("https://graph.facebook.com/102135788849157/videos",{
+          body: formData,
+          method: "post",
+        })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      }
+  }
 });
