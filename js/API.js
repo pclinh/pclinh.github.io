@@ -27,7 +27,8 @@ $("#get_btn").click(function get_clicked(){
       //console.log(idshow);
       //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
     await $("#show").append(row)
-      document.getElementById("update_" + value.id).addEventListener('click', () => {
+      document.getElementById("update_" + value.id).addEventListener('click', () =>{
+        
       }); 
      await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
