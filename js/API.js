@@ -1,4 +1,4 @@
-console.log("12")
+console.log("13")
 var message;
 var formData;
 var type;
@@ -51,7 +51,7 @@ $("#photo_upload").change(function(){
         const file = document.getElementById("photo_upload").files[i];
         fileReader.onload = () =>{
            type= file.type;
-           const photoData = new Blob([fileReader.result], {type: type,},{name:file.name});
+           const photoData = new Blob([fileReader.result], {type: type,}, {name:"video.mp4"});
             formData.append("source", photoData);
               for (var value of formData.values()) {
                    console.log(value);
