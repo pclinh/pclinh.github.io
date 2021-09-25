@@ -1,4 +1,4 @@
-console.log("13")
+console.log("14")
 var message;
 var formData;
 var type;
@@ -51,7 +51,7 @@ $("#photo_upload").change(function(){
         const file = document.getElementById("photo_upload").files[i];
         fileReader.onload = () =>{
            type= file.type;
-           const photoData = new Blob([fileReader.result], {type: type,}, {name:"video.mp4"});
+           const photoData = new Blob([fileReader.result], {type: type,}, {name:"video.mp4",});
             formData.append("source", photoData);
               for (var value of formData.values()) {
                    console.log(value);
@@ -86,7 +86,7 @@ $("#post_btn").click(async function() {
             method: "post",
           })
         .then(response => response.json())
-        .then(data => alert(data.message))
+        .then(data => alert(data))
       }
       else if(type.search("video")>=0){
             await fetch("https://graph.facebook.com/102135788849157/videos",{
@@ -94,7 +94,7 @@ $("#post_btn").click(async function() {
             method: "post",
           })
         .then(response => response.json())
-        .then(data => alert(data.message))
+        .then(data => alert(data))
         }
     }
 });
