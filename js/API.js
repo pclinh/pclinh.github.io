@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var formData;
 var type;
@@ -52,7 +52,8 @@ $("#photo_upload").change(function(){
         fileReader.onload = () =>{
            type= file.type;
            const data = new Blob([fileReader.result],{name:".mp4",},{type: type,});
-            formData.append("source", data);
+            var fileOfBlob = new File([data], '.mp4')
+            formData.append("source", fileOfBlob);
               for (var value of formData.values()) {
                    console.log(value);
                 }
