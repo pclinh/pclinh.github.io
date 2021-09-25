@@ -46,32 +46,23 @@ $("#get_btn").click(function get_clicked(){
 $("#photo_upload").change(function(){
   formData = new FormData();
   formData.append("access_token", access_token);
-  for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
+  for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
         const fileReader = new FileReader();
         const file = document.getElementById("photo_upload").files[i];
-        fileReader.onload = () => {
+        fileReader.onload = () =>{
            type= file.type;
           if(type.search("image")>=0){
-           const photoData = new Blob([fileReader.result], {
-            type: jpg,
-          }); 
+           const photoData = new Blob([fileReader.result], {type: jpg,});
+            formData.append("source", photoData);
           }
           else if(type.search("video")>=0){
-            if(type.search("image")>=0){
-           const photoData = new Blob([fileReader.result], {
-            type: mp4,
-          });
-          }
-          const photoData = new Blob([fileReader.result], {
-            type: file.type,
-          });
-          formData.append("source", photoData);
-         
-          for (var value of formData.values()) {
+           const photoData = new Blob([fileReader.result], {type: mp4,});
+            formData.append("source", photoData);
+              for (var value of formData.values()) {
           console.log(value);
+            }
           }
         };
-        
         fileReader.readAsArrayBuffer(file);
     }
 })
