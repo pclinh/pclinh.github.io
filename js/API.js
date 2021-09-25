@@ -51,21 +51,16 @@ $("#photo_upload").change(function(){
         const file = document.getElementById("photo_upload").files[i];
         fileReader.onload = () =>{
            type= file.type;
-          if(type.search("image")>=0){
            const photoData = new Blob([fileReader.result], {type: type,});
             formData.append("source", photoData);
-          }
-          else if(type.search("video")>=0){
-           const photoData = new Blob([fileReader.result], {type: type",});
-            formData.append("source", photoData);
               for (var value of formData.values()) {
-          console.log(value);
+                   console.log(value);
+                }
+            };
+            fileReader.readAsArrayBuffer(file);
             }
-          }
-        };
-        fileReader.readAsArrayBuffer(file);
-    }
 })
+
 $("#post_btn").click(async function() {
   message = document.getElementById("post_content").value;
   formData.append("message", message);
