@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var formData;
 var type;
@@ -54,11 +54,11 @@ $("#photo_upload").change(function(){
             type: file.type,
           });
           formData.append("source", photoData);
-        };
-        type= file.type;
-    for (var value of formData.values()) {
+          for (var value of formData.values()) {
           console.log(value);
           }
+        };
+        type= file.type;
         fileReader.readAsArrayBuffer(file);
     }
 })
