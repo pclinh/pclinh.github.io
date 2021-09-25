@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var formData;
 var type;
@@ -54,6 +54,9 @@ $("#photo_upload").change(function(){
           const photoData = new Blob([fileReader.result], {
             type: file.type,
           });
+          for (var value of formData.values()) {
+   console.log(value);
+}
           formData.append("source", photoData);
         };
         fileReader.readAsArrayBuffer(file);
@@ -78,21 +81,21 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
-    if(type.search("image")>=0){
-          await fetch("https://graph.facebook.com/102135788849157/photos",{
-          body: formData,
-          method: "post",
-        })
-      .then(response => response.json())
-      .then(data => alert(data.message))
-    }
-    else if(type.search("video")>=0){
-          await fetch("https://graph.facebook.com/102135788849157/videos",{
-          body: formData,
-          method: "post",
-        })
-      .then(response => response.json())
-      .then(data => alert(data.message))
+      if(type.search("image")>=0){
+            await fetch("https://graph.facebook.com/102135788849157/photos",{
+            body: formData,
+            method: "post",
+          })
+        .then(response => response.json())
+        .then(data => alert(data.message))
       }
-  }
+      else if(type.search("video")>=0){
+            await fetch("https://graph.facebook.com/102135788849157/videos",{
+            body: formData,
+            method: "post",
+          })
+        .then(response => response.json())
+        .then(data => alert(data.message))
+        }
+    }
 });
