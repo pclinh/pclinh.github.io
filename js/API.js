@@ -1,4 +1,4 @@
-console.log("13")
+console.log("11")
 var message;
 var formData;
 var type;
@@ -50,11 +50,23 @@ $("#photo_upload").change(function(){
         const fileReader = new FileReader();
         const file = document.getElementById("photo_upload").files[i];
         fileReader.onload = () => {
+           type= file.type;
+          if(type.search("image")>=0){
+           const photoData = new Blob([fileReader.result], {
+            type: jpg,
+          }); 
+          }
+          else if(type.search("video")>=0){
+            if(type.search("image")>=0){
+           const photoData = new Blob([fileReader.result], {
+            type: mp4,
+          });
+          }
           const photoData = new Blob([fileReader.result], {
             type: file.type,
           });
           formData.append("source", photoData);
-          type= file.type;
+         
           for (var value of formData.values()) {
           console.log(value);
           }
