@@ -1,4 +1,4 @@
-console.log("13")
+console.log("11")
 var message;
 var formData;
 var type;
@@ -49,16 +49,15 @@ $("#photo_upload").change(function(){
   for (let i = 0; i < $("#photo_upload").prop("files").length; i++) {
         const fileReader = new FileReader();
         const file = document.getElementById("photo_upload").files[i];
-        
         fileReader.onload = () => {
           const photoData = new Blob([fileReader.result], {
             type: file.type,
           });
-          type= file.type;
           formData.append("source", photoData);
         };
+        type= file.type;
     for (var value of formData.values()) {
-   console.log(value);
+          console.log(value);
           }
         fileReader.readAsArrayBuffer(file);
     }
