@@ -51,9 +51,8 @@ $("#photo_upload").change(function(){
         const file = document.getElementById("photo_upload").files[i];
         fileReader.onload = () =>{
            type= file.type;
-           const data = new Blob([fileReader.result], {type: type,});
-            data.name="video.mp4"
-            formData.append("video.mp4", data);
+           const data = new Blob([fileReader.result],{name:".mp4",},{type: type,});
+            formData.append("source", data);
               for (var value of formData.values()) {
                    console.log(value);
                 }
