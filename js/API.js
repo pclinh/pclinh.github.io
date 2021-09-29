@@ -74,6 +74,7 @@ $("#get_btn").click(function get_clicked(){
   }}
   )})
 $("#post_btn").click(async function() {
+  $("#show").replaceWith('<p id="show"></p>');
   message = document.getElementById("post_content").value;
   formData.append("message", message);
   if (message == "") {
