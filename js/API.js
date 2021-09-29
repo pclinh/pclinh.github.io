@@ -19,8 +19,8 @@ $("#get_btn").click(function get_clicked(){
   FB.api(
     "/102135788849157/feed",
     "GET",
-    {access_token: access_token,
-     fields:"id,permalink_url,message,created_time",  
+    {
+     access_token: access_token,
     },
    async function (response){
       if (response && !response.error){
