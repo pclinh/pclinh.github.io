@@ -1,13 +1,14 @@
-console.log("15")
+console.log("16")
 var message;
 var formData;
 var type;
 //$.getScript("./js/fbsdk.js");
 async function show(message){
-      var showtxt = message;
+      var showtxt = await message;
       var limitW = 3;
-      var char = 4;
       var txtStart = showtxt.slice(0, limitW);
+      var char = 4;
+      
       var txtEnd = showtxt.slice(txtStart.length);
       if (showtxt < limitW){
           showtxt = txtStart + "...";
@@ -27,7 +28,7 @@ $("#get_btn").click(function get_clicked(){
       await $.each(response.data,async function (index, value){
         showtxt=await show(value.message)
         var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+"&emsp;"+ value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
-    $("#show").append(row)
+   await $("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
       }); 
