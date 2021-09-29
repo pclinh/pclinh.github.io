@@ -1,7 +1,8 @@
-console.log("18")
+console.log("10")
 var message;
 var formData;
 var type;
+var multi=false;
 //$.getScript("./js/fbsdk.js");
 async function show(messagetxt){
       var showtxt = await messagetxt;
@@ -12,6 +13,29 @@ async function show(messagetxt){
          }
       return showtxt;
 }
+$("#photo_upload").change(function(){
+  formData = new FormData();
+  formData.append("access_token", access_token);
+      if($("#photo_upload").prop("files").length > 1){
+            multi=true;
+      }else{
+            multi=false
+      }
+  for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
+        const fileReader = new FileReader();
+        const file = document.getElementById("photo_upload").files[i];
+        fileReader.onload = () =>{
+           type= file.type;
+           const data = new Blob([fileReader.result],{name:".mp4",},{type: type,});
+            var fileOfBlob = new File([data], '.mp4')
+            formData.append("source"+i, fileOfBlob);
+              for (var value of formData.values()) {
+                   console.log(value);
+                }
+            };
+            fileReader.readAsArrayBuffer(file);
+            }
+})
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
@@ -49,25 +73,6 @@ $("#get_btn").click(function get_clicked(){
     });
   }}
   )})
-$("#photo_upload").change(function(){
-  formData = new FormData();
-  formData.append("access_token", access_token);
-  for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
-        const fileReader = new FileReader();
-        const file = document.getElementById("photo_upload").files[i];
-        fileReader.onload = () =>{
-           type= file.type;
-           const data = new Blob([fileReader.result],{name:".mp4",},{type: type,});
-            var fileOfBlob = new File([data], '.mp4')
-            formData.append("source", fileOfBlob);
-              for (var value of formData.values()) {
-                   console.log(value);
-                }
-            };
-            fileReader.readAsArrayBuffer(file);
-            }
-})
-
 $("#post_btn").click(async function() {
   message = document.getElementById("post_content").value;
   formData.append("message", message);
@@ -87,7 +92,7 @@ $("#post_btn").click(async function() {
       }
     );
   } else {
-      if(type.search("image")>=0){
+      if(type.search("image")>=0 && multi==false){
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body: formData,
             method: "post",
@@ -95,6 +100,16 @@ $("#post_btn").click(async function() {
         .then(response => response.json())
         .then(data => alert(data))
       }
+        else if(type.search("image")>=0 && multi==true){
+            await fetch("https://graph.facebook.com/102135788849157/albums",{
+            body:{formData,
+                  name=""
+                  },
+            method: "post",
+          })
+        .then(response => response.json())
+        .then(data => alert(data))
+        }
       else if(type.search("video")>=0){
             await fetch("https://graph.facebook.com/102135788849157/videos",{
             body: formData,
