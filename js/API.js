@@ -6,9 +6,7 @@ var type;
 async function show(messagetxt){
       var showtxt = await messagetxt;
       var limitW = 3;
-      var txtStart = showtxt.slice(0, limitW);
-      var char = 4;
-      var txtEnd = showtxt.slice(txtStart.length);
+      var txtStart = showtxt.slice(0, limitW-1);
       if (showtxt > limitW){
           showtxt = await txtStart + "...";
          }
