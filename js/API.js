@@ -1,10 +1,10 @@
-console.log("12")
+console.log("13")
 var message;
 var formData;
 var type;
 //$.getScript("./js/fbsdk.js");
 function show(data){
-  var limitW = 10;
+  var limitW = 3;
       var showtxt= data.message;
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
@@ -29,7 +29,7 @@ $("#get_btn").click(function get_clicked(){
    async function (response){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
-        show(value)
+        await show(value)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
       }); 
