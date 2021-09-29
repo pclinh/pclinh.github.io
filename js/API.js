@@ -103,7 +103,7 @@ $("#post_btn").click(async function() {
         else if(type.search("image")>=0 && multi==true){
             await fetch("https://graph.facebook.com/102135788849157/albums",{
             body:{formData,
-                  name=""
+                  "name":""
                   },
             method: "post",
           })
