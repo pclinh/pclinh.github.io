@@ -3,15 +3,16 @@ var message;
 var formData;
 var type;
 //$.getScript("./js/fbsdk.js");
-async function show(data){
+async function show(message){
   var limitW = 3;
-      var showtxt= data.message;
+      var showtxt= message;
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
       var txtEnd = showtxt.slice(txtStart.length);
       if (showtxt < limitW){
           showtxt = txtStart + "...";
       }
+  return showtxt;
 }
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
@@ -24,7 +25,7 @@ $("#get_btn").click(function get_clicked(){
    async function (response){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
-        showtxt=await show(value)
+        showtxt=await show(value.message)
         var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+"&emsp;"+ value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
     $("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
