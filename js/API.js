@@ -100,7 +100,7 @@ $("#post_btn").click(async function() {
             body: formData,
             method: "post",
           })
-        .then(response => if(!response.error)alert("Delete succeed");)
+        .then(response =>{if(!response.error)alert("Delete succeed")})
         .then(data => console.log(data))
         }
     }
