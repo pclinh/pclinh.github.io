@@ -1,4 +1,4 @@
-console.log("17")
+console.log("18")
 var message;
 var formData;
 var type;
@@ -25,8 +25,12 @@ $("#get_btn").click(function get_clicked(){
    async function (response){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
-            if(value.message !="")
-        showtxt=await show(value.message)
+            if(value.message !=""){
+                 var showtxt = await show(value.message)
+            }else{
+                  var showtxt =""
+            }
+            
         var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+"&emsp;"+ value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
    await $("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
