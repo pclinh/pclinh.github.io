@@ -10,7 +10,7 @@ async function show(messagetxt){
       var char = 4;
       var txtEnd = showtxt.slice(txtStart.length);
       if (showtxt < limitW){
-          showtxt = txtStart + "...";
+          showtxt = await txtStart + "...";
          }
       return showtxt;
 }
