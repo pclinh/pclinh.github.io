@@ -6,9 +6,9 @@ var type;
 async function show(messagetxt){
       var showtxt = await messagetxt;
       var limitW = 3;
-      var txtStart = showtxt.slice(0, limitW-1);
+      var txtStart = showtxt.slice(0, limitW);
       if (showtxt > limitW){
-          showtxt = await txtStart + "...";
+          showtxt = await txtStart+ "...";
          }
       return showtxt;
 }
@@ -24,7 +24,7 @@ $("#get_btn").click(function get_clicked(){
    async function (response){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
-            if(value.message !=null){
+            if(value.message != null){
                  var showtxt = await show(value.message)
             }else{
                   var showtxt =""
@@ -100,7 +100,7 @@ $("#post_btn").click(async function() {
             body: formData,
             method: "post",
           })
-        .then(response => response.json())
+        .then(response => if(!response.error)alert("Delete succeed");)
         .then(data => console.log(data))
         }
     }
