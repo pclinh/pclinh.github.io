@@ -9,7 +9,7 @@ function show(data){
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
       var txtEnd = showtxt.slice(txtStart.length);
-      if (value.message < limitW){
+      if (showtxt < limitW){
           showtxt = txtStart + "...";
       }
       var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+"&emsp;"+ data.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + data.created_time + "</td><td class='show_content'id='Show_" + data.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + data.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + data.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + data.id + "\'>update</button></td></tr>");
