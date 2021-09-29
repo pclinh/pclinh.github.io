@@ -1,11 +1,11 @@
-console.log("14")
+console.log("15")
 var message;
 var formData;
 var type;
 //$.getScript("./js/fbsdk.js");
 async function show(message){
-  var limitW = 3;
-      var showtxt= message;
+      var showtxt = message;
+      var limitW = 3;
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
       var txtEnd = showtxt.slice(txtStart.length);
