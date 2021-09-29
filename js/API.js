@@ -3,7 +3,7 @@ var message;
 var formData;
 var type;
 var multi=false;
-//$.getScript("./js/fbsdk.js");
+$.getScript("./js/fbsdk.js");
 async function show(messagetxt){
       var showtxt = await messagetxt;
       var limitW = 3;
