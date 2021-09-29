@@ -7,6 +7,7 @@ $(".back_btn").click( function(){
     $("#post_ctrl").css("visibility","hidden");
 })
 $("#post_create_btn").click(function(){
+    $("#show").replaceWith('<p id="show"></p>');
     $("#editor_forms").css({"visibility":"visible","width": "50%","height": "500px",})
     $("#post_ctrl").css("visibility","hidden");
 })
