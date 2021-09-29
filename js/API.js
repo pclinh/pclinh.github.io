@@ -1,8 +1,23 @@
-console.log("12")
+console.log("11")
 var message;
 var formData;
 var type;
 //$.getScript("./js/fbsdk.js");
+function show(data){
+  var limitW = 10;
+      var showtxt= message;
+      var char = 4;
+      var txtStart = showtxt.slice(0, limitW);
+      var txtEnd = showtxt.slice(txtStart.length);
+      if (value.message < limitW){
+          showtxt = txtStart + "...";
+      }
+      var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+"&emsp;"+ data.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + data.created_time + "</td><td class='show_content'id='Show_" + data.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + data.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + data.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + data.id + "\'>update</button></td></tr>");
+      //idshow = "'#Show_" + value.id + "'";
+      //console.log(idshow);
+      //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
+    $("#show").append(row)
+}
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
@@ -14,21 +29,9 @@ $("#get_btn").click(function get_clicked(){
    async function (response){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
-      var limitW = 10;
-      var showtxt= await value.message;
-      var char = 4;
-      var txtStart = showtxt.slice(0, limitW);
-      var txtEnd = showtxt.slice(txtStart.length);
-      if (value.message < limitW){
-          showtxt = txtStart + "...";
-      }
-      var row = $("<tr><td>&emsp;&emsp;ID:&emsp;"+index+"&emsp;"+ value.id + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
-      //idshow = "'#Show_" + value.id + "'";
-      //console.log(idshow);
-      //var content = " <div class='fb-post' data-href='" + value.permalink_url + "' data-width='500'>12</div>";
-    await $("#show").append(row)
+        show(value)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
-        
+  
       }); 
      await document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
