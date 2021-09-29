@@ -21,7 +21,7 @@ $("#get_btn").click(function get_clicked(){
     "GET",
     {
      access_token: access_token,
-     fields:*,
+     fields:"id,permalink_url,message,created_time",
     },
    async function (response){
       if (response && !response.error){
