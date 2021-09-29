@@ -5,7 +5,7 @@ var type;
 //$.getScript("./js/fbsdk.js");
 function show(data){
   var limitW = 10;
-      var showtxt= message;
+      var showtxt= data.message;
       var char = 4;
       var txtStart = showtxt.slice(0, limitW);
       var txtEnd = showtxt.slice(txtStart.length);
