@@ -21,6 +21,7 @@ $("#get_btn").click(function get_clicked(){
     "GET",
     {
      access_token: access_token,
+     fields:*,
     },
    async function (response){
       if (response && !response.error){
