@@ -102,7 +102,7 @@ $("#post_btn").click(async function() {
         .then(data => alert(data))
       }
         else if(type.search("image")>=0 && multi==true){
-            await fetch("https://graph.facebook.com/102135788849157/albums",{
+            await fetch("https://graph.facebook.com/102135788849157/photos",{
             body:{formData,
                   "name":"",
                   "privacy":"public"
