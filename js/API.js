@@ -57,6 +57,7 @@ $("#post_btn").click(async function(){
     alert("Vui lòng nhập nội dung");
   } else if ($("#photo_upload").prop("files").length == 0) {
     message = document.getElementById("post_content").value;
+    console.log(scheduled_time)
     FB.api(
       "102135788849157/feed",
       "POST",
