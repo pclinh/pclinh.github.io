@@ -1,4 +1,4 @@
-console.log("17")
+console.log("11")
 var message;
 var formData;
 var type;
@@ -53,7 +53,6 @@ $("#post_btn").click(async function(){
   }
   $("#show").replaceWith('<p id="show"></p>');
   message = document.getElementById("post_content").value;
-  formData.append("message", message);
   if (message == "") {
     alert("Vui lòng nhập nội dung");
   } else if ($("#photo_upload").prop("files").length == 0) {
@@ -72,6 +71,7 @@ $("#post_btn").click(async function(){
     );
   } else {
       if(type.search("image")>=0 && multi==false){
+        formData.append("message", message);
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body: {formData,
                    "scheduled_publish_time":scheduled_time
@@ -82,6 +82,7 @@ $("#post_btn").click(async function(){
         .then(data => alert(data))
       }
         else if(type.search("image")>=0 && multi==true){
+          formData.append("message", message);
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body:{formData,
                   "name":"",
@@ -93,6 +94,7 @@ $("#post_btn").click(async function(){
         .then(data => alert(data))
         }
       else if(type.search("video")>=0){
+        formData.append("message", message);
             await fetch("https://graph.facebook.com/102135788849157/videos",{
             body: {formData,
                    "scheduled_publish_time":scheduled_time
