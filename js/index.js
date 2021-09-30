@@ -31,7 +31,7 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
         }
 })
 function create_time(date){
-year = date.getFullYear();
+year = date.getYear();
 month = date.getMonth()+1;
 day = date.getDate();
 time = date.getTime();
