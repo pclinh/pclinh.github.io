@@ -1,4 +1,4 @@
-console.log("13")
+console.log("14")
 var message;
 var formData;
 var type;
@@ -43,7 +43,13 @@ $("#get_btn").click(function get_clicked(){
     });
   }}
   )})
-$("#post_btn").click(async function() {
+$("#post_btn").click(async function(){
+  if($("#schedule").prop('checked', true)){
+    const time = $("#schedule_date").value + $("#schedule_time").value;
+    console.log(time)
+    schedule_time= time.toISOString();
+    console.log(schedule_time)
+  }
   $("#show").replaceWith('<p id="show"></p>');
   message = document.getElementById("post_content").value;
   formData.append("message", message);
