@@ -31,8 +31,9 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
         }
 })
 function create_time(date){
-dt = date.toLocaleDateString('en-GB');
-time = date.getTime();
+var d = new Date(date)
+dt = d.toLocaleDateString('en-GB');
+time = d.getTime();
 if (dt < 10) {
 dt = '0' + dt;
 }
