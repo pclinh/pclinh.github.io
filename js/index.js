@@ -31,9 +31,7 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
         }
 })
 function create_time(date){
-year = date.getYear();
-month = date.getMonth()+1;
-day = date.getDate();
+dt = date.toLocaleDateString('en-GB');
 time = date.getTime();
 if (dt < 10) {
 dt = '0' + dt;
@@ -41,6 +39,6 @@ dt = '0' + dt;
 if (month < 10) {
 month = '0' + month;
 }
-showtime = year+'-' + month + '-'+day+"&emsp;&emsp;"+time; 
+showtime = dt+"&emsp;&emsp;"+time; 
 return showtime;
 }
