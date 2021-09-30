@@ -18,7 +18,7 @@ $("#get_btn").click(function get_clicked(){
       if (response && !response.error){
       await $.each(response.data,async function (index, value){
             if(value.message != null){
-                 var showtxt = await showtxt(value.message)
+                 var showtxt = await show(value.message)
             }else{
                   var showtxt =""
             }
