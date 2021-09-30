@@ -1,4 +1,4 @@
-console.log("15")
+console.log("13")
 var message;
 var formData;
 var type;
@@ -46,10 +46,7 @@ $("#get_btn").click(function get_clicked(){
 $("#post_btn").click(async function(){
   if($("#schedule").prop('checked', true)){
     const time = $("#schedule_date").val()+" "+$("#schedule_time").val();
-    console.log(time)
-    const d = new Date(time)
-    schedule_time= d.toISOString();
-    console.log(schedule_time)
+    schedule_time= await change_time(time);
   }
   $("#show").replaceWith('<p id="show"></p>');
   message = document.getElementById("post_content").value;
