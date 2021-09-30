@@ -1,4 +1,4 @@
-console.log("11")
+console.log("18")
 var message;
 var formData;
 var type;
@@ -23,7 +23,7 @@ $("#get_btn").click(function get_clicked(){
                   var showtxt =""
             }
             showtime= await create_time(value.created_time)
-        var row = $("<tr><td>&emsp;&emsp;Ngày tạo:&emsp; " + showtime + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Nội dung:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>Chi tiết</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>xóa</button></td><td><button class=\"update_btn\" class=\'update_" + value.id + "\'>Chi tiết</button></td></tr>");
+        var row = $("<tr><td>&emsp;&emsp;Ngày tạo:&emsp; " + showtime + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Nội dung:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>Chi tiết</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>xóa</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>Cập nhật</button></td></tr>");
    await $("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
