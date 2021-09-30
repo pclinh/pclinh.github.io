@@ -1,4 +1,4 @@
-console.log("11")
+console.log("15")
 var message;
 var formData;
 var type;
@@ -63,6 +63,7 @@ $("#post_btn").click(async function(){
       "POST",
       {
         message: message,
+        published:false,
         access_token: access_token,
         scheduled_publish_time:scheduled_time
       },
