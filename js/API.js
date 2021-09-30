@@ -3,7 +3,7 @@ var message;
 var formData;
 var type;
 var multi=false;
-var scheduled_time="";
+var schedule_time="";
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
 $("#get_btn").click(function get_clicked(){
