@@ -34,12 +34,6 @@ function create_time(date){
 var d = new Date(date)
 dt = d.toLocaleDateString('en-GB');
 time = d.getTime();
-if (dt < 10) {
-dt = '0' + dt;
-}
-if (month < 10) {
-month = '0' + month;
-}
 showtime = dt+"&emsp;&emsp;"+time; 
 return showtime;
 }
