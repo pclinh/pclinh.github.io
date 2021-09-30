@@ -1,4 +1,4 @@
-console.log("14")
+console.log("15")
 var message;
 var formData;
 var type;
@@ -45,7 +45,7 @@ $("#get_btn").click(function get_clicked(){
   )})
 $("#post_btn").click(async function(){
   if($("#schedule").prop('checked', true)){
-    const time = $("#schedule_date").value + $("#schedule_time").value;
+    const time = $("#schedule_date").value;
     console.log(time)
     schedule_time= time.toISOString();
     console.log(schedule_time)
