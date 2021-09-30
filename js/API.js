@@ -16,6 +16,7 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
+        response.data.created_time.sort();
       await $.each(response.data,async function (index, value){
             if(value.message != null){
                  var showtxt = await show(value.message)
