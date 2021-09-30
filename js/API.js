@@ -3,7 +3,7 @@ var message;
 var formData;
 var type;
 var multi=false;
-var schedule_time="";
+var scheduled_time="";
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
 $("#get_btn").click(function get_clicked(){
@@ -46,7 +46,7 @@ $("#get_btn").click(function get_clicked(){
 $("#post_btn").click(async function(){
   if($("#schedule").prop('checked', true)){
     const time = $("#schedule_date").val()+" "+$("#schedule_time").val();
-    schedule_time= await change_time(time);
+    scheduled_time= await change_time(time);
   }
   $("#show").replaceWith('<p id="show"></p>');
   message = document.getElementById("post_content").value;
