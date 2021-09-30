@@ -33,7 +33,7 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
 function create_time(date){
 var d = new Date(date)
 dt = d.toLocaleDateString('en-GB');
-time = d.toLocaleString('en-GB');
+time = d.toLocaleTimeString('en-GB');
 showtime = dt+"&emsp;&emsp;"+time; 
 return showtime;
 }
