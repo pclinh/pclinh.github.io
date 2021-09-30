@@ -37,3 +37,8 @@ time = d.toLocaleTimeString('en-GB');
 showtime = dt+"&emsp;&emsp;"+time; 
 return showtime;
 }
+function change_time(time){
+    console.log(time)
+    const d = new Date(time)
+    return d.toISOString();
+}
