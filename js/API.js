@@ -3,6 +3,7 @@ var message;
 var formData;
 var type;
 var multi=false;
+var scheduled_time="";
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
 $("#get_btn").click(function get_clicked(){
@@ -16,7 +17,6 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
-        response.data.created_time.sort();
       await $.each(response.data,async function (index, value){
             if(value.message != null){
                  var showtxt = await show(value.message)
@@ -57,6 +57,7 @@ $("#post_btn").click(async function() {
       {
         message: message,
         access_token: access_token,
+        scheduled_publish_time:scheduled_time
       },
       function(response) {
         console.log(response);
@@ -65,7 +66,9 @@ $("#post_btn").click(async function() {
   } else {
       if(type.search("image")>=0 && multi==false){
             await fetch("https://graph.facebook.com/102135788849157/photos",{
-            body: formData,
+            body: {formData,
+                   "scheduled_publish_time":scheduled_time
+                  },
             method: "post",
           })
         .then(response => response.json())
@@ -75,7 +78,7 @@ $("#post_btn").click(async function() {
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body:{formData,
                   "name":"",
-                  "privacy":"public"
+                  "scheduled_publish_time":scheduled_time
                   },
             method: "post",
           })
@@ -84,7 +87,9 @@ $("#post_btn").click(async function() {
         }
       else if(type.search("video")>=0){
             await fetch("https://graph.facebook.com/102135788849157/videos",{
-            body: formData,
+            body: {formData,
+                   "scheduled_publish_time":scheduled_time
+                  },
             method: "post",
           })
         .then(response =>{if(!response.error)alert("Delete succeed")})
