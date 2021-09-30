@@ -1,41 +1,10 @@
-console.log("11")
+console.log("18")
 var message;
 var formData;
 var type;
 var multi=false;
 $.getScript("./js/fbsdk.js");
-async function show(messagetxt){
-      var showtxt = await messagetxt;
-      var limitW = 3;
-      var txtStart = showtxt.slice(0, limitW);
-      if (showtxt > limitW){
-          showtxt = await txtStart+ "...";
-         }
-      return showtxt;
-}
-$("#photo_upload").change(function(){
-  formData = new FormData();
-  formData.append("access_token", access_token);
-      if($("#photo_upload").prop("files").length > 1){
-            multi=true;
-      }else{
-            multi=false
-      }
-  for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
-        const fileReader = new FileReader();
-        const file = document.getElementById("photo_upload").files[i];
-        fileReader.onload = () =>{
-           type= file.type;
-           const data = new Blob([fileReader.result],{name:".mp4",},{type: type,});
-            var fileOfBlob = new File([data], '.mp4')
-            formData.append("source"+i, fileOfBlob);
-              for (var value of formData.values()) {
-                   console.log(value);
-                }
-            };
-            fileReader.readAsArrayBuffer(file);
-            }
-})
+$.getScript("./js/index.js");
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
@@ -53,8 +22,8 @@ $("#get_btn").click(function get_clicked(){
             }else{
                   var showtxt =""
             }
-            
-        var row = $("<tr><td>&emsp;&emsp;URL:&emsp;"+"&emsp;"+ value.permalink_url + "</td><td>&emsp;&emsp;Created time:&emsp; " + value.created_time + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Content:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>detail</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>delete</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>update</button></td></tr>");
+            showtime= await create_time(value.created_time)
+        var row = $("<tr><td>&emsp;&emsp;Ngày tạo:&emsp; " + showtime + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Nội dung:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>Chi tiết</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>xóa</button></td><td><button class=\"update_btn\" class=\'update_" + value.id + "\'>Chi tiết</button></td></tr>");
    await $("#show").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
