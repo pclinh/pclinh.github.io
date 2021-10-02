@@ -2,7 +2,7 @@ async function show(messagetxt){
   var showtxt = await messagetxt;
   var limitW = 3;
   var txtStart = showtxt.slice(0, limitW);
-  if (showtxt > limitW){
+  if (showtxt.lenght() > limitW){
       showtxt = await txtStart+ "...";
      }
   return showtxt;
