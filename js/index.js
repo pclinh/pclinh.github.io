@@ -2,8 +2,8 @@ async function show(messagetxt){
   var showtxt = await messagetxt;
   var limitW = 3;
   var txtStart = showtxt.slice(0, limitW);
-  console.log(showtxt.lenght)
-  if (showtxt.lenght > limitW){
+  console.log(showtxt.size())
+  if (showtxt.size() > limitW){
 
       showtxt = await txtStart+ "...";
      }
