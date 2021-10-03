@@ -6,16 +6,7 @@ var multi=false;
 var scheduled_time="";
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
-$("document").ready(function(){
-    FB.api(
-    '/102135788849157/insights/page_follows',
-    'GET',
-    {"date_preset":"today"},
-    function(response) {
-        $("#show_follower").text()=response.data.values.value;
-    }
-  );
-})
+
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
