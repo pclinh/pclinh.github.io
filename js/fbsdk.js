@@ -55,7 +55,7 @@ $("document").ready(function(){
     'GET',
     {"date_preset":"today"},
     function(response) {
-        $("#show_follower").text()=response.data.values.value;
+        $("#show_follower").text(response.data.values.value);
     }
   );
 })
