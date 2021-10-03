@@ -32,19 +32,6 @@ window.fbAsyncInit = function(){
     }).catch(e => {
     console.log(e);
 });
-   FB.api(
-    '/102135788849157/insights/page_follows',
-    'GET',
-    {"date_preset":"today",
-     "access_token":access_token 
-    },
-    function(response) {
-      console.log(response)
-        var fol = response.data[0].values[0].value
-        console.log(fol)
-        $("#show_follower").text(fol);
-    }
-);
    } else {
      console.log('Not authenticated');
      window.location.href='index.html';
@@ -62,4 +49,3 @@ function logout (){
             window.location.href='index.html'
       });
     }
-
