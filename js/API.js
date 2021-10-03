@@ -1,9 +1,19 @@
-console.log("13")
+console.log("14")
 var message;
 var formData;
 var type;
 var multi=false;
 var scheduled_time="";
+$(window).load(){
+  FB.api(
+  '/102135788849157/insights/page_follows',
+  'GET',
+  {"date_preset":"today"},
+  function(response) {
+      $("#show_follower").text()=response.data.values.value;
+  }
+);
+}
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
 $("#get_btn").click(function get_clicked(){
