@@ -4,6 +4,9 @@ var formData;
 var type;
 var multi=false;
 var scheduled_time="";
+
+$.getScript("./js/fbsdk.js");
+$.getScript("./js/index.js");
 $("window").load(function(){
     FB.api(
     '/102135788849157/insights/page_follows',
@@ -14,8 +17,6 @@ $("window").load(function(){
     }
   );
 })
-$.getScript("./js/fbsdk.js");
-$.getScript("./js/index.js");
 $("#get_btn").click(function get_clicked(){
   $("#show").replaceWith('<p id="show"></p>');
   FB.api(
