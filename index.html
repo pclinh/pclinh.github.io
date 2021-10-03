@@ -6,50 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/fbsdk.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1229103174227463',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v11.0'
-    });
-
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-  };
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-   function statusChangeCallback(response){
-     if(response.status === 'connected'){
-      console.log('Logged in and authenticated');
-      window.location.href="main.html";
-     } else {
-       console.log('Not authenticated');
-     }
-   }
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-  </script>
   <div id="log_fb">
     <button id="fb_btn" scope="public_profile,email" onclick="checkLoginState()"> Đăng nhập tài khoản Facebook
     </button>
   </div>
-        
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 </html>
