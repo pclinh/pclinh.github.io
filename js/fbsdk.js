@@ -21,7 +21,6 @@ window.fbAsyncInit = function(){
 }(document, 'script', 'facebook-jssdk'));
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
-     window.location.href="homepage.html";
     console.log('Logged in and authenticated');
      await  $.ajax({ 
         type: 'GET', 
@@ -41,10 +40,11 @@ window.fbAsyncInit = function(){
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
+    if(response.status === 'connected')
+     window.location.href="homepage.html";
   });
 }
-
-  function logout (){
+function logout (){
         FB.logout(function(response){
             window.location.href='index.html'
       });
