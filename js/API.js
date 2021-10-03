@@ -4,7 +4,6 @@ var formData;
 var type;
 var multi=false;
 var scheduled_time="";
-
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
 $("document").ready(function(){
