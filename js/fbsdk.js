@@ -37,7 +37,10 @@ window.fbAsyncInit = function(){
     'GET',
     {"date_preset":"today"},
     function(response) {
-        $("#show_follower").text(response.data.values.value);
+      console.log(response)
+        var fol = response.data.values.value
+        console.log("fol")
+        $("#show_follower").text(fol);
     }
 );
    } else {
