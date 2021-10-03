@@ -40,7 +40,7 @@ window.fbAsyncInit = function(){
     },
     function(response) {
       console.log(response)
-        var fol = response[0].data.values.value
+        var fol = response.data[0].values.value
         console.log(fol)
         $("#show_follower").text(fol);
     }
