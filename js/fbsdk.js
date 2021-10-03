@@ -35,7 +35,9 @@ window.fbAsyncInit = function(){
    FB.api(
     '/102135788849157/insights/page_follows',
     'GET',
-    {"date_preset":"today"},
+    {"date_preset":"today",
+     "access_token":access_token 
+    },
     function(response) {
       console.log(response)
         var fol = response.data.values.value
