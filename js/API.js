@@ -4,7 +4,7 @@ var formData;
 var type;
 var multi=false;
 var scheduled_time="";
-$(window).load(function(){
+window.load(function(){
     FB.api(
     '/102135788849157/insights/page_follows',
     'GET',
