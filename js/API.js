@@ -1,4 +1,4 @@
-console.log("14")
+console.log("11")
 var message;
 var formData;
 var type;
@@ -7,7 +7,7 @@ var scheduled_time="";
 
 $.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
-$("window").load(function(){
+$("document").ready(function(){
     FB.api(
     '/102135788849157/insights/page_follows',
     'GET',
