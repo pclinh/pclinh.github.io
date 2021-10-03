@@ -21,6 +21,7 @@ window.fbAsyncInit = function(){
 }(document, 'script', 'facebook-jssdk'));
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
+     window.location.href="homepage.html";
     console.log('Logged in and authenticated');
      await  $.ajax({ 
         type: 'GET', 
