@@ -48,3 +48,13 @@ function checkLoginState() {
             window.location.href='index.html'
       });
     }
+$("document").ready(function(){
+    FB.api(
+    '/102135788849157/insights/page_follows',
+    'GET',
+    {"date_preset":"today"},
+    function(response) {
+        $("#show_follower").text()=response.data.values.value;
+    }
+  );
+})
