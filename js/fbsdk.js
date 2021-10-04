@@ -27,7 +27,6 @@ window.fbAsyncInit = function(){
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' },
         success: function (data) {
-         window.location.href="homepage.html";
          access_token=data.access_token;
         },
     }).catch(e => {
@@ -41,38 +40,34 @@ window.fbAsyncInit = function(){
     },
     function(response) {
       console.log(response)
-        var fol = response.data[0].values[0].value
+        const fol = response.data[0].values[0].value
         console.log(fol)
         $("#show_follower").text(fol);
     }
 );
      FB.api(
-    '/102135788849157/insights/page_follows',
-    'GET',
-    {"date_preset":"today",
-     "access_token":access_token 
-    },
-    function(response) {
-      console.log(response)
-        var fol = response.data[0].values[0].value
+  '/102135788849157/insights/page_post_engagements/days_28',
+  'GET',
+  {"date_preset":"today"},
+  function(response) {
+      const fol = response.data[0].values[0].value
         console.log(fol)
-        $("#show_like").text(fol);
-    }
+        $("#show_month_engagements").text(fol);
+  }
 );
    } else {
      console.log('Not authenticated');
      window.location.href='index.html';
    }
  }
-function checkLoginState() {
+function checkLoginState(){
   FB.getLoginStatus(function(response){
     statusChangeCallback(response);
-    if(response.status === 'connected');
    })
 }
 function logout (){
         FB.logout(function(response){
-            window.location.href='index.html'
+            checkLoginState()
       });
     }
  
