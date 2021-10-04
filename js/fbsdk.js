@@ -22,6 +22,7 @@ window.fbAsyncInit = function(){
  async function statusChangeCallback(response){
    if(response.status === 'connected'){
     console.log('Logged in and authenticated');
+     window.location.href="homepage.html";
      await  $.ajax({ 
         type: 'GET', 
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
@@ -32,16 +33,6 @@ window.fbAsyncInit = function(){
     }).catch(e => {
     console.log(e);
 });
-   } else {
-     console.log('Not authenticated');
-     window.location.href='index.html';
-   }
- }
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-    if(response.status === 'connected')
-     window.location.href="homepage.html";
     FB.api(
     '/102135788849157/insights/page_follows',
     'GET',
@@ -56,6 +47,16 @@ function checkLoginState() {
     }
 );
   });
+   } else {
+     console.log('Not authenticated');
+     window.location.href='index.html';
+   }
+ }
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    if(response.status === 'connected')
+     
 }
 function logout (){
         FB.logout(function(response){
