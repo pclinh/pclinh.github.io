@@ -32,7 +32,7 @@ window.fbAsyncInit = function(){
     }).catch(e => {
     console.log(e);
 });
-    FB.api(
+    await FB.api(
     '/102135788849157/insights/page_follows',
     'GET',
     {"date_preset":"today",
@@ -45,7 +45,7 @@ window.fbAsyncInit = function(){
         $("#show_follower").text(fol);
     }
 );
-     FB.api(
+await FB.api(
   '/102135788849157/insights/page_post_engagements/days_28',
   'GET',
   {"date_preset":"today"},
