@@ -46,7 +46,6 @@ window.fbAsyncInit = function(){
         $("#show_follower").text(fol);
     }
 );
-  });
    } else {
      console.log('Not authenticated');
      window.location.href='index.html';
@@ -56,7 +55,7 @@ function checkLoginState() {
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
     if(response.status === 'connected')
-     
+     });
 }
 function logout (){
         FB.logout(function(response){
