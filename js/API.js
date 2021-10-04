@@ -45,7 +45,7 @@ $("#get_btn").click(function get_clicked(){
   }}
   )})
 $("#post_btn").click(async function(){
-  if($("#schedule").prop('checked', true)){
+  if($("#schedule").prop('checked')== true){
     const time = $("#schedule_date").val()+" "+$("#schedule_time").val();
     scheduled_time= await change_time(time);
   }
