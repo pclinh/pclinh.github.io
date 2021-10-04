@@ -106,3 +106,16 @@ $("#post_btn").click(async function(){
         }
     }
 });
+FB.api(
+    '/102135788849157/insights/page_follows',
+    'GET',
+    {"date_preset":"today",
+     "access_token":access_token 
+    },
+    function(response) {
+      console.log(response)
+        var fol = response.data[0].values[0].value
+        console.log(fol)
+        $("#show_follower").text(fol);
+    }
+);
