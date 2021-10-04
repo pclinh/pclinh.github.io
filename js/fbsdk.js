@@ -52,10 +52,10 @@ window.fbAsyncInit = function(){
    }
  }
 function checkLoginState() {
-  FB.getLoginStatus(function(response) {
+  FB.getLoginStatus(function(response){
     statusChangeCallback(response);
     if(response.status === 'connected')
-     });
+   })
 }
 function logout (){
         FB.logout(function(response){
