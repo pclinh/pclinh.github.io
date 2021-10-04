@@ -48,7 +48,8 @@ window.fbAsyncInit = function(){
 await FB.api(
   '/102135788849157/insights/page_post_engagements/days_28',
   'GET',
-  {"date_preset":"today"},
+  {"date_preset":"today",
+  "access_token":access_token },
   function(response) {
       const fol = response.data[0].values[0].value
         console.log(fol)
