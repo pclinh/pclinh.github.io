@@ -33,7 +33,7 @@ window.fbAsyncInit = function(){
     console.log(e);
 });
     await FB.api(
-    '/102135788849157/insights/page_follows',
+    '/102135788849157/insights/page_fans',
     'GET',
     {"date_preset":"today",
      "access_token":access_token 
