@@ -6,7 +6,7 @@ window.fbAsyncInit = function(){
     xfbml      : true,
     version    : 'v12.0'
   });
-function getLoginStatus(){
+
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
       if(response.status === 'connected'){
@@ -15,7 +15,6 @@ function getLoginStatus(){
       else
         window.location.href='index.html'
     });
-  };
 }
   
  (function(d, s, id){
