@@ -11,43 +11,8 @@
     <title>Document</title>
 </head>
 <body>
-  <script>
-  window.fbAsyncInit = function(){
-  FB.init({
-    appId      : '1229103174227463',
-    cookie     : true,
-    xfbml      : true,
-    version    : 'v12.0'
-  });
-  FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-     
-  });
-};
- (function(d, s, id){
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
- async function statusChangeCallback(response){
-   if(response.status === 'connected'){
-    console.log('Logged in and authenticated');
-      window.location.href='homepage.html'
-   } else {
-     console.log('Not authenticated');
-     window.location.href='index.html';
-   }
- }
-function checkLoginState(){
-  FB.getLoginStatus(function(response){
-    statusChangeCallback(response);
-   })
-}
-  </script>
   <div id="log_fb">
-    <button id="fb_btn" scope="public_profile,email" onclick="checkLoginState()"> Đăng nhập tài khoản Facebook
+    <button id="fb_btn" scope="public_profile,email" onclick="login()"> Đăng nhập tài khoản Facebook
     </button>
   </div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
