@@ -1,4 +1,5 @@
 var access_token="";
+console/log("ss")
 window.fbAsyncInit = function(){
   FB.init({
     appId      : '1229103174227463',
@@ -15,7 +16,7 @@ window.fbAsyncInit = function(){
       else
         window.location.href='index.html'
     });
-}
+};
   
  (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
