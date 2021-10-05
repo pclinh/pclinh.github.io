@@ -69,12 +69,14 @@ function checkLoginState(){
 }
 function login (){
         FB.login(function(response){
-          console.log(response);
+          if(response.status=='connected')
+            window.location.href="homepage.html"
       });
     }
 function logout (){
         FB.logout(function(response){
-          console.log(response);
+          if(response.status!='connected')
+            window.location.href="index.html"
       });
     }
  
