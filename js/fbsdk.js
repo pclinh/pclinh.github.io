@@ -58,7 +58,7 @@ await FB.api(
 );
    } else {
      console.log('Not authenticated');
-     window.location.href='index.html';
+     
    }
  }
 function checkLoginState(){
@@ -66,9 +66,15 @@ function checkLoginState(){
     statusChangeCallback(response);
    })
 }
+function login (){
+        FB.logout(function(response){
+          console.log(response);
+      });
+    }
 function logout (){
         FB.logout(function(response){
-            checkLoginState()
+          console.log(response);
+            window.location.href='index.html';
       });
     }
  
