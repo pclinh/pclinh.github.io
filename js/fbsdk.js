@@ -6,12 +6,18 @@ window.fbAsyncInit = function(){
     xfbml      : true,
     version    : 'v12.0'
   });
-
+function getLoginStatus(){
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-     
-  });
-};
+      if(response.status === 'connected'){
+        window.location.href='homepage.html'
+      }
+      else
+        window.location.href='index.html'
+    });
+  };
+}
+  
  (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
    if (d.getElementById(id)) {return;}
@@ -67,14 +73,13 @@ function checkLoginState(){
    })
 }
 function login (){
-        FB.logout(function(response){
+        FB.login(function(response){
           console.log(response);
       });
     }
 function logout (){
         FB.logout(function(response){
           console.log(response);
-            window.location.href='index.html';
       });
     }
  
