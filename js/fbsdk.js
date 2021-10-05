@@ -10,11 +10,6 @@ window.fbAsyncInit = function(){
 
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
-      if(response.status === 'connected'){
-        window.location.href='homepage.html'
-      }
-      else
-        window.location.href='index.html'
     });
 };
   
