@@ -57,6 +57,17 @@ await FB.api(
         $("#show_month_engagements").text(enga);
   }
 );
+await FB.api(
+  '/102135788849157/insights/page_impressions_unique/days_28',
+  'GET',
+  {"date_preset":"yesterday".
+  "access_token":access_token},
+  function(response) {
+      const impres = response.data[0].values[0].value
+        console.log(response)
+        $("#show_month_impres").text(impres);
+  }
+);
    } else {
      console.log('Not authenticated');
      
