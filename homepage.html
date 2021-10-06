@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="bg">
+    </div>
     <header>
+      <div id="header">
         <p id="w_name">API PROJECT</p>
         <div id="main_ctrl">
           <button class="header_btn" id="logout_btn" onclick="logout()">Logout</button>
@@ -16,25 +19,35 @@
           <button class="header_btn">About</button>
           <button class="header_btn" id="post_ctrl_btn">Post manage</button>
         </div>
+      </div>
       </header>
       <div id="body">
-        <div class="count" id="fol_count">
-            <p>Tổng số người thích trang:</p>
-            <p id="show_follower"></p>
+        <div id="fans_count">
+          <div class="count" id="fol_count">
+          <p>Tổng số người thích trang:</p>
+          <p id="show_follower"></p>
           </div>
-          <div class ="count" id="month_like_count">
-            <p>Lượt tương tác bài viết:</p>
-            <p id="show_month_engagements"></p>
+        </div>
+        <div id="body_2">
+          <div id="inights">
+            <div class ="count" id="month_like_count">
+              <p>Lượt tương tác bài viết trong một tháng vừa qua:</p><p id="show_month_engagements"></p>
+            </div>
+            <div class ="count" id="month_impres_count">
+              <p>Số người tiếp cận được trong một tháng vừa qua:</p><p id="show_month_impres"></p>
+            </div>
+            <div class ="count" id="month_like_count">
+              <p>Lượt tương tác bài viết trong một tháng vừa qua:</p>
+              <p id="show_month_engagements"></p>
+            </div>
           </div>
-          <div class ="count" id="month_impres_count">
-            <p>Số người tiếp cận được:</p>
-            <p id="show_month_impres"></p>
+          <div id="control">
+            <button class="right_body_btn" id="post_ctrl_btn">Post manage</button>
+            <button class="right_body_btn" id="messege_ctrl_btn">Messenge</button>
           </div>
-          <div class ="count" id="month_like_count">
-            <p>Lượt tương tác bài viết:</p>
-            <p id="show_month_engagements"></p>
-          </div>
+        </div>
       </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/API.js"></script>
     <script src="./js/control.js"></script>
