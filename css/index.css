@@ -3,6 +3,15 @@ body{
     padding: 0;
     margin: 0px;
     z-index: 2;
+    
+}
+#bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(../img/187161.webp);
+    opacity: 0.5;
 }
 #log_fb{
     margin-top: 150px;
@@ -16,9 +25,15 @@ body{
 #w_name{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 50px;
-    color: lightgray;
+    color:black;
     padding: 0;
     margin: 9% 0 0 5%;
+}
+#header{
+    width: 100%;
+    height: 110px;
+    display: grid;
+    grid-template-columns: 20% 80%;
 }
 .header_btn{
     display: flex; 
@@ -28,29 +43,66 @@ body{
     font-size: 20px;
     background-color: transparent;
     float: right;
-    color: lightgray;
 }
-.header_btn:hover{
+button:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.2);
     cursor: pointer;
 }
 .count{
     text-align: center;
-    font-size: 25px;
-    margin: 0 0 0 28%;
-    width: 50%;
+    font-size: 30px;
+    margin: 0 0 0 0;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+#fol_count .p{
+    margin: 0;
+    padding: 0;
 }
 #fol_count{
-    background-color: blue;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width :60%;
 }
-#month_like_count{
-    background-color: brown;
+#body_2{
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: solid;
+    display: grid;
+    height: max-content;
+    grid-template-columns: 50% 50%;
+}
+#control{
+    display: grid;
+    padding: 5% 20% 5% 20%;
+    grid-template-rows: 50% 50%;
+}
+.right_body_btn{
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 #body{
-    margin: 3% 0 0 0;
-    background-color: khaki;
+    font-weight: 900;
     display: grid;
     width: 100%;
-    grid-template-columns: 50% 50%;
+    height: max-content;
+    grid-template-rows: 30% 70%;
+}
+#fans_count{
+    display: inline-grid;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+#month_like_count{
+    width: 100%;
 }
 
 
@@ -97,21 +149,10 @@ body{
     width:  90%;
     height: 70%;
 }
-header{
 
-    background-image: url("../img/banner.png");
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position-y: -160px;
-    width: 100%;
-    height: 110px;
-    display: grid;
-    grid-template-columns: 20% 80%;
-
-}
 
 #post_ctrl{
-
+    visibility: hidden;
 }
 
 #schedule{
