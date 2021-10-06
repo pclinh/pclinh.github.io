@@ -33,7 +33,7 @@ window.fbAsyncInit = function(){
     }).catch(e => {
     console.log(e);
 });
-    await FB.api(
+   FB.api(
     '/102135788849157/insights/page_fans',
     'GET',
     {"date_preset":"today",
@@ -46,7 +46,7 @@ window.fbAsyncInit = function(){
         $("#show_follower").text(fol);
     }
 );
-await FB.api(
+ FB.api(
   '/102135788849157/insights/page_post_engagements/days_28',
   'GET',
   {"date_preset":"yesterday",
@@ -57,7 +57,7 @@ await FB.api(
         $("#show_month_engagements").text(enga);
   }
 );
-await FB.api(
+FB.api(
   '/102135788849157/insights/page_impressions_unique/days_28',
   'GET',
   {"date_preset":"yesterday",
