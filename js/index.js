@@ -15,7 +15,6 @@ async function show(messagetxt){
 }
 $("#photo_upload").change(function(){
 formData = new FormData();
-formData.append("access_token", access_token);
   if($("#photo_upload").prop("files").length > 1){
         multi=true;
   }else{
