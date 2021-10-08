@@ -99,10 +99,7 @@ $("#post_btn").click(async function(){
             }
       if(type.search("image")>=0 && multi==false){
             await fetch("https://graph.facebook.com/102135788849157/photos",{
-            body: {"access_token": access_token,
-                  formData,
-                  "scheduled_publish_time":scheduled_time
-                  },
+            body:formData,
             method: "post",
           })
         .then(response => response.json())
@@ -110,10 +107,7 @@ $("#post_btn").click(async function(){
       }
         else if(type.search("image")>=0 && multi==true){
             await fetch("https://graph.facebook.com/102135788849157/photos",{
-            body:{"access_token": access_token,
-                  formData,
-                  "scheduled_publish_time":scheduled_time
-                  },
+            body:formData,
             method: "post",
           })
         .then(response => response.json())
