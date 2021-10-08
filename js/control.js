@@ -1,6 +1,5 @@
 $("#post_ctrl_btn").click( function(){
-    $("#main_ctrl").css("visibility","hidden");
-    $("#post_ctrl").css("visibility","visible");
+    window.location.href="post.html"
 });
 $(".back_btn").click( function(){
     $("#main_ctrl").css("visibility","visible");
