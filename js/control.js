@@ -1,4 +1,4 @@
-$("#post_ctrl_btn").click( function(){
+$(".post_ctrl_btn").click( function(){
     window.location.href="post.html"
 });
 $(".back_btn").click( function(){
