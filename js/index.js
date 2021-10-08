@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("getted")
+console.log("getted1")
 var formData;
 var type;
 async function show(messagetxt){
