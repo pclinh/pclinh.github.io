@@ -92,7 +92,7 @@ $("#post_btn").click(async function(){
       }
     );
   } else {
-      await formData.append("message", message);
+      await formData.append("title", message);
       await formData.append("scheduled_publish_time",scheduled_time);
       for (var value of formData.values()) {
                console.log(value);
