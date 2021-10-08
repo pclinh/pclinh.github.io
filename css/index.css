@@ -150,11 +150,6 @@ button:hover{
     height: 70%;
 }
 
-
-#post_ctrl{
-    visibility: hidden;
-}
-
 #schedule{
     align-content: space-between;
     margin-left: 2.5%;
