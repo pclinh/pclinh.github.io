@@ -92,13 +92,10 @@ $("#post_btn").click(async function(){
       }
     );
   } else {
-      await formData.append("title", message);
-      await formData.append("scheduled_publish_time",scheduled_time);
-      for (var value of formData.values()) {
-               console.log(value);
-            }
       if(type.search("image")>=0 && multi==false){
-            await fetch("https://graph.facebook.com/102135788849157/photos",{
+        formData.append("message", message);
+        formData.append("scheduled_publish_time",scheduled_time);
+        await fetch("https://graph.facebook.com/102135788849157/photos",{
             body:formData,
             method: "post",
           })
@@ -106,7 +103,9 @@ $("#post_btn").click(async function(){
         .then(data => alert(data))
       }
         else if(type.search("image")>=0 && multi==true){
-            await fetch("https://graph.facebook.com/102135788849157/photos",{
+          formData.append("message", message);
+          formData.append("scheduled_publish_time",scheduled_time);
+          await fetch("https://graph.facebook.com/102135788849157/photos",{
             body:formData,
             method: "post",
           })
@@ -114,7 +113,8 @@ $("#post_btn").click(async function(){
         .then(data => alert(data))
         }
       else if(type.search("video")>=0){
-        
+            await formData.append("description", message);
+            await formData.append("scheduled_publish_time",scheduled_time);
             await fetch("https://graph.facebook.com/102135788849157/videos",{
             body:formData,
             method: "post",
