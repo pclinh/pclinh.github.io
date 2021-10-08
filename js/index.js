@@ -1,5 +1,6 @@
 $.getScript("./js/fbsdk.js");
 console.log("getted")
+var formData;
 async function show(messagetxt){
   var showtxt = await messagetxt;
   var limitW = 3;
