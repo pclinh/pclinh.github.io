@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var multi=false;
 var scheduled_time="";
@@ -72,6 +72,7 @@ $("#post_btn").click(async function(){
         formData.append("message", message);
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body: {formData,
+                   "access_token": access_token,
                    "scheduled_publish_time":scheduled_time
                   },
             method: "post",
@@ -83,7 +84,7 @@ $("#post_btn").click(async function(){
           formData.append("message", message);
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body:{formData,
-                  "name":"",
+                  "access_token": access_token,
                   "scheduled_publish_time":scheduled_time
                   },
             method: "post",
@@ -98,6 +99,7 @@ $("#post_btn").click(async function(){
             }
             await fetch("https://graph.facebook.com/102135788849157/videos",{
             body: {formData,
+                   "access_token": access_token,
                    "scheduled_publish_time":scheduled_time
                   },
             method: "post",
