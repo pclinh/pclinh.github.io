@@ -19,7 +19,7 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
     const file = document.getElementById("photo_upload").files[i];
     fileReader.onload = () =>{
        type= file.type;
-       const data = new Blob([fileReader.result],{name:".mp4",},{type: type,});
+       const data = new Blob([fileReader.result],{name:".mp4",},{type:file.type,});
         var fileOfBlob = new File([data], '.mp4')
         formData.append("source"+i, fileOfBlob);
           for (var value of formData.values()) {
@@ -125,6 +125,9 @@ $("#post_btn").click(async function(){
           })
         .then(response =>{if(!response.error)alert("Đăng bài thành công")})
         .then(data => console.log(data))
+        for (var value of formData.values()) {
+               console.log(value);
+            }
         }
     }
 });
