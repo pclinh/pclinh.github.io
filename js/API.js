@@ -4,7 +4,6 @@ var multi=false;
 var formData;
 var type;
 var scheduled_time="";
-$.getScript("./js/fbsdk.js");
 $.getScript("./js/index.js");
 
 $("#photo_upload").change(function(){
