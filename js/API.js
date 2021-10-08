@@ -93,6 +93,7 @@ $("#post_btn").click(async function(){
         }
       else if(type.search("video")>=0){
         formData.append("message", message);
+        console.log(formData)
             await fetch("https://graph.facebook.com/102135788849157/videos",{
             body: {formData,
                    "scheduled_publish_time":scheduled_time
