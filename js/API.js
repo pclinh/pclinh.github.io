@@ -1,7 +1,5 @@
 console.log("13")
 var message;
-var formData;
-var type;
 var multi=false;
 var scheduled_time="";
 $.getScript("./js/fbsdk.js");
