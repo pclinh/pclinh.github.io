@@ -9,6 +9,7 @@ $.getScript("./js/index.js");
 
 $("#photo_upload").change(function(){
 formData = new FormData();
+formData.append("access_token", access_token);
   if($("#photo_upload").prop("files").length > 1){
         multi=true;
   }else{
@@ -92,11 +93,9 @@ $("#post_btn").click(async function(){
       }
     );
   } else {
-      formData.append("access_token", access_token);
       formData.append("message", message);
       formData.append("scheduled_publish_time",scheduled_time);
       if(type.search("image")>=0 && multi==false){
-        formData.append("message", message);
             await fetch("https://graph.facebook.com/102135788849157/photos",{
             body: {"access_token": access_token,
                   formData,
