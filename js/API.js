@@ -1,4 +1,4 @@
-console.log("12")
+console.log("13")
 var message;
 var multi=false;
 var formData;
@@ -117,17 +117,16 @@ $("#post_btn").click(async function(){
         .then(data => alert(data))
         }
       else if(type.search("video")>=0){
+        for (var value of formData.values()) {
+               console.log(value);
+            }
             await fetch("https://graph.facebook.com/102135788849157/videos",{
-            body: {
-                   formData,
-                  },
+            body:formData,
             method: "post",
           })
         .then(response =>{if(!response.error)alert("Đăng bài thành công")})
         .then(data => console.log(data))
-        for (var value of formData.values()) {
-               console.log(value);
-            }
+        
         }
     }
 });
