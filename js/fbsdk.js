@@ -42,7 +42,7 @@ window.fbAsyncInit = function(){
       console.log(response)
         const fol = response.data[0].values[0].value
         console.log(fol)
-        $("#fol_count").text("Tổng số người thích trang:   "+fol);
+        $("#fol_count").text("Tổng số người thích trang:           "+fol);
     }
 );
  FB.api(
@@ -53,7 +53,7 @@ window.fbAsyncInit = function(){
   function(response) {
       const enga = response.data[0].values[0].value
         console.log(response)
-        $("#month_like_count").text("Lượt tương tác bài viết trong một tháng vừa qua:    "+enga);
+        $("#month_like_count").text("Lượt tương tác bài viết trong một tháng vừa qua:           "+enga);
   }
 );
 FB.api(
@@ -64,7 +64,7 @@ FB.api(
   function(response) {
       const impres = response.data[0].values[0].value
         console.log(response)
-        $("#month_impres_count").text("Số người tiếp cận được trong một tháng vừa qua:    "+impres);
+        $("#month_impres_count").text("Số người tiếp cận được trong một tháng vừa qua:           "+impres);
   }
 );
    } else {
