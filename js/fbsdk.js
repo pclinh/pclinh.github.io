@@ -53,7 +53,7 @@ window.fbAsyncInit = function(){
   function(response) {
       const enga = response.data[0].values[0].value
         console.log(response)
-        $("#month_like_count").text(+enga);
+        $("#month_like_count").text("Số người tiếp cận được trong một tháng vừa qua:"+enga);
   }
 );
 FB.api(
