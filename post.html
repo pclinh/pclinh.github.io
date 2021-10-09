@@ -8,37 +8,61 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <div>
-    <div id="post_ctrl">
+  <header>
+    <div id="header">
+      <p id="w_name">API PROJECT</p>
+      <div id="main_ctrl">
+        <button class="header_btn" id="logout_btn" onclick="logout()">Logout</button>
+        <button class="header_btn">Help</button>
+        <button class="header_btn">About</button>
+        <button class="header_btn" id="post_ctrl_btn">Trang chủ</button>
+      </div>
+    </div>
+  </header>
+  <div id="editor_forms">
       <div>
-        <button class="back_btn">Back</button>
-        <button id="get_btn">Get</button>
-        <button id="post_create_btn">Post</button>
-        <div id="show"></div>
+        <p style="margin-left:40%; font-weight: bolder; font-size: 30px; position:relative;">Nhập nội dung</p>
+        <textarea id="post_content"></textarea>
+      </div>
+      <div id="schedule">
+        <input type="checkbox" name="" id="schedule">Hẹn giờ
+        <input type="date" name="schedule_date" id="schedule_date">
+        <input type="time" name="schedule_time" id="schedule_time">
       </div>
       <div>
-        <div id="editor_forms">
-          <div>
-            <p style="margin-left:40%; font-weight: bolder; font-size: 30px; position:relative;">Nhập nội dung</p>
-            <textarea id="post_content"></textarea>
-          </div>
-          <div id="schedule">
-            <input type="checkbox" name="" id="schedule">Hẹn giờ
-            <input type="date" name="schedule_date" id="schedule_date">
-            <input type="time" name="schedule_time" id="schedule_time">
-          </div>
-          <div>
-            <p  style="margin-left:5%;">Thêm hình ảnh hoặc video:</p>
-          </div>
-          <div id="post_element">
-              <input type="file" multiple id="photo_upload" accept="image/*, video/*">
-              <button id="cancel_btn">Cancel</button>
-              <button id="post_btn">Post</button>
-          </div>   
-        </div>  
+        <p  style="margin-left:5%;">Thêm hình ảnh hoặc video:</p>
+      </div>
+      <div id="post_element">
+          <input type="file" multiple id="photo_upload" accept="image/*, video/*">
+          <button id="cancel_btn">Cancel</button>
+          <button id="post_btn">Post</button>
+      </div>   
+  </div>
+  <div id="post_ctr_element">
+    <div id="post_ctrl">
+      <div>
+          <button class="back_btn">Back</button>
+          <button id="get_btn">Get</button>
+          <button id="post_create_btn">Post</button>
+          <div id="show"></div>
+        </div>
+        <div> 
+        </div>
+      </div>
+      <div id="post_ctr_main">
+        <div id="part1">  
+
+        </div>
+        <div id="part2">
+        
+        </div>
+        <div id="part3">
+
+        </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/fbsdk.js"></script>
     <script src="./js/API.js"></script>
     <script src="./js/control.js"></script>
 </body>
