@@ -42,7 +42,7 @@ window.fbAsyncInit = function(){
       console.log(response)
         const fol = response.data[0].values[0].value
         console.log(fol)
-        $("#fol_count").text() +=fol;
+        $("#fol_count").append(fol);
     }
 );
  FB.api(
@@ -53,7 +53,7 @@ window.fbAsyncInit = function(){
   function(response) {
       const enga = response.data[0].values[0].value
         console.log(response)
-        $("#month_like_count").text()+=enga;
+        $("#month_like_count").append(enga);
   }
 );
 FB.api(
@@ -64,7 +64,7 @@ FB.api(
   function(response) {
       const impres = response.data[0].values[0].value
         console.log(response)
-        $("#month_impres_count").text()+=impres;
+        $("#month_impres_count").append(impres);
   }
 );
    } else {
