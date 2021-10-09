@@ -1,171 +1,182 @@
-body{
-    display: grid;
-    padding: 0;
-    margin: 0px;
-    z-index: 2;   
+body {
+  display: grid;
+  padding: 0;
+  margin: 0px;
+  z-index: 2;
 }
-#bg{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-image: url(../img/187161.webp);
-    opacity: 0.5;
+#bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(../img/187161.webp);
+  opacity: 0.5;
 }
-#log_fb{
-    margin-top: 150px;
-    margin-left: 550px;
-    height: 150px;
-    width: 250px;
-    display: flex;
-    align-content: center;
-    background-color: aqua;
+#log_fb {
+  margin-top: 150px;
+  margin-left: 550px;
+  height: 150px;
+  width: 250px;
+  display: flex;
+  align-content: center;
+  background-color: aqua;
 }
-#w_name{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 50px;
-    color:black;
-    padding: 0;
-    margin: 9% 0 0 5%;
+#w_name {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  color: black;
+  padding: 0;
+  margin: 9% 0 0 5%;
 }
-#header{
-    width: 100%;
-    height: 110px;
-    display: grid;
-    grid-template-columns: 20% 80%;
+#header {
+  width: 100%;
+  height: 110px;
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
-.header_btn{
-    display: flex; 
-    margin: 0 40px 0 0;
-    border: 0px;
-    border-left: 1px black;
-    font-size: 20px;
-    background-color: transparent;
-    float: right;
+.header_btn {
+  display: flex;
+  margin: 0 40px 0 0;
+  border: 0px;
+  border-left: 1px black;
+  font-size: 20px;
+  background-color: transparent;
+  float: right;
 }
-button:hover{
-    transition: all .2s ease-in-out;
-    transform: scale(1.2);
-    cursor: pointer;
+button:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.2);
+  cursor: pointer;
 }
-.count{
-    text-align: center;
-    font-size: 30px;
-    margin: 0 0 0 0;
-    display: grid;
-    grid-template-columns: 70% 30%;
+.count {
+  text-align: center;
+  font-size: 30px;
+  margin: 0 0 0 0;
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
-#fol_count .p{
-    margin: 0;
-    padding: 0;
+#fol_count .p {
+  margin: 0;
+  padding: 0;
 }
-#fol_count{
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width :60%;
+#fol_count {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 60%;
 }
-#body_2{
-    font-weight: 900;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border: solid;
-    display: grid;
-    height: max-content;
-    grid-template-columns: 50% 50%;
+#body_2 {
+  font-weight: 900;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: solid;
+  display: grid;
+  height: max-content;
+  grid-template-columns: 50% 50%;
 }
-#control{
-    display: grid;
-    padding: 5% 20% 5% 20%;
-    grid-template-rows: 50% 50%;
+#control {
+  display: grid;
+  padding: 5% 20% 5% 20%;
+  grid-template-rows: 50% 50%;
 }
-.right_body_btn{
-    font-weight: 900;
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    margin-bottom: 20px;
-    width: 100%;
+.right_body_btn {
+  font-weight: 900;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 100%;
 }
-#body{
-    font-weight: 900;
-    display: grid;
-    width: 100%;
-    height: max-content;
-    grid-template-rows: 30% 70%;
+#body {
+  font-weight: 900;
+  display: grid;
+  width: 100%;
+  height: max-content;
+  grid-template-rows: 30% 70%;
 }
-#fans_count{
-    display: inline-grid;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+#fans_count {
+  display: inline-grid;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-#month_like_count{
-    width: 100%;
-}
-
-
-
-
-
-
-
-
-#cancel_btn{
-    margin-left: 18%;
-    width: 100px;
-    height: 25px;
-}
-#fb_btn{
-    background: blue;
-    width: 100px;
-    height: 50px;
-    display: flex;
-    align-self: flex-end;
-    margin-left: 50px;
-    margin-bottom: 50px;
-}
-#main_ctrl{
-    width: 100%;
-}
-#editor_forms{
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-    display: grid;
-    grid-template-rows: 75% 5% 5% 20%;
-    background-color: aqua;
-    margin: 5% 25%;
-    transition: width 0.5s, height 0.1s;
-}
-#post_content{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    margin-left: 5%;
-    width:  90%;
-    height: 70%;
+#month_like_count {
+  width: 100%;
 }
 
-#schedule{
-    align-content: space-between;
-    margin-left: 2.5%;
+#cancel_btn {
+  margin-left: 18%;
+  width: 100px;
+  height: 25px;
 }
-#post_btn{
-    border-radius: 3px;
-    border: transparent;
-    width: 100px;
-    height: 25px;
-    margin-bottom: 15px;
-    background-color:rgb(145, 176, 243);
+#fb_btn {
+  background: blue;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-self: flex-end;
+  margin-left: 50px;
+  margin-bottom: 50px;
 }
-#post_element{
-    margin-left: 4.9%;
-    width:100%;
-    display: grid;
-    align-content: space-around;
-    grid-template-columns: 30% 40% 30%;
+#main_ctrl {
+  width: 100%;
+}
+#editor_forms {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  display: grid;
+  grid-template-rows: 75% 5% 5% 20%;
+  background-color: aqua;
+  margin: 5% 25%;
+  transition: width 0.5s, height 0.1s;
+}
+#post_content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin-left: 5%;
+  width: 90%;
+  height: 70%;
+}
+
+#schedule {
+  align-content: space-between;
+  margin-left: 2.5%;
+}
+#post_btn {
+  border-radius: 3px;
+  border: transparent;
+  width: 100px;
+  height: 25px;
+  margin-bottom: 15px;
+  background-color: rgb(145, 176, 243);
+}
+#post_element {
+  margin-left: 4.9%;
+  width: 100%;
+  display: grid;
+  align-content: space-around;
+  grid-template-columns: 30% 40% 30%;
+}
+#post_ctr {
+  height: fit-content;
+}
+
+#post_ctr_main {
+  display: grid;
+  width: 100%;
+  height: 500px;
+  grid-template-columns: 25% 50% 25%;
+}
+#part1 {
+  background-color: aquamarine;
+}
+#part2 {
+  background-color: bisque;
+}
+#part3 {
+  background-color: rgb(145, 176, 243);
 }
