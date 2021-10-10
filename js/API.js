@@ -1,4 +1,4 @@
-console.log("13")
+console.log("11")
 var message;
 var multi=false;
 var formData;
@@ -68,7 +68,7 @@ $("#get_btn").click(function get_clicked(){
       })
       */
     });
-        $(".select_post").css({"color":"beige"});
+        $(".select_post").css("color","beige");
         $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
   }}
   )})
