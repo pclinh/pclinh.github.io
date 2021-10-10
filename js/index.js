@@ -3,12 +3,11 @@ console.log("getted1")
 
 
 async function show(messagetxt){
+  console.log(messagetxt)
   var showtxt = await messagetxt;
   var limitW = 3;
   var txtStart = showtxt.slice(0, limitW);
-  console.log(messagetxt.lenght)
   if (messagetxt.lenght > limitW){
-
       showtxt = await txtStart+ "...";
      }
   return showtxt;
