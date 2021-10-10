@@ -47,7 +47,7 @@ $("#get_btn").click(function get_clicked(){
                   var showtxt =""
             }
             showtime= await create_time(value.created_time)
-      var row = $("<option id="+value.id+">"+showtxt+"</option>");
+      var row = $("<div class="select_post" id="+value.id+">"+showtxt+"</div>");
       await $("#post_selection").append(row)
             
             
@@ -68,8 +68,8 @@ $("#get_btn").click(function get_clicked(){
       })
       */
     });
-        $("option").hover("cursor","pointer");
-        $("option").css({"color":"beige"});
+        $(".select_post").hover("cursor","pointer");
+        $(".select_post").css({"color":"beige"});
   }}
   )})
 
