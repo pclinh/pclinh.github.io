@@ -47,8 +47,9 @@ $("#get_btn").click(function get_clicked(){
                   var showtxt =""
             }
             showtime= await create_time(value.created_time)
-        var row = $("<option id="+value.id+">"+showtxt+"</option>");
-   await $("#post_selection").append(row)
+      var row = $("<option id="+value.id+">"+showtxt+"</option>");
+      await $("#post_selection").append(row)
+            $("option").css("color","beige");
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
       }); 
