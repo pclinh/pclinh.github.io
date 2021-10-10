@@ -30,7 +30,7 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
         }
 })
 $("#get_btn").click(function get_clicked(){
-  $("#show").replaceWith('<p id="show"></p>');
+  $("#post_selection").replaceWith('<div id="post_selection"></div>');
   FB.api(
     "/102135788849157/feed",
     "GET",
