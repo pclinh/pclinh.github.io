@@ -47,7 +47,7 @@ $("#get_btn").click(function get_clicked(){
                   var showtxt =""
             }
             showtime= await create_time(value.created_time)
-      var row = $("<div class="select_post" id="+value.id+">"+showtxt+"</div>");
+      var row = $("<div class='select_post' id="+value.id+">"+showtxt+"</div>");
       await $("#post_selection").append(row)
             
             
