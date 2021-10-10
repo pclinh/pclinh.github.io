@@ -4,13 +4,12 @@ body {
   margin: 0px;
   z-index: 2;
 }
-#bg {
+.bg {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url(../img/187161.webp);
-  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.753);
 }
 #log_fb {
   margin-top: 150px;
@@ -21,10 +20,14 @@ body {
   align-content: center;
   background-color: aqua;
 }
+p,
+button {
+  color: beige;
+}
 #w_name {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 50px;
-  color: black;
+
   padding: 0;
   margin: 9% 0 0 5%;
 }
@@ -164,19 +167,24 @@ button:hover {
 #post_ctr {
   height: fit-content;
 }
-
+#post_ctr > div > button {
+  color: black;
+}
 #post_ctr_main {
   display: grid;
-  width: 100%;
+  width: 99%;
   height: 500px;
-  grid-template-columns: 25% 50% 25%;
+  margin-left: 0.4%;
+  grid-template-columns: 25% 50% 24%;
+}
+.show_info_post {
+  overflow: auto;
+  border: black groove 2px;
+  border-radius: 8px;
 }
 #part1 {
-  background-color: aquamarine;
 }
 #part2 {
-  background-color: bisque;
 }
 #part3 {
-  background-color: rgb(145, 176, 243);
 }
