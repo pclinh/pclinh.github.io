@@ -65,9 +65,9 @@ $("#get_btn").click(function get_clicked(){
         });
       })
       */
-    });    
       $(".select_post").css("color","beige");
-  $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
+      $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
+    });    
   }}
   )}
 )
