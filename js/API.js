@@ -68,10 +68,13 @@ $("#get_btn").click(function get_clicked(){
       })
       */
     });
-        $(".select_post").css("color","beige");
-        $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
+        
   }}
-  )})
+  )}
+                   
+  $(".select_post").css("color","beige");
+  $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
+)
 
 $("#post_btn").click(async function(){
   if($("#schedule").prop('checked')== true){
