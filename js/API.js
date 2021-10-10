@@ -68,8 +68,8 @@ $("#get_btn").click(function get_clicked(){
       })
       */
     });
-        $("option").hover("cursor","poiter");
-        $("option").css({"color":"beige","cursor":"poiter"});
+        $("option").hover("cursor","pointer");
+        $("option").css({"color":"beige"});
   }}
   )})
 
