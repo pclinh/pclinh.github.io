@@ -1,4 +1,4 @@
-console.log("15")
+console.log("11")
 var message;
 var multi=false;
 var formData;
@@ -47,8 +47,8 @@ $("#get_btn").click(function get_clicked(){
                   var showtxt =""
             }
             showtime= await create_time(value.created_time)
-        var row = $("<tr><td>&emsp;&emsp;Ngày tạo:&emsp; " + showtime + "</td><td class='show_content'id='Show_" + value.id + "'>&emsp;&emsp;Nội dung:&emsp;" + showtxt + "</td><td><button class=\"detail_btn\" id=\'detail_" + value.id + "\'>Chi tiết</button><td><button class=\"delete_btn\" id=\'delete_" + value.id + "\'>xóa</button></td><td><button class=\"update_btn\" id=\'update_" + value.id + "\'>Cập nhật</button></td></tr>");
-   await $("#show").append(row)
+        var row = $("<option id="+value.id">"+showtxt"</option>");
+   await $("#post_selection").append(row)
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
       }); 
