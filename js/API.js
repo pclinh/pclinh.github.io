@@ -1,4 +1,4 @@
-console.log("11")
+console.log("12")
 var message;
 var multi=false;
 var formData;
@@ -49,8 +49,6 @@ $("#get_btn").click(function get_clicked(){
             showtime= await create_time(value.created_time)
       var row = $("<div class='select_post' id="+value.id+">"+showtxt+"</div>");
       await $("#post_selection").append(row)
-            
-            
        /* 
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
   
@@ -67,11 +65,10 @@ $("#get_btn").click(function get_clicked(){
         });
       })
       */
-    });
-        
-  }}
-    $(".select_post").css("color","beige");
+    });    
+      $(".select_post").css("color","beige");
   $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
+  }}
   )}
 )
 
