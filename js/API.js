@@ -72,7 +72,6 @@ $("#get_btn").click(function get_clicked(){
         $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
             }, function(){
          $(this).css({"background-color":"transparent"});
-        $(".selected_post").css({"background-color":"rgba(9, 7, 44, 0.274)"});
         });
     });    
   }}
