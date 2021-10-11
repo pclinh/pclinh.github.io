@@ -2,13 +2,12 @@ $.getScript("./js/fbsdk.js");
 console.log("getted1")
 
 
-async function show(messagetxt){
-  console.log(messagetxt)
-  var showtxt = await messagetxt;
+function show(messagetxt){
+  var showtxt = messagetxt;
   var limitW = 20;
   var txtStart = showtxt.slice(0, limitW);
   if (messagetxt.length > limitW){
-      showtxt = await txtStart+ "...";
+      showtxt = txtStart+ "...";
      }
   return showtxt;
 }
