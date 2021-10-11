@@ -66,13 +66,13 @@ $("#get_btn").click(function get_clicked(){
         });
       })
       */
-      $(".selected_post").css({"background-color":"rgba(9, 7, 44, 0.274)"});
       $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
       $(".select_post_createtime").css({  "float":"right"});
       $(".select_post").hover(function(){
         $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
             }, function(){
          $(this).css({"background-color":"transparent"});
+        $(".selected_post").css({"background-color":"rgba(9, 7, 44, 0.274)"});
         });
     });    
   }}
