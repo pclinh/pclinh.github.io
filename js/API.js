@@ -51,7 +51,7 @@ $("#get_btn").click(function get_clicked(){
       await $("#post_selection").append(row)
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
-        document.getElementById(value.id).addClass("selected_post");
+        $("#"+value.id).addClass("selected_post");
       });
        /* 
      
