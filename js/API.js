@@ -40,7 +40,7 @@ $("#get_btn").click(function get_clicked(){
     },
    async function (response){
       if (response && !response.error){
-      await $.each(response.data,async function (index, value){
+      $.each(response.data,async function (index, value){
             if(value.message != null){
                  var showtxt = await show(value.message)
             }else{
@@ -60,13 +60,13 @@ $("#get_btn").click(function get_clicked(){
           method: 'DELETE',
           success: function (result) {
             alert("Delete succeed");
-            get_clicked();
           }
         });
       })
       */
-      $(".select_post").css("color","beige");
-      $(".select_post").hover(function(){$(this).css("cursor","pointer")});  
+      $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
+      $(".select_post_createtim").css({  "float":"right","display":"inline-block"});
+      $(".select_post").hover(function(){$(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"})});  
     });    
   }}
   )}
@@ -77,7 +77,6 @@ $("#post_btn").click(async function(){
     const time = $("#schedule_date").val()+" "+$("#schedule_time").val();
     scheduled_time= await change_time(time);
   }
-  $("#show").replaceWith('<p id="show"></p>');
   message = document.getElementById("post_content").value;
   if (message == "") {
     alert("Vui lòng nhập nội dung");
