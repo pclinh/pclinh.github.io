@@ -67,11 +67,10 @@ $("#get_btn").click(function get_clicked(){
       $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
       $(".select_post_createtime").css({  "float":"right"});
       $(".select_post").hover(function(){
-        $(this).css("cursor","pointer");
+        $(this).css({"cursor":"pointer","background-color";"rgba(9, 7, 44, 0.274)"});
             }, function(){
-         $(this).css("background-color","rgba(9, 7, 44, 0.274)");
+         $(this).css({"background-color":"none"});
         });
-       $(".select_post").mouseout(function(){"background-color","none" })
     });    
   }}
   )}
