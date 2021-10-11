@@ -17,7 +17,7 @@ function create_time(date){
 var d = new Date(date)
 dt = d.toLocaleDateString('en-GB');
 time = d.toLocaleTimeString('en-GB');
-showtime = dt+"  "+time; 
+showtime = dt+" "+time; 
 return showtime;
 }
 function change_time(time){
