@@ -47,7 +47,7 @@ $("#get_btn").click(function get_clicked(){
                   var showtxt =""
             }
             showtime= await create_time(value.created_time)
-      var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post'> "+showtime+"</div></div>");
+      var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
       await $("#post_selection").append(row)
        /* 
       document.getElementById("update_" + value.id).addEventListener('click', () =>{
