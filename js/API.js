@@ -69,7 +69,7 @@ $("#get_btn").click(function get_clicked(){
       $(".select_post").hover(function(){
         $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
             }, function(){
-         $(this).css({"background-color":"none"});
+         $(this).css({"background-color":"transparent"});
         });
     });    
   }}
