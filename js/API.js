@@ -49,10 +49,12 @@ $("#get_btn").click(function get_clicked(){
             showtime= await create_time(value.created_time)
       var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
       await $("#post_selection").append(row)
+      document.getElementById(value.id).addEventListener('click', () =>{
+        $(".selected_post").removeClass("selected_post")
+        $(this).addClass("selected_post");
+      });
        /* 
-      document.getElementById("update_" + value.id).addEventListener('click', () =>{
-  
-      }); 
+     
      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
        $.ajax({
