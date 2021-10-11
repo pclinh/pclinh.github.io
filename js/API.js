@@ -65,7 +65,7 @@ $("#get_btn").click(function get_clicked(){
       })
       */
       $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
-      $(".select_post_createtim").css({  "float":"right","display":"inline-block"});
+      $(".select_post_createtime").css({  "float":"right","display":"inline-block"});
       $(".select_post").hover(function(){$(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"})});  
     });    
   }}
