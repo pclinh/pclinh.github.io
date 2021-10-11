@@ -51,7 +51,7 @@ $("#get_btn").click(function get_clicked(){
       await $("#post_selection").append(row)
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
-        $("#"+value.id).addClass("selected_post");
+        $(this).addClass("selected_post");
       });
        /* 
      
@@ -66,6 +66,7 @@ $("#get_btn").click(function get_clicked(){
         });
       })
       */
+      $(".selected_post").css({"background-color":"rgba(9, 7, 44, 0.274)"});
       $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
       $(".select_post_createtime").css({  "float":"right"});
       $(".select_post").hover(function(){
