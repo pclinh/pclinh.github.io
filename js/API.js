@@ -70,7 +70,7 @@ $("#get_btn").click(function get_clicked(){
         $(this).css("cursor","pointer");
             }, function(){
          $(this).css("background-color","rgba(9, 7, 44, 0.274)";
-        }
+        });
     });    
   }}
   )}
