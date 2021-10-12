@@ -57,7 +57,7 @@ $("#get_btn").click(function get_clicked(){
              FB.api(
                  '/oembed_post',
                    'GET',
-                  {"url":value.permalink_url,"maxwidth":"600"},
+                  {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
               function(response){
                   $("#postdtail").append(response.html);
                }
