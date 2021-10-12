@@ -53,13 +53,12 @@ $("#get_btn").click(function get_clicked(){
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
         $("#"+value.id).addClass("selected_post");
-         $("#postdtail").replace(<div id="postdtail"></div>);
+         $("#postdtail").replace("<div id='postdtail'></div>");
              FB.api(
                  '/oembed_post',
                    'GET',
                   {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
-              function(response) {
-               
+              function(response){
                   $("#postdtail").append(response.html);
                }
             );
