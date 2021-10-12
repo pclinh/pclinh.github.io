@@ -6,6 +6,10 @@ var type;
 var scheduled_time="";
 $.getScript("./js/index.js");
 
+$(".select_post").click(function(){
+  var x= $(".selected_post").id;
+  console.log(x);
+})
 $("#photo_upload").change(function(){
 formData = new FormData();
 formData.append("access_token",access_token);
@@ -13,7 +17,7 @@ formData.append("access_token",access_token);
         multi=true;
   }else{
         multi=false
-  }
+}
 for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
     const fileReader = new FileReader();
     const file = document.getElementById("photo_upload").files[i];
@@ -131,8 +135,7 @@ $("#post_btn").click(async function(){
             method: "post",
           })
         .then(response =>{if(!response.error)alert("Đăng bài thành công")})
-        .then(data => console.log(data))
-        
+        .then(data => console.log(data);
         }
     }
 });
