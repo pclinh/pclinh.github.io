@@ -60,9 +60,9 @@ $("#get_btn").click(function get_clicked(){
                   {"url":value.permalink_url,"maxwidth":"600"},
               function(response){
                   $("#postdtail").append(response.html);
-                  $("iframe").css("background-color","whitesmoke");
                }
             );
+        $("iframe").css("background-color","whitesmoke");
       });
        /* 
      
