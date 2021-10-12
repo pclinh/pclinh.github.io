@@ -1,4 +1,4 @@
-console.log("12")
+console.log("13")
 var message;
 var multi=false;
 var formData;
@@ -7,7 +7,7 @@ var scheduled_time="";
 $.getScript("./js/index.js");
 
 $(".select_post").click(function(){
-  var x= $(".selected_post").id;
+  var x  = $(".select_post selected_post").id;
   console.log(x);
 })
 $("#photo_upload").change(function(){
