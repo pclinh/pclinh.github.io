@@ -135,7 +135,7 @@ $("#post_btn").click(async function(){
             method: "post",
           })
         .then(response =>{if(!response.error)alert("Đăng bài thành công")})
-        .then(data => console.log(data);
+        .then(data => console.log(data));
         }
     }
 });
