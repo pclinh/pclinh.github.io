@@ -53,7 +53,7 @@ $("#get_btn").click(function get_clicked(){
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
         $("#"+value.id).addClass("selected_post");
-         $("#postdtail").replace("<div id='postdtail'></div>");
+         $("#postdtail").replaceWith("<div id='postdtail'></div>");
              FB.api(
                  '/oembed_post',
                    'GET',
