@@ -53,9 +53,7 @@ $("#get_btn").click(function get_clicked(){
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
         $("#"+value.id).addClass("selected_post");
-
-           var x  = $(".selected_post").getAttribute('id');
-              console.log(x);
+              console.log(value.id);
 
       });
        /* 
