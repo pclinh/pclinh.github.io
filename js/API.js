@@ -6,10 +6,7 @@ var type;
 var scheduled_time="";
 $.getScript("./js/index.js");
 
-$(".select_post").click(function(){
-  var x  = $(".select_post selected_post").id;
-  console.log(x);
-})
+
 $("#photo_upload").change(function(){
 formData = new FormData();
 formData.append("access_token",access_token);
@@ -56,6 +53,10 @@ $("#get_btn").click(function get_clicked(){
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
         $("#"+value.id).addClass("selected_post");
+
+           var x  = $(".select_post selected_post").id;
+              console.log(x);
+
       });
        /* 
      
