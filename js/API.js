@@ -1,4 +1,4 @@
-console.log("15")
+console.log("16")
 var message;
 var multi=false;
 var formData;
@@ -53,8 +53,15 @@ $("#get_btn").click(function get_clicked(){
       document.getElementById(value.id).addEventListener('click', () =>{
         $(".selected_post").removeClass("selected_post")
         $("#"+value.id).addClass("selected_post");
-              console.log(value.permalink_url);
-
+         perma=
+             FB.api(
+                 '/oembed_post',
+                   'GET',
+                  {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
+              function(response) {
+                  console.log(response.html)
+               }
+            );
       });
        /* 
      
