@@ -54,7 +54,7 @@ $("#get_btn").click(function get_clicked(){
         $(".selected_post").removeClass("selected_post")
         $("#"+value.id).addClass("selected_post");
 
-           var x  = $(".select_post selected_post").id;
+           var x  = $(".selected_post").id;
               console.log(x);
 
       });
