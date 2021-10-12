@@ -59,7 +59,7 @@ $("#get_btn").click(function get_clicked(){
                    'GET',
                   {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
               function(response) {
-                  $("#"+value.id).append(response.html);
+                  $("#postdtail").append(response.html);
                }
             );
       });
