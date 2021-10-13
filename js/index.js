@@ -14,6 +14,17 @@ function show_post(id, permalink){
             );
   $("iframe").css("background-color","whitesmoke");
 }
+function cmt(id){
+  FB.api(
+   id+'/comments',
+  'GET',
+  {access_token: access_token},
+  function(response) {
+    console.log(response)
+      //$("#comment_detail").append(response.message)
+  }
+);
+}
 function show(messagetxt){
   var showtxt = messagetxt;
   var limitW = 20;
