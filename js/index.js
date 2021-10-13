@@ -18,7 +18,7 @@ function cmt(id){
   FB.api(
    id+'/comments',
   'GET',
-  {"fields":"permalink_url"},
+   {"fields":"permalink_url"},
   function(response){
     var cmt_detail="<p class="cmt_link" id="+permalink_url+">"+response.data[0].from.name +": " + response.data[0].message;
     console.log(cmt_detail)
