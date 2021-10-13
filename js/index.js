@@ -24,7 +24,8 @@ function cmt(id,permalink_url){
     var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
     console.log(cmt_detail)
       $("#comment_detail").append(cmt_detail);
-    }
+        }
+      );
   }
 );
     $(".cmt_link").click(function(){
@@ -54,4 +55,3 @@ function change_time(time){
     const d = new Date(time)
     return d.toISOString();
 }
-
