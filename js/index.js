@@ -1,14 +1,14 @@
 $.getScript("./js/fbsdk.js");
 console.log("getted1")
 
-function show_post(id){
+function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
          $("#postdtail").replaceWith("<div id='postdtail'></div>");
              FB.api(
                  '/oembed_post',
                    'GET',
-                  {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
+                  {"url":permalink,"maxwidth":"600","useiframe":"true"},
               function(response){
                   $("#postdtail").append(response.html);
                }
