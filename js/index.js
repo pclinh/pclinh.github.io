@@ -14,17 +14,23 @@ function show_post(id, permalink){
             );
   $("iframe").css("background-color","whitesmoke");
 }
-function cmt(id){
+function cmt(id,permalink_url){
   FB.api(
    id+'/comments',
   'GET',
    {},
   function(response){
-    var cmt_detail="<p class='cmt_link' id="+response.id+">"+response.data[0].from.name +": " + response.data[0].message;
+    $.each(response.data,async function (index, value){
+    var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
     console.log(cmt_detail)
       $("#comment_detail").append(cmt_detail);
+    }
   }
 );
+    $(".cmt_link").click(function(){
+      const cmt_url= permalink_url+&"comment_id="+value.id;
+      window.open(cmt_url);
+    })
 }
 function show(messagetxt){
   var showtxt = messagetxt;
