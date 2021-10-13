@@ -29,7 +29,7 @@ function cmt(id,permalink_url){
   }
 );
     $(".cmt_link").click(function(){
-      const cmt_url= permalink_url+&"comment_id="+value.id;
+      const cmt_url= permalink_url+"&comment_id="+value.id;
       window.open(cmt_url);
     })
 }
