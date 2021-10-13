@@ -51,21 +51,9 @@ $("#get_btn").click(function get_clicked(){
       var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
       await $("#post_selection").append(row)
       document.getElementById(value.id).addEventListener('click', () =>{
-        $(".selected_post").removeClass("selected_post")
-        $("#"+value.id).addClass("selected_post");
-         $("#postdtail").replaceWith("<div id='postdtail'></div>");
-             FB.api(
-                 '/oembed_post',
-                   'GET',
-                  {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
-              function(response){
-                  $("#postdtail").append(response.html);
-               }
-            );
-        $("iframe").css("background-color","whitesmoke");
+          show(value.id)
       });
-       /* 
-     
+       /*
      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
         var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
        $.ajax({
