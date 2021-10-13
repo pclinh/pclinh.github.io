@@ -21,7 +21,8 @@ function cmt(id){
   {access_token: access_token},
   function(response) {
     console.log(response)
-      //$("#comment_detail").append(response.message)
+    var cmt_detail= response.data[0].from.name +": " + response.data[0].message
+      $("#comment_detail").append(cmt_detail)
   }
 );
 }
