@@ -31,8 +31,10 @@ window.fbAsyncInit = function(){
         },
     }).catch(e => {
     console.log(e);
-});
-
+  });
+    if(window.location.href=="homepage.html"){
+          insight()
+    }
    } else {
      console.log('Not authenticated');
    }
