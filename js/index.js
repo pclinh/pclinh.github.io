@@ -36,7 +36,7 @@ function change_time(time){
     const d = new Date(time)
     return d.toISOString();
 }
-function (){
+function insight(){
 FB.api(
     '/102135788849157/insights/page_fans',
     'GET',
