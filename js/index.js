@@ -3,7 +3,7 @@ console.log("getted1")
 
 function show_post(id){
   $(".selected_post").removeClass("selected_post")
-        $("#"id).addClass("selected_post");
+        $("#"+id).addClass("selected_post");
          $("#postdtail").replaceWith("<div id='postdtail'></div>");
              FB.api(
                  '/oembed_post',
