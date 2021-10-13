@@ -1,7 +1,20 @@
 $.getScript("./js/fbsdk.js");
 console.log("getted1")
 
-
+function show_post(id){
+  $(".selected_post").removeClass("selected_post")
+        $("#"+value.id).addClass("selected_post");
+         $("#postdtail").replaceWith("<div id='postdtail'></div>");
+             FB.api(
+                 '/oembed_post',
+                   'GET',
+                  {"url":value.permalink_url,"maxwidth":"600","useiframe":"true"},
+              function(response){
+                  $("#postdtail").append(response.html);
+               }
+            );
+  $("iframe").css("background-color","whitesmoke");
+}
 function show(messagetxt){
   var showtxt = messagetxt;
   var limitW = 20;
