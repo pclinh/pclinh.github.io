@@ -1,5 +1,4 @@
 $.getScript("./js/fbsdk.js");
-console.log("getted1")
 
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
@@ -37,7 +36,7 @@ function change_time(time){
     const d = new Date(time)
     return d.toISOString();
 }
-function insight(){
+function (){
 FB.api(
     '/102135788849157/insights/page_fans',
     'GET',
@@ -50,7 +49,6 @@ FB.api(
         $("#fol_count").text("Tổng số người thích trang:           "+fol);
     }
 );
-   
  FB.api(
   '/102135788849157/insights/page_post_engagements/days_28',
   'GET',
