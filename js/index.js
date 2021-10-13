@@ -15,7 +15,7 @@ function show_post(id, permalink){
   $("iframe").css("background-color","whitesmoke");
 }
 function cmt(id,permalink_url){
-  var x= "//"+id + '//comments';
+  var x= "/"+id + '/comments';
   console.log(x);                            
   FB.api(
    x,
