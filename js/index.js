@@ -20,8 +20,8 @@ function cmt(id){
   'GET',
   {access_token: access_token},
   function(response) {
-    console.log(response)
-    var cmt_detail= response.data[0].from.name +": " + response.data[0].message
+    var cmt_detail= response.data[0].from.name +": " + response.data[0].message;
+    console.log(cmt_detail)    
       $("#comment_detail").append(cmt_detail)
   }
 );
