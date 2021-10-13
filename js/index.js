@@ -36,37 +36,4 @@ function change_time(time){
     const d = new Date(time)
     return d.toISOString();
 }
-function insight(){
-FB.api(
-    '/102135788849157/insights/page_fans',
-    'GET',
-    {"date_preset":"today",
-     "access_token":access_token 
-    },
-    function(response) {
-      console.log(response)
-        const fol = response.data[0].values[0].value
-        $("#fol_count").text("Tổng số người thích trang:           "+fol);
-    }
-);
- FB.api(
-  '/102135788849157/insights/page_post_engagements/days_28',
-  'GET',
-  {"date_preset":"yesterday",
-  "access_token":access_token},
-  function(response) {
-      const enga = response.data[0].values[0].value
-        $("#month_like_count").text("Lượt tương tác bài viết trong một tháng vừa qua:           "+enga);
-  }
-);
-FB.api(
-  '/102135788849157/insights/page_impressions_unique/days_28',
-  'GET',
-  {"date_preset":"yesterday",
-  "access_token":access_token},
-  function(response) {
-      const impres = response.data[0].values[0].value
-        $("#month_impres_count").text("Số người tiếp cận được trong một tháng vừa qua:           "+impres);
-  }
-);
-}
+
