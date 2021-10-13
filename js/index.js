@@ -16,7 +16,7 @@ function show_post(id, permalink){
 }
 function cmt(id,permalink_url){
   var x="/"id + '/comments';
-  console.log(url);                            
+  console.log(x);                            
   FB.api(
    x,
   'GET',
