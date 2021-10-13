@@ -32,7 +32,7 @@ window.fbAsyncInit = function(){
     }).catch(e => {
     console.log(e);
   });
-    if(window.location.href=="homepage.html"){
+    if(window.location.href=="https://pclinh.github.io/homepage.html"){
       FB.api(
     '/102135788849157/insights/page_fans',
     'GET',
