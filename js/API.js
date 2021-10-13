@@ -52,7 +52,7 @@ $("#get_btn").click(function get_clicked(){
       await $("#post_selection").append(row)
       document.getElementById(value.id).addEventListener('click', () =>{
           show_post(value.id, value.permalink_url)
-          cmt(value.id);
+          cmt(value.id,value.permalink_url);
       });
        /*
      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
