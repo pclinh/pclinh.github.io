@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("0");
+console.log("1");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -20,15 +20,16 @@ function cmt(id,permalink_url){
   'GET',
    {"fields":"comments",
     "access_token":access_token},
-  function(response){
+  async function(response){
+    if (response && !response.error){
     $.each(response.data,async function (index, value){
       console.log(value.from.name)
     var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
     console.log(cmt_detail)
-      $("#comment_detail").append(cmt_detail);
+     await $("#comment_detail").append(cmt_detail);
         }
       );
-  }
+    }}
   );
     $(".cmt_link").click(function(){
       const cmt_url= permalink_url+"&comment_id="+value.id;
