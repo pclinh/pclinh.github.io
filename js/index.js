@@ -17,9 +17,9 @@ function show_post(id, permalink){
 function cmt(id,permalink_url){
                       
   FB.api(
-   id + '/comments',
+   id,
   'GET',
-   {},
+   {"fields":"comments"},
   function(response){
     $.each(response.data,async function (index, value){
     var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
