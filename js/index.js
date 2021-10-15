@@ -17,7 +17,7 @@ function show_post(id, permalink){
 function cmt(id,permalink_url){
                       
   FB.api(
-   id,
+   id+"/",
   'GET',
    {"fields":"comments"},
   function(response){
