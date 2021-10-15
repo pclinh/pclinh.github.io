@@ -22,6 +22,7 @@ function cmt(id,permalink_url){
     "access_token":access_token},
   function(response){
     $.each(response.data,async function (index, value){
+      console.log(value.from.name)
     var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
     console.log(cmt_detail)
       $("#comment_detail").append(cmt_detail);
