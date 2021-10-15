@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log();
+console.log("0");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -15,10 +15,9 @@ function show_post(id, permalink){
   $("iframe").css("background-color","whitesmoke");
 }
 function cmt(id,permalink_url){
-  var x= "/"+id + '/comments';
-  console.log(x);                            
+                      
   FB.api(
-   x,
+   id + '/comments',
   'GET',
    {},
   function(response){
