@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("0");
+console.log("1");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -17,7 +17,7 @@ function show_post(id, permalink){
 function cmt(id,permalink_url){
                       
   FB.api(
-   id,
+   /102135788849157/+id,
   'GET',
    {"fields":"comments"},
   function(response){
