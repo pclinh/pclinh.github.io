@@ -27,11 +27,13 @@ window.fbAsyncInit = function(){
         url: 'https://graph.facebook.com/102135788849157?fields=access_token&access_token='+response.authResponse.accessToken, 
         data: { get_param: 'value' },
         success: function (data) {
+          console.log(data.access_token)
          access_token=data.access_token;
         },
     }).catch(e => {
     console.log(e);
   });
+     console.log(access_token)
     if(window.location.href=="https://pclinh.github.io/homepage.html"){
       FB.api(
     '/102135788849157/insights/page_fans',
