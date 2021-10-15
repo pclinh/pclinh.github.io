@@ -1,4 +1,4 @@
-console.log("2")
+console.log("3")
 var message;
 var multi=false;
 var formData;
@@ -51,8 +51,9 @@ $("#get_btn").click(function get_clicked(){
       var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
       await $("#post_selection").append(row)
       document.getElementById(value.id).addEventListener('click',async () =>{
+         await  cmt(value.id,value.permalink_url);
       await show_post(value.id, value.permalink_url)
-      await  cmt(value.id,value.permalink_url);
+     
       });
        /*
      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
