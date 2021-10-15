@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("1");
+console.log("0");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -15,7 +15,7 @@ function show_post(id, permalink){
   $("iframe").css("background-color","whitesmoke");
 }
 function cmt(id,permalink_url){
-                      
+   /*                   
   FB.api(
    id+"/",
   'GET',
@@ -33,6 +33,15 @@ function cmt(id,permalink_url){
       const cmt_url= permalink_url+"&comment_id="+value.id;
       window.open(cmt_url);
     })
+    */
+  FB.api(
+  '/102135788849157_123566173372785',
+  'GET',
+  {"fields":"comments"},
+  function(response) {
+      // Insert your code here
+  }
+);
 }
 function show(messagetxt){
   var showtxt = messagetxt;
