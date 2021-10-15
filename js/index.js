@@ -14,12 +14,12 @@ function show_post(id, permalink){
             );
   $("iframe").css("background-color","whitesmoke");
 }
-function cmt(id,permalink_url){
-   /*                   
+function cmt(id,permalink_url){               
   FB.api(
    id+"/",
   'GET',
-   {"fields":"comments"},
+   {"fields":"comments",
+    "access_token":access_token},
   function(response){
     $.each(response.data,async function (index, value){
     var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
@@ -28,20 +28,12 @@ function cmt(id,permalink_url){
         }
       );
   }
-);
+  );
     $(".cmt_link").click(function(){
       const cmt_url= permalink_url+"&comment_id="+value.id;
       window.open(cmt_url);
     })
-    */
-  FB.api(
-  '/102135788849157_123566173372785',
-  'GET',
-  {"fields":"comments"},
-  function(response) {
-      // Insert your code here
-  }
-);
+
 }
 function show(messagetxt){
   var showtxt = messagetxt;
