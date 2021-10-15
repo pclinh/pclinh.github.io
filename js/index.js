@@ -21,9 +21,10 @@ function cmt(id,permalink_url){
    {"fields":"comments",
     "access_token":access_token},
   async function(response){
+    console.log(value.from.name)
     if (response && !response.error){
     $.each(response.data,async function (index, value){
-      console.log(value.from.name)
+      
     var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
     console.log(cmt_detail)
      await $("#comment_detail").append(cmt_detail);
