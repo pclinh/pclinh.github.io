@@ -21,7 +21,7 @@ function cmt(id,permalink_url){
    {"fields":"comments",
     "access_token":access_token},
   async function(response){
-    console.log(response.data)
+    console.log(response)
     if (response && !response.error){
     $.each(response.data,async function (index, value){
       
