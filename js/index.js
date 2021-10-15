@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("0");
+console.log("1");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -32,7 +32,7 @@ function cmt(id,permalink_url){
     }}
   );
     $(".cmt_link").click(function(){
-      const cmt_url= permalink_url+"&comment_id="+value.id;
+      const cmt_url= permalink_url+"&comment_id="+this.id;
       window.open(cmt_url);
     })
 
