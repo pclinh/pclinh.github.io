@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("0");
+console.log("1");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -24,7 +24,7 @@ function cmt(id,permalink_url){
     if (response && !response.error){
    await $.each(response.comments.data,async function (index, value){
       
-    var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message;
+    var cmt_detail="<p class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message+"</p>";
     console.log(cmt_detail)
      await $("#comment_detail").append(cmt_detail);
         }
