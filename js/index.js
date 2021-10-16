@@ -28,7 +28,7 @@ function cmt(id,permalink_url){
     console.log(cmt_detail)
      await $("#comment_detail").append(cmt_detail);
       document.getElementById(value.id).addEventListener('click',async () =>{
-           const cmt_id= value.id.slice(value.id.search("_"),end)
+           const cmt_id= value.id.slice(value.id.search("_"),value.id.length - 1)
            console.log(cmt_id)
            const cmt_url= permalink_url+"&comment_id="+cmt_id;
                    window.open(cmt_url);
