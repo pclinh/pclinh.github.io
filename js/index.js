@@ -29,7 +29,8 @@ function cmt(id,permalink_url){
      await $("#comment_detail").append(cmt_detail);
       document.getElementById(value.id).addEventListener('click',async () =>{
            const cmt_id= value.id.replace(id+"_","")
-           const cmt_url= permalink_url+"&comment_id="+value.id;
+           console.log(cmt_id)
+           const cmt_url= permalink_url+"&comment_id="+cmt_id;
                    window.open(cmt_url);
       });
         }
