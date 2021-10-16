@@ -1,5 +1,5 @@
 $.getScript("./js/fbsdk.js");
-console.log("2");
+console.log("3");
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
@@ -28,6 +28,7 @@ function cmt(id,permalink_url){
     console.log(cmt_detail)
      await $("#comment_detail").append(cmt_detail);
       document.getElementById(value.id).addEventListener('click',async () =>{
+           const cmt_id= value.id.replace(id+"_","")
            const cmt_url= permalink_url+"&comment_id="+value.id;
                    window.open(cmt_url);
       });
