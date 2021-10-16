@@ -68,24 +68,25 @@ $("#get_btn").click(function get_clicked(){
         });
       })
       */
-       $(".cmt_link").hover(function(){
-        $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
-            }, function(){
-         $(this).css({"background-color":"transparent"});
-    });
 
-    $(".cmt_link").click(function(){
-      const cmt_url= permalink_url+"&comment_id="+this.id;
-      window.open(cmt_url);
-    })
       $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
       $(".select_post_createtime").css({  "float":"right"});
       $(".select_post").hover(function(){
         $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
             }, function(){
          $(this).css({"background-color":"transparent"});
-        
         });
+        $(".cmt_link").hover(function(){
+        $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
+            }, function(){
+         $(this).css({"background-color":"transparent"});
+    });
+
+   /* $(".cmt_link").click(function(){
+      const cmt_url= permalink_url+"&comment_id="+this.id;
+      window.open(cmt_url);
+    })
+    */
     });    
   }}
   )}
