@@ -31,16 +31,6 @@ function cmt(id,permalink_url){
       );
     }}
   );
-   $(".cmt_link").hover(function(){
-        $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
-            }, function(){
-         $(this).css({"background-color":"transparent"});
-    });
-
-    $(".cmt_link").click(function(){
-      const cmt_url= permalink_url+"&comment_id="+this.id;
-      window.open(cmt_url);
-    })
 }
 function show(messagetxt){
   var showtxt = messagetxt;
