@@ -68,8 +68,10 @@ $("#get_btn").click(function get_clicked(){
         });
       })
       */
-
-      $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
+    });    
+  }}
+  )
+  $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
       $(".select_post_createtime").css({  "float":"right"});
       $(".select_post").hover(function(){
         $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
@@ -81,16 +83,11 @@ $("#get_btn").click(function get_clicked(){
             }, function(){
          $(this).css({"background-color":"transparent"});
     });
-
-   /* $(".cmt_link").click(function(){
+    $(".cmt_link").click(function(){
       const cmt_url= permalink_url+"&comment_id="+this.id;
       window.open(cmt_url);
     })
-    */
-    });    
-  }}
-  )}
-)
+})
 
 $("#post_btn").click(async function(){
   if($("#schedule").prop('checked')== true){
