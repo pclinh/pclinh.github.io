@@ -1,5 +1,61 @@
 $.getScript("./js/fbsdk.js");
 console.log("3");
+function getPost(){
+$("#post_selection").replaceWith('<div id="post_selection"></div>');
+  FB.api(
+    "/102135788849157/feed",
+    "GET",
+    {
+     access_token: access_token,
+     fields:"id,permalink_url,message,created_time",
+    },
+   async function (response){
+      if (response && !response.error){
+      $.each(response.data,async function (index, value){
+            if(value.message != null){
+                 var showtxt = await show(value.message)
+            }else{
+                  var showtxt =""
+            }
+          showtime= await create_time(value.created_time)
+      var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
+      await $("#post_selection").append(row)
+      document.getElementById(value.id).addEventListener('click',async () =>{
+         
+        await show_post(value.id, value.permalink_url);
+        await  cmt(value.id,value.permalink_url);
+     
+      });
+       /*
+     document.getElementById("delete_" + value.id).addEventListener('click', () =>{
+        var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
+       $.ajax({
+          url:url,
+          method: 'DELETE',
+          success: function (result) {
+            alert("Delete succeed");
+          }
+        });
+      })
+      */
+      $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
+      $(".select_post_createtime").css({  "float":"right"});
+      $(".select_post").hover(function(){
+        $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
+            }, function(){
+         $(this).css({"background-color":"transparent"});
+        });
+        $(".cmt_link").css({"color":"beige","padding-top": "20px", "height":"50px"});
+        $(".cmt_link").hover(function(){
+        $(this).css({"cursor":"pointer","background-color":"rgba(9, 7, 44, 0.274)"});
+            }, function(){
+         $(this).css({"background-color":"transparent"});
+    });
+    });    
+  }}
+  )
+ 
+}
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
         $("#"+id).addClass("selected_post");
