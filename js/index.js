@@ -109,6 +109,10 @@ function cmt(id,permalink_url){
     var cmt_detail="<div class=cmt_link id="+value.id+">"+value.from.name +": " + value.message+"</div>";
     console.log(cmt_detail)
      $("#comment_detail").append(cmt_detail);
+     document.getElementById(cmt_filter).addEventListener('click',async () =>{
+       content= $('#content').val()
+           cmt_filter(value.id,value.permalink_url,)
+      });
       document.getElementById(value.id).addEventListener('click',async () =>{
            const cmt_id= value.id.slice(value.id.search("_")+1,value.id.length)
            console.log(cmt_id)
