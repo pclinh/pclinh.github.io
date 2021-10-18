@@ -25,7 +25,7 @@ function cmt(id,permalink_url){
     if (response && !response.error){
    await $.each(response.comments.data,async function (index, value){
       
-    var cmt_detail="<div class='cmt_link' id="+value.id+">"+value.from.name +": " + value.message+"</div>";
+    var cmt_detail="<div class=cmt_link id="+value.id+">"+value.from.name +": " + value.message+"</div>";
     console.log(cmt_detail)
      $("#comment_detail").append(cmt_detail);
       document.getElementById(value.id).addEventListener('click',async () =>{
