@@ -7,7 +7,7 @@ function show_post(id, permalink){
              FB.api(
                  '/oembed_post',
                    'GET',
-                  {"url":permalink,"maxwidth":"600","useiframe":"true"},
+                  {"url":permalink,"maxwidth":"100%","useiframe":"true"},
               function(response){
                   $("#postdtail").append(response.html);
                }
