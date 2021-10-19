@@ -31,10 +31,6 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
         }
 })
 
-$(document).ready(function(){
-  getPost();
-})
-
 $("#post_btn").click(async function(){
   if($("#schedule").prop('checked')== true){
     const time = $("#schedule_date").val()+" "+$("#schedule_time").val();
