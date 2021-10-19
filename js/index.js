@@ -70,6 +70,7 @@ function show_post(id, permalink) {
   $("iframe").css("background-color", "whitesmoke");
 }
 function cmt_filter(id, permalink_url, content) {
+  console.log(content)
   FB.api(
     id + "/",
     'GET',
