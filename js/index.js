@@ -79,20 +79,19 @@ function cmt_filter(id, permalink_url, content) {
       "access_token": access_token
     },
     async function (response) {
-      console.log(response)
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error) {
         await $.each(response.comments.data, async function (index, value) {
           if (value.message.search(content) != -1) {
             var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
-            $("#comment_detail").append(cmt_detail);
-          }
-          document.getElementById(value.id).addEventListener('click', async () => {
+            document.getElementById(value.id).addEventListener('click', async () => {
             const cmt_id = value.id.slice(value.id.search("_") + 1, value.id.length)
             console.log(cmt_id)
             const cmt_url = permalink_url + "&comment_id=" + cmt_id;
             window.open(cmt_url);
           });
+            $("#comment_detail").append(cmt_detail);
+          }
         }
         );
       }
@@ -108,7 +107,6 @@ function cmt(id, permalink_url) {
       "access_token": access_token
     },
     async function (response) {
-      $("#cmt_filter").off('click');
       document.getElementById("cmt_filter").addEventListener('click', async () => {
         const content = $("#ip_filter").val();
         cmt_filter(id, permalink_url, content)
@@ -116,10 +114,8 @@ function cmt(id, permalink_url) {
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error) {
         await $.each(response.comments.data, async function (index, value) {
-
           var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
           console.log(cmt_detail);
-
           $("#comment_detail").append(cmt_detail);
           document.getElementById(value.id).addEventListener('click', async () => {
             const cmt_id = value.id.slice(value.id.search("_") + 1, value.id.length)
