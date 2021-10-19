@@ -32,7 +32,7 @@ for (let i = 0; i < $("#photo_upload").prop("files").length; i++){
 })
 
 $(document).ready(function(){
-  function getPost();
+  getPost();
 })
 
 $("#post_btn").click(async function(){
