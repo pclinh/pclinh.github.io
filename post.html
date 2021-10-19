@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
   <div class="bg"></div>
   <header>
@@ -21,49 +23,55 @@
     </div>
   </header>
   <div id="editor_forms">
-      <div>
-        <p style="margin-left:40%; font-weight: bolder; font-size: 30px; position:relative;">Nhập nội dung</p>
-        <textarea id="post_content"></textarea>
-      </div>
-      <div id="schedule">
-        <input type="checkbox" name="" id="schedule">Hẹn giờ
-        <input type="date" name="schedule_date" id="schedule_date">
-        <input type="time" name="schedule_time" id="schedule_time">
-      </div>
-      <div>
-        <p  style="margin-left:5%;">Thêm hình ảnh hoặc video:</p>
-      </div>
-      <div id="post_element">
-          <input type="file" multiple id="photo_upload" accept="image/*, video/*">
-          <button id="cancel_btn">Cancel</button>
-          <button id="post_btn">Post</button>
-      </div>   
+    <div>
+      <p style="margin-left:40%; font-weight: bolder; font-size: 20px; position:relative;">Nhập nội dung</p>
+      <p style="display: inline-block;margin-left: 5%;">Chủ đề</p>
+      <select name="" id="title">
+        <option value="0">Vũ trụ</option>
+        <option value="1">Đại dương</option>
+      </select>
+      <textarea id="post_content"></textarea>
+    </div>
+    <div id="schedule">
+      <input type="checkbox" name="" id="schedule">Hẹn giờ
+      <input type="date" name="schedule_date" id="schedule_date">
+      <input type="time" name="schedule_time" id="schedule_time">
+    </div>
+    <div>
+      <p style="margin-left:5%;">Thêm hình ảnh hoặc video:</p>
+    </div>
+    <div id="post_element">
+      <input type="file" multiple id="photo_upload" accept="image/*, video/*">
+      <button id="cancel_btn">Cancel</button>
+      <button id="post_btn">Post</button>
+    </div>
   </div>
   <div id="post_ctr_element">
     <div id="post_ctrl">
       <div>
-          <button class="back_btn">Back</button>
-          <button id="get_btn">Get</button>
-          <button id="post_create_btn">Post</button>
-        </div>
-        <div> 
-        </div>
+        <button id="post_create_btn">Post</button>
       </div>
-      <div id="post_ctr_main">
-        <div class="show_info_post" id="part1">  
-          <div id="post_selection"></div>
-        </div>
-        <div class="show_info_post" id="part2">
-          <div id="postdtail"></div>
-        </div>
-        <div class="show_info_post" id="part3">
-          <div id="comment_detail"></div>
+      <div>
+      </div>
+    </div>
+    <div id="post_ctr_main">
+      <div class="show_info_post" id="part1">
+        <div id="post_selection"></div>
+      </div>
+      <div class="show_info_post" id="part2">
+        <div id="postdtail"></div>
+      </div>
+      <div class="show_info_post" id="part3">
+        <div id="comment_detail"></div>
+        <div id="filter">
+          <input id="ip_filter"><button id="cmt_filter">Lọc</button>
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/fbsdk.js"></script>
-    <script src="./js/API.js"></script>
-    <script src="./js/control.js"></script>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./js/API.js"></script>
+  <script src="./js/control.js"></script>
 </body>
+
 </html>
