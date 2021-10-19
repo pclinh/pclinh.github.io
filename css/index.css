@@ -22,7 +22,6 @@ body {
 }
 p,
 button {
-  color: beige;
 }
 #w_name {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -132,7 +131,7 @@ button:hover {
   width: 0;
   height: 0;
   display: grid;
-  grid-template-rows: 75% 5% 5% 20%;
+  grid-template-rows: 75% 4% 4% 18%;
   background-color: aqua;
   margin: 5% 25%;
   transition: width 0.5s, height 0.1s;
@@ -142,7 +141,7 @@ button:hover {
   font-size: 20px;
   margin-left: 5%;
   width: 90%;
-  height: 70%;
+  height: 65%;
 }
 
 #schedule {
@@ -177,12 +176,16 @@ button:hover {
   margin-left: 0.4%;
   grid-template-columns: 25% 50% 24%;
 }
+#title{
+  margin-left: 2%;
+  display: inline-block;
+}
 .show_info_post {
   overflow: auto;
   border: black groove 2px;
   border-radius: 8px;
 }
-.selected_post{
+.selected_post {
   background-color: rgba(9, 7, 44, 0.274);
 }
 #part1 {
@@ -190,8 +193,18 @@ button:hover {
 #part2 {
 }
 #part3 {
+  display: grid;
+  grid-template-rows:95% 5% ;
+}
+#filter{
+  border: solid transparent;
+}
+#ip_filter{
+  width: 80%;
+}
+#cmt_filter{
+  width:15%
 }
 #postdtail {
-  padding-left:1% 
+  padding-left: 1%;
 }
-
