@@ -19,12 +19,9 @@ $("#post_selection").replaceWith('<div id="post_selection"></div>');
             }
           showtime= await create_time(value.created_time)
       var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
-      await $("#post_selection").append(row)
-      document.getElementById("cmt_filter").addEventListener('click',async () =>{
-          const content=$("ip_filter").val();
-          await cmt_filter(value.id,value.permalink_url,content)
-      });  
+      await $("#post_selection").append(row);
       document.getElementById(value.id).addEventListener('click',async () =>{
+        $("#cmt_filter").off('click')
         await show_post(value.id, value.permalink_url);
         await  cmt(value.id,value.permalink_url);
       });
@@ -56,7 +53,6 @@ $("#post_selection").replaceWith('<div id="post_selection"></div>');
     });    
   }}
   )
- 
 }
 function show_post(id, permalink){
   $(".selected_post").removeClass("selected_post")
@@ -110,7 +106,11 @@ function cmt(id,permalink_url){
    await $.each(response.comments.data,async function (index, value){
       
     var cmt_detail="<div class=cmt_link id="+value.id+">"+value.from.name +": " + value.message+"</div>";
-    console.log(cmt_detail)
+    console.log(cmt_detail);
+     document.getElementById("cmt_filter").addEventListener('click',async () =>{
+          const content=$("ip_filter").val();
+          await cmt_filter(id,permalink_url,content)
+      });
      $("#comment_detail").append(cmt_detail);
       document.getElementById(value.id).addEventListener('click',async () =>{
            const cmt_id= value.id.slice(value.id.search("_")+1,value.id.length)
