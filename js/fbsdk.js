@@ -35,7 +35,7 @@ window.fbAsyncInit = function(){
     console.log(e);
   });
      console.log(access_token)
-    if(windowlocation.href=="https://pclinh.github.io/post.html){
+    if(windowlocation.href=="https://pclinh.github.io/post.html"){
      getPost();} 
     if(window.location.href=="https://pclinh.github.io/homepage.html"){
       FB.api(
