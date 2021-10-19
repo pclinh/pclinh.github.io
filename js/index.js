@@ -108,8 +108,9 @@ function cmt(id, permalink_url) {
       "access_token": access_token
     },
     async function (response) {
+      $("#cmt_filter").off('click');
       document.getElementById("cmt_filter").addEventListener('click', async () => {
-        const content = $("ip_filter").val();
+        const content = $("#ip_filter").val();
         cmt_filter(id, permalink_url, content)
       });
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
