@@ -21,10 +21,8 @@ $("#post_selection").replaceWith('<div id="post_selection"></div>');
       var row = $("<div class='select_post' id="+value.id+">"+showtxt+"<div class='select_post_createtime'> "+showtime+"</div></div>");
       await $("#post_selection").append(row)
       document.getElementById(value.id).addEventListener('click',async () =>{
-         
         await show_post(value.id, value.permalink_url);
         await  cmt(value.id,value.permalink_url);
-     
       });
        /*
      document.getElementById("delete_" + value.id).addEventListener('click', () =>{
@@ -38,6 +36,10 @@ $("#post_selection").replaceWith('<div id="post_selection"></div>');
         });
       })
       */
+       document.getElementById("cmt_filter").addEventListener('click',async () =>{
+          const content=$("ip_filter").val();
+          cmt_filter(value.id,value.permalink_url,content)
+      });
       $(".select_post").css({"color":"beige","padding-top": "20px", "height":"50px"});
       $(".select_post_createtime").css({  "float":"right"});
       $(".select_post").hover(function(){
@@ -95,10 +97,6 @@ function cmt_filter(id,permalink_url,content){
     }}
   );
 }
-$("#cmt_filter").click(async () =>{
-       content= $('#ip_filter').val()
-           cmt_filter(value.id,value.permalink_url,content)
-      });
 function cmt(id,permalink_url){               
   FB.api(
    id+"/",
