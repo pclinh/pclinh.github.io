@@ -79,6 +79,7 @@ function cmt_filter(id,permalink_url,content){
    {"fields":"comments",
     "access_token":access_token},
   async function(response){
+    console.log(response)
     $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
     if (response && !response.error){
    await $.each(response.comments.data,async function (index, value){
