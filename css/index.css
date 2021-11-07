@@ -189,8 +189,12 @@ button:hover {
   background-color: rgba(9, 7, 44, 0.274);
 }
 #part1 {
+  display: grid;
+  grid-template-rows:95% 5% ;
 }
 #part2 {
+  display: grid;
+  grid-template-rows:95% 5% ;
 }
 #part3 {
   display: grid;
