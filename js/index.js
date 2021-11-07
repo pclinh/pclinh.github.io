@@ -22,7 +22,7 @@ function getPost() {
           await $("#post_selection").append(row);
           document.getElementById(value.id).addEventListener('click', async () => {
             $("#cmt_filter").off('click')
-            $("#delete_post").off('click')
+            $("#delete_post_btn").off('click')
             await show_post(value.id, value.permalink_url);
             await cmt(value.id, value.permalink_url);
           });
@@ -108,11 +108,11 @@ function cmt(id, permalink_url) {
       "access_token": access_token
     },
     async function (response) {
+      $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       document.getElementById("cmt_filter").addEventListener('click', async () => {
         const content = $("#ip_filter").val();
         cmt_filter(id, permalink_url, content)
       });
-      $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error && response != null) {
         await $.each(response.data, async function (index, value) {
           var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
