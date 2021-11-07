@@ -21,8 +21,8 @@ function getPost() {
           var row = $("<div class='select_post' id=" + value.id + ">" + showtxt + "<div class='select_post_createtime'> " + showtime + "</div></div>");
           await $("#post_selection").append(row);
           document.getElementById(value.id).addEventListener('click', async () => {
-           try{ $("#cmt_filter").unbind()
-            $("#delete_post_btn").unbind();
+           try{ $("#cmt_filter").unbind("click")
+            $("#delete_post_btn").unbind("click");
               }
             catch(e){
             }
