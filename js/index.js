@@ -21,8 +21,8 @@ function getPost() {
           var row = $("<div class='select_post' id=" + value.id + ">" + showtxt + "<div class='select_post_createtime'> " + showtime + "</div></div>");
           await $("#post_selection").append(row);
           document.getElementById(value.id).addEventListener('click', async () => {
-            $("#cmt_filter").removeEventListener("click");
-            $("#delete_post_btn").removeEventListener("click");
+            $("#cmt_filter").removeEventListener("click",clickHandler);
+            $("#delete_post_btn").removeEventListener("click",clickHandler);
             await show_post(value.id, value.permalink_url);
             await cmt(value.id, value.permalink_url);
           });
@@ -54,7 +54,7 @@ function show_post(id, permalink) {
     { "url": permalink, "maxwidth": "730", "useiframe": "true" },
     function (response) {
       $("#postdtail").append(response.html);
-      document.getElementById("post_delete_btn").addEventListener('click', () => {
+      document.getElementById("post_delete_btn").addEventListener('click',clickHandler, () => {
         delete_post(id);
       })
     }
@@ -109,7 +109,7 @@ function cmt(id, permalink_url) {
     },
     async function (response) {
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
-      document.getElementById("cmt_filter").addEventListener('click', async () => {
+      document.getElementById("cmt_filter").addEventListener('click',clickHandler, async () => {
         const content = $("#ip_filter").val();
         cmt_filter(id, permalink_url, content)
       });
@@ -118,7 +118,7 @@ function cmt(id, permalink_url) {
           var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
           console.log(cmt_detail);
           $("#comment_detail").append(cmt_detail);
-          document.getElementById(value.id).addEventListener('click', async () => {
+          document.getElementById(value.id).addEventListener('click',clickHandler, async () => {
             const cmt_id = value.id.slice(value.id.search("_") + 1, value.id.length)
             console.log(cmt_id)
             const cmt_url = permalink_url + "&comment_id=" + cmt_id;
