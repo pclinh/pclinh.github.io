@@ -5,6 +5,16 @@ var formData;
 var type;
 var scheduled_time = "";
 $.getScript("./js/index.js");
+var values = $(this).serialize();
+$.ajax({
+  method: "POST",
+  url: "./php/select_post.php",
+  data: values,
+})
+  .done(function (response) {
+
+  });
+
 $("#photo_upload").change(function () {
   formData = new FormData();
   formData.append("access_token", access_token);

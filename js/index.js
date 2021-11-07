@@ -22,21 +22,10 @@ function getPost() {
           await $("#post_selection").append(row);
           document.getElementById(value.id).addEventListener('click', async () => {
             $("#cmt_filter").off('click')
+            $("#delete_post").off('click')
             await show_post(value.id, value.permalink_url);
             await cmt(value.id, value.permalink_url);
           });
-          /*
-        document.getElementById("delete_" + value.id).addEventListener('click', () =>{
-           var url ="https://graph.facebook.com/v11.0/"+value.id+"?access_token=" + access_token;
-          $.ajax({
-             url:url,
-             method: 'DELETE',
-             success: function (result) {
-               alert("Delete succeed");
-             }
-           });
-         })
-         */
           $(".select_post").css({ "color": "beige", "padding-top": "20px", "height": "50px" });
           $(".select_post_createtime").css({ "float": "right" });
           $(".select_post").hover(function () {
@@ -65,12 +54,26 @@ function show_post(id, permalink) {
     { "url": permalink, "maxwidth": "730", "useiframe": "true" },
     function (response) {
       $("#postdtail").append(response.html);
+      document.getElementById("delete_post").addEventListener('click', () => {
+        delete_post(id);
+      })
     }
   );
   $("iframe").css("background-color", "whitesmoke");
 }
+function delete_post(id) {
+  FB.api(
+    id + "/",
+    'DElETE',
+    {
+      "access_token": access_token
+    },
+    function (response) {
+      alert("Xoá thàng công")
+      getPost();
+    })
+}
 function cmt_filter(id, permalink_url, content) {
-  console.log(content)
   FB.api(
     id + "/",
     'GET',
