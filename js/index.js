@@ -21,8 +21,11 @@ function getPost() {
           var row = $("<div class='select_post' id=" + value.id + ">" + showtxt + "<div class='select_post_createtime'> " + showtime + "</div></div>");
           await $("#post_selection").append(row);
           document.getElementById(value.id).addEventListener('click', async () => {
-            $("#cmt_filter").removeEventListener("click",);
-            $("#delete_post_btn").removeEventListener("click",);
+           try{ $("#cmt_filter").removeEventListener("click",clickHandler);
+            $("#delete_post_btn").removeEventListener("click",clickHandler);
+              }
+            catch(e){
+            }
             await show_post(value.id, value.permalink_url);
             await cmt(value.id, value.permalink_url);
           });
@@ -87,7 +90,7 @@ function cmt_filter(id, permalink_url, content) {
           if (value.message.search(content) != -1) {
             var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
             $("#comment_detail").append(cmt_detail);
-            document.getElementById(value.id).addEventListener('click', async () => {
+            document.getElementById(value.id).addEventListener('click',clickHandler, async () => {
               const cmt_id = value.id.slice(value.id.search("_") + 1, value.id.length)
               console.log(cmt_id)
               const cmt_url = permalink_url + "&comment_id=" + cmt_id;
@@ -109,7 +112,7 @@ function cmt(id, permalink_url) {
     },
     async function (response) {
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
-      document.getElementById("cmt_filter").addEventListener('click', async () => {
+      document.getElementById("cmt_filter").addEventListener('click',clickHandler, async () => {
         const content = $("#ip_filter").val();
         cmt_filter(id, permalink_url, content)
       });
