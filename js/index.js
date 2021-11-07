@@ -54,7 +54,7 @@ function show_post(id, permalink) {
     { "url": permalink, "maxwidth": "730", "useiframe": "true" },
     function (response) {
       $("#postdtail").append(response.html);
-      document.getElementById("delete_post").addEventListener('click', () => {
+      document.getElementById("post_delete_btn").addEventListener('click', () => {
         delete_post(id);
       })
     }
