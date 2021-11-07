@@ -83,7 +83,7 @@ function cmt_filter(id, permalink_url, content) {
     async function (response) {
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error) {
-        await $.each(response.comments.data, async function (index, value) {
+        await $.each(response.data, async function (index, value) {
           if (value.message.search(content) != -1) {
             var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
             $("#comment_detail").append(cmt_detail);
@@ -114,7 +114,7 @@ function cmt(id, permalink_url) {
       });
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error && response != null) {
-        await $.each(response.comments.data, async function (index, value) {
+        await $.each(response.data, async function (index, value) {
           var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
           console.log(cmt_detail);
           $("#comment_detail").append(cmt_detail);
