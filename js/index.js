@@ -75,16 +75,14 @@ function delete_post(id) {
 }
 function cmt_filter(id, permalink_url, content) {
   FB.api(
-    id + "/",
+    id + "/comments",
     'GET',
     {
-      "fields": "comments",
       "access_token": access_token
     },
     async function (response) {
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error) {
-        Cốnle.log(response)
         await $.each(response.comments.data, async function (index, value) {
           if (value.message.search(content) != -1) {
             var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
@@ -104,10 +102,9 @@ function cmt_filter(id, permalink_url, content) {
 }
 function cmt(id, permalink_url) {
   FB.api(
-    id + "/",
+    id + "/comments",
     'GET',
     {
-      "fields": "comments",
       "access_token": access_token
     },
     async function (response) {
@@ -116,7 +113,7 @@ function cmt(id, permalink_url) {
         cmt_filter(id, permalink_url, content)
       });
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
-      if (response && !response.error && response.data != null) {
+      if (response && !response.error && response != null) {
         await $.each(response.comments.data, async function (index, value) {
           var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
           console.log(cmt_detail);
