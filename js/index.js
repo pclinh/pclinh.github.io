@@ -64,7 +64,7 @@ function show_post(id, permalink) {
 function delete_post(id) {
   FB.api(
     id + "/",
-    'DElETE',
+    'DELETE',
     {
       "access_token": access_token
     },
