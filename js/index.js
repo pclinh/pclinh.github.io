@@ -21,8 +21,8 @@ function getPost() {
           var row = $("<div class='select_post' id=" + value.id + ">" + showtxt + "<div class='select_post_createtime'> " + showtime + "</div></div>");
           await $("#post_selection").append(row);
           document.getElementById(value.id).addEventListener('click', async () => {
-            $("#cmt_filter").removeEventListener("click", clickHandler);
-            $("#delete_post_btn").removeEventListener("click", clickHandler);
+            $("#cmt_filter").removeEventListener("click");
+            $("#delete_post_btn").removeEventListener("click");
             await show_post(value.id, value.permalink_url);
             await cmt(value.id, value.permalink_url);
           });
