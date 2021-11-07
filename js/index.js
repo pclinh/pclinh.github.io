@@ -83,14 +83,14 @@ function cmt_filter(id, permalink_url, content) {
       if (response && !response.error) {
         await $.each(response.comments.data, async function (index, value) {
           if (value.message.search(content) != -1) {
-            var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>"; 
+            var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
             $("#comment_detail").append(cmt_detail);
             document.getElementById(value.id).addEventListener('click', async () => {
               const cmt_id = value.id.slice(value.id.search("_") + 1, value.id.length)
               console.log(cmt_id)
               const cmt_url = permalink_url + "&comment_id=" + cmt_id;
               window.open(cmt_url);
-              });
+            });
           }
         }
         );
