@@ -84,6 +84,7 @@ function cmt_filter(id, permalink_url, content) {
     async function (response) {
       $("#comment_detail").replaceWith("<div id='comment_detail'></div>")
       if (response && !response.error) {
+        Cốnle.log(response)
         await $.each(response.comments.data, async function (index, value) {
           if (value.message.search(content) != -1) {
             var cmt_detail = "<div class=cmt_link id=" + value.id + ">" + value.from.name + ": " + value.message + "</div>";
