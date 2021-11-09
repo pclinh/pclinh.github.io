@@ -60,8 +60,18 @@ $("#post_btn").click(async function () {
         scheduled_publish_time: scheduled_time
       },
       function (response) {
-        console.log(response);
-        console.log("Cái j đó"); 
+        console.log(response.id);
+        $.ajax({
+                type: "POST",
+                url: "php/insert_data.php",
+                data: {
+                    id: response.id
+                },
+                dataType: "json",
+                success: function (rpData) {
+                    console.log(rpData);
+                }
+            });
       }
     );
   } else {
