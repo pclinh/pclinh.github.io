@@ -191,14 +191,17 @@ button:hover {
 #part1 {
   display: grid;
   grid-template-rows:95% 5% ;
+  position: absolute;
 }
 #part2 {
   display: grid;
   grid-template-rows:95% 5% ;
+  position: absolute;
 }
 #part3 {
   display: grid;
   grid-template-rows:95% 5% ;
+  position: absolute;
 }
 #filter{
   border: solid transparent;
