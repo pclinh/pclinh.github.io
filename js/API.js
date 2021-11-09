@@ -61,6 +61,7 @@ $("#post_btn").click(async function () {
       },
       function (response) {
         console.log(response);
+        console.log("Cái j đó"); 
       }
     );
   } else {
