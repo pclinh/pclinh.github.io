@@ -9,7 +9,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.753);
+  background-color: rgba(155, 155, 155, 0.664);
 }
 #log_fb {
   margin-top: 150px;
@@ -20,9 +20,7 @@ body {
   align-content: center;
   background-color: aqua;
 }
-p,
-button {
-}
+
 #w_name {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 50px;
@@ -191,7 +189,6 @@ button:hover {
 #part1 {
   display: grid;
   grid-template-rows:95% 5% ;
-  
 }
 #part2 {
   display: grid;
@@ -200,20 +197,23 @@ button:hover {
 }
 #part3 {
   display: grid;
-  grid-template-rows:95% 5% ;
-  
+  grid-template-rows: 95% 5%;
 }
-#filter{
-  border: solid transparent;
+
+#cmt_filter{
+  width: 100%;
 }
+
 #ip_filter{
-  width: 80%;
-  position: absolute;
+  margin-left: 4%;
+  width: 70%;
 }
 #cmt_filter{
-  width:15%;
-  position: absolute;
+  width:20%;
 }
 #postdtail {
   padding-left: 1%;
+}
+#post_create_btn{
+  position:fixed;
 }
